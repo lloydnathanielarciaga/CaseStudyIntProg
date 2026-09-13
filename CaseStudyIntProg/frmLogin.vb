@@ -42,12 +42,10 @@ Public Class frmLogin
 
                 ' Filter successful login if their role is admin or staff[cite: 3]
                 If dr("Role").ToString() = "Administrator" Then
-                    'frmAdmin.Show()
-                    MsgBox("Welcome Administrator!")
+                    frmAdmin.Show()
                     Me.Hide()
                 ElseIf dr("Role").ToString() = "Registrar Staff" Then
-                    'frmStaff.Show()
-                    MsgBox("Welcome Registrar Staff!")
+                    frmStaff.Show()
                     Me.Hide()
                 End If
 
@@ -70,6 +68,15 @@ Public Class frmLogin
                 cn.Close()
             End If
         End Try
+
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+
+        ' Step 5: Clear/reset all input fields 
+        txtUsername.Text = ""
+        txtPassword.Text = ""
+        txtUsername.Focus()
 
     End Sub
 End Class
