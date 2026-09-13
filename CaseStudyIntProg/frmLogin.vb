@@ -41,7 +41,7 @@ Public Class frmLogin
 
                 ' Filter successful login if their role is admin or staff
                 If dr("Role").ToString() = "Administrator" Then
-                    frmAdmin.Show()
+                    'frmAdmin.Show()
                     Me.Hide()
                 ElseIf dr("Role").ToString() = "Registrar Staff" Then
                     frmStaff.Show()
