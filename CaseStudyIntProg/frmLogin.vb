@@ -9,7 +9,7 @@ Public Class frmLogin
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
-        ' Step 3: Proper validations to all input fields[cite: 1]
+        ' Step 3: Proper validations to all input fields
         If txtUsername.Text.Trim() = "" Then
             MessageBox.Show("Please enter your username.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             txtUsername.Focus()
@@ -22,25 +22,24 @@ Public Class frmLogin
             Exit Sub
         End If
 
-        ' Step 3 & 4: Database check, error handling, and role filtering[cite: 1, 3]
+        ' Step 3 & 4: Database check, error handling, and role filtering
         Try
             Call connection()
 
             sql = "SELECT Role FROM tblusers WHERE Username = @username AND Password = @password"
             cmd = New MySqlCommand(sql, cn)
 
-            ' Use .Parameters for security and readability[cite: 3, 4]
+            ' Use .Parameters for security and readability
             cmd.Parameters.AddWithValue("@username", txtUsername.Text)
             cmd.Parameters.AddWithValue("@password", txtPassword.Text)
 
             dr = cmd.ExecuteReader()
 
             ' Combine While and .Parameters for easy reading
-            ' No boolean variables are used; the loop inherently checks for existence
             While dr.Read()
                 MessageBox.Show("Log in Success!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                ' Filter successful login if their role is admin or staff[cite: 3]
+                ' Filter successful login if their role is admin or staff
                 If dr("Role").ToString() = "Administrator" Then
                     frmAdmin.Show()
                     Me.Hide()
@@ -60,10 +59,10 @@ Public Class frmLogin
             MessageBox.Show("Log in Failed! Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         Catch ex As Exception
-            ' Rollback/Error Handling if an unexpected error occurs[cite: 1]
+            ' Rollback/Error Handling if an unexpected error occurs
             MessageBox.Show("An error occurred: " & ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
-            ' Ensure the connection is always closed[cite: 1]
+            ' Ensure the connection is always closed
             If cn.State = ConnectionState.Open Then
                 cn.Close()
             End If
