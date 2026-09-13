@@ -120,6 +120,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbContext.vb" />
+    <Compile Include="frmDocumentManagement.Designer.vb">
+      <DependentUpon>frmDocumentManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -150,6 +156,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmDocumentManagement.resx">
+      <DependentUpon>frmDocumentManagement.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
