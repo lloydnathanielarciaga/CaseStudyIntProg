@@ -28,7 +28,7 @@
 
     Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequest.Click
 
-        'LoadFormInPanel(New frmDocumentRequest())
+        LoadFormInPanel(New frmNewDocumentRequest())
 
     End Sub
 End Class
