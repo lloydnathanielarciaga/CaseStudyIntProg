@@ -88,6 +88,7 @@ Partial Class frmStaff
         Me.Controls.Add(Me.SplitContainerMain)
         Me.Name = "frmStaff"
         Me.Text = "frmStaff"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.SplitContainerMain.Panel1.ResumeLayout(False)
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerMain.ResumeLayout(False)
