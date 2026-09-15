@@ -126,6 +126,12 @@
     <Compile Include="frmDocumentManagement.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDocumentRequestList.Designer.vb">
+      <DependentUpon>frmDocumentRequestList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocumentRequestList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmDocumentManagement.resx">
       <DependentUpon>frmDocumentManagement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocumentRequestList.resx">
+      <DependentUpon>frmDocumentRequestList.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

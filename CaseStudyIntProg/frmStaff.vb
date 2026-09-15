@@ -31,4 +31,10 @@
         LoadFormInPanel(New frmNewDocumentRequest())
 
     End Sub
+
+    Private Sub btnDocumentRequestList_Click(sender As Object, e As EventArgs) Handles btnDocumentRequestList.Click
+
+        LoadFormInPanel(New frmDocumentRequestList())
+
+    End Sub
 End Class
