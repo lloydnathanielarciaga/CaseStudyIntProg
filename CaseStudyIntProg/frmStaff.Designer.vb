@@ -26,6 +26,7 @@ Partial Class frmStaff
         Me.TableLayoutPanelButtons = New System.Windows.Forms.TableLayoutPanel()
         Me.btnDocumentManagement = New System.Windows.Forms.Button()
         Me.btnDocumentRequest = New System.Windows.Forms.Button()
+        Me.btnDocumentRequestList = New System.Windows.Forms.Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -48,16 +49,18 @@ Partial Class frmStaff
         'TableLayoutPanelButtons
         '
         Me.TableLayoutPanelButtons.ColumnCount = 1
-        Me.TableLayoutPanelButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanelButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentManagement, 0, 0)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequest, 0, 1)
+        Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequestList, 0, 2)
         Me.TableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanelButtons.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelButtons.Name = "TableLayoutPanelButtons"
-        Me.TableLayoutPanelButtons.RowCount = 2
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(120, 100)
+        Me.TableLayoutPanelButtons.RowCount = 3
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(120, 141)
         Me.TableLayoutPanelButtons.TabIndex = 0
         '
         'btnDocumentManagement
@@ -65,7 +68,7 @@ Partial Class frmStaff
         Me.btnDocumentManagement.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDocumentManagement.Location = New System.Drawing.Point(3, 3)
         Me.btnDocumentManagement.Name = "btnDocumentManagement"
-        Me.btnDocumentManagement.Size = New System.Drawing.Size(114, 44)
+        Me.btnDocumentManagement.Size = New System.Drawing.Size(114, 41)
         Me.btnDocumentManagement.TabIndex = 0
         Me.btnDocumentManagement.Text = "Document Management"
         Me.btnDocumentManagement.UseVisualStyleBackColor = True
@@ -73,12 +76,22 @@ Partial Class frmStaff
         'btnDocumentRequest
         '
         Me.btnDocumentRequest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 53)
+        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 50)
         Me.btnDocumentRequest.Name = "btnDocumentRequest"
-        Me.btnDocumentRequest.Size = New System.Drawing.Size(114, 44)
+        Me.btnDocumentRequest.Size = New System.Drawing.Size(114, 41)
         Me.btnDocumentRequest.TabIndex = 1
         Me.btnDocumentRequest.Text = "Document Request"
         Me.btnDocumentRequest.UseVisualStyleBackColor = True
+        '
+        'btnDocumentRequestList
+        '
+        Me.btnDocumentRequestList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDocumentRequestList.Location = New System.Drawing.Point(3, 97)
+        Me.btnDocumentRequestList.Name = "btnDocumentRequestList"
+        Me.btnDocumentRequestList.Size = New System.Drawing.Size(114, 41)
+        Me.btnDocumentRequestList.TabIndex = 2
+        Me.btnDocumentRequestList.Text = "Request List"
+        Me.btnDocumentRequestList.UseVisualStyleBackColor = True
         '
         'frmStaff
         '
@@ -101,4 +114,5 @@ Partial Class frmStaff
     Friend WithEvents TableLayoutPanelButtons As TableLayoutPanel
     Friend WithEvents btnDocumentManagement As Button
     Friend WithEvents btnDocumentRequest As Button
+    Friend WithEvents btnDocumentRequestList As Button
 End Class
