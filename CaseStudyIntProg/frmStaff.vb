@@ -37,4 +37,10 @@
         LoadFormInPanel(New frmDocumentRequestList())
 
     End Sub
+
+    Private Sub btnPaymentInformation_Click(sender As Object, e As EventArgs) Handles btnPaymentInformation.Click
+
+        LoadFormInPanel(New frmRecordPaymentInformation())
+
+    End Sub
 End Class
