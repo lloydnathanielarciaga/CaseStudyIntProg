@@ -43,4 +43,10 @@
         LoadFormInPanel(New frmRecordPaymentInformation())
 
     End Sub
+
+    Private Sub btnSystemReport_Click(sender As Object, e As EventArgs) Handles btnSystemReport.Click
+
+        LoadFormInPanel(New frmSystemReport())
+
+    End Sub
 End Class
