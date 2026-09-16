@@ -1,2 +1,2 @@
 # Progress
-clone COMPLETED, huwag MAIN
+run COMPLETED branch huwag MAIN
