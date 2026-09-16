@@ -28,8 +28,8 @@ Partial Class frmLogin
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.btnLogin = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -110,16 +110,6 @@ Partial Class frmLogin
         Me.txtPassword.Size = New System.Drawing.Size(176, 20)
         Me.txtPassword.TabIndex = 4
         '
-        'btnLogin
-        '
-        Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnLogin.Location = New System.Drawing.Point(42, 7)
-        Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(75, 23)
-        Me.btnLogin.TabIndex = 5
-        Me.btnLogin.Text = "SignIn"
-        Me.btnLogin.UseVisualStyleBackColor = True
-        '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 2
@@ -135,6 +125,16 @@ Partial Class frmLogin
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(240, 38)
         Me.TableLayoutPanel2.TabIndex = 5
+        '
+        'btnLogin
+        '
+        Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnLogin.Location = New System.Drawing.Point(42, 7)
+        Me.btnLogin.Name = "btnLogin"
+        Me.btnLogin.Size = New System.Drawing.Size(75, 23)
+        Me.btnLogin.TabIndex = 5
+        Me.btnLogin.Text = "SignIn"
+        Me.btnLogin.UseVisualStyleBackColor = True
         '
         'btnClear
         '
