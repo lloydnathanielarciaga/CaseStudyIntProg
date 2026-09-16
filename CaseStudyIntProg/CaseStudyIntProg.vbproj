@@ -144,6 +144,12 @@
     <Compile Include="frmNewDocumentRequest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmRecordPaymentInformation.Designer.vb">
+      <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordPaymentInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStaff.Designer.vb">
       <DependentUpon>frmStaff.vb</DependentUpon>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewDocumentRequest.resx">
       <DependentUpon>frmNewDocumentRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordPaymentInformation.resx">
+      <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
