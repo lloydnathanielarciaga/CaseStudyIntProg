@@ -49,4 +49,8 @@
         LoadFormInPanel(New frmSystemReport())
 
     End Sub
+
+    Private Sub btnStudentManagement_Click(sender As Object, e As EventArgs) Handles btnStudentManagement.Click
+        LoadFormInPanel(New frmStudentManagement())
+    End Sub
 End Class

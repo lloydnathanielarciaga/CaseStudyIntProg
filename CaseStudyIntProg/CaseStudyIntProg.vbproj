@@ -162,6 +162,12 @@
     <Compile Include="frmStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmStudentManagement.Designer.vb">
+      <DependentUpon>frmStudentManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentManagement.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSystemReport.Designer.vb">
       <DependentUpon>frmSystemReport.vb</DependentUpon>
     </Compile>
@@ -212,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentManagement.resx">
+      <DependentUpon>frmStudentManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemReport.resx">
       <DependentUpon>frmSystemReport.vb</DependentUpon>

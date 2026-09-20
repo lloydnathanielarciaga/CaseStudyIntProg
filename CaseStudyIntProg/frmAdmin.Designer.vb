@@ -30,6 +30,7 @@ Partial Class frmAdmin
         Me.btnPaymentInformation = New System.Windows.Forms.Button()
         Me.btnSystemReport = New System.Windows.Forms.Button()
         Me.btnUserManagement = New System.Windows.Forms.Button()
+        Me.btnStudentManagement = New System.Windows.Forms.Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -53,6 +54,7 @@ Partial Class frmAdmin
         '
         Me.TableLayoutPanelButtons.ColumnCount = 1
         Me.TableLayoutPanelButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanelButtons.Controls.Add(Me.btnStudentManagement, 0, 5)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentManagement, 0, 0)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequest, 0, 1)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequestList, 0, 2)
@@ -133,6 +135,16 @@ Partial Class frmAdmin
         Me.btnUserManagement.Text = "User Management"
         Me.btnUserManagement.UseVisualStyleBackColor = True
         '
+        'btnStudentManagement
+        '
+        Me.btnStudentManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnStudentManagement.Location = New System.Drawing.Point(3, 223)
+        Me.btnStudentManagement.Name = "btnStudentManagement"
+        Me.btnStudentManagement.Size = New System.Drawing.Size(114, 38)
+        Me.btnStudentManagement.TabIndex = 6
+        Me.btnStudentManagement.Text = "Student Management"
+        Me.btnStudentManagement.UseVisualStyleBackColor = True
+        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -158,4 +170,5 @@ Partial Class frmAdmin
     Friend WithEvents btnPaymentInformation As Button
     Friend WithEvents btnSystemReport As Button
     Friend WithEvents btnUserManagement As Button
+    Friend WithEvents btnStudentManagement As Button
 End Class

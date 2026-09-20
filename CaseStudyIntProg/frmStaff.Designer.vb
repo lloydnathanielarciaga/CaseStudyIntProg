@@ -29,6 +29,7 @@ Partial Class frmStaff
         Me.btnDocumentRequestList = New System.Windows.Forms.Button()
         Me.btnPaymentInformation = New System.Windows.Forms.Button()
         Me.btnSystemReport = New System.Windows.Forms.Button()
+        Me.btnStudentManagement = New System.Windows.Forms.Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -52,6 +53,7 @@ Partial Class frmStaff
         '
         Me.TableLayoutPanelButtons.ColumnCount = 1
         Me.TableLayoutPanelButtons.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanelButtons.Controls.Add(Me.btnStudentManagement, 0, 5)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentManagement, 0, 0)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequest, 0, 1)
         Me.TableLayoutPanelButtons.Controls.Add(Me.btnDocumentRequestList, 0, 2)
@@ -60,12 +62,14 @@ Partial Class frmStaff
         Me.TableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Top
         Me.TableLayoutPanelButtons.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanelButtons.Name = "TableLayoutPanelButtons"
-        Me.TableLayoutPanelButtons.RowCount = 5
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0005!))
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.9985!))
-        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanelButtons.RowCount = 6
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66708!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66708!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66708!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66542!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667!))
+        Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(120, 248)
         Me.TableLayoutPanelButtons.TabIndex = 0
         '
@@ -74,7 +78,7 @@ Partial Class frmStaff
         Me.btnDocumentManagement.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDocumentManagement.Location = New System.Drawing.Point(3, 3)
         Me.btnDocumentManagement.Name = "btnDocumentManagement"
-        Me.btnDocumentManagement.Size = New System.Drawing.Size(114, 43)
+        Me.btnDocumentManagement.Size = New System.Drawing.Size(114, 35)
         Me.btnDocumentManagement.TabIndex = 0
         Me.btnDocumentManagement.Text = "Document Management"
         Me.btnDocumentManagement.UseVisualStyleBackColor = True
@@ -82,9 +86,9 @@ Partial Class frmStaff
         'btnDocumentRequest
         '
         Me.btnDocumentRequest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 52)
+        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 44)
         Me.btnDocumentRequest.Name = "btnDocumentRequest"
-        Me.btnDocumentRequest.Size = New System.Drawing.Size(114, 43)
+        Me.btnDocumentRequest.Size = New System.Drawing.Size(114, 35)
         Me.btnDocumentRequest.TabIndex = 1
         Me.btnDocumentRequest.Text = "Document Request"
         Me.btnDocumentRequest.UseVisualStyleBackColor = True
@@ -92,9 +96,9 @@ Partial Class frmStaff
         'btnDocumentRequestList
         '
         Me.btnDocumentRequestList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentRequestList.Location = New System.Drawing.Point(3, 101)
+        Me.btnDocumentRequestList.Location = New System.Drawing.Point(3, 85)
         Me.btnDocumentRequestList.Name = "btnDocumentRequestList"
-        Me.btnDocumentRequestList.Size = New System.Drawing.Size(114, 43)
+        Me.btnDocumentRequestList.Size = New System.Drawing.Size(114, 35)
         Me.btnDocumentRequestList.TabIndex = 2
         Me.btnDocumentRequestList.Text = "Request List"
         Me.btnDocumentRequestList.UseVisualStyleBackColor = True
@@ -102,9 +106,9 @@ Partial Class frmStaff
         'btnPaymentInformation
         '
         Me.btnPaymentInformation.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnPaymentInformation.Location = New System.Drawing.Point(3, 150)
+        Me.btnPaymentInformation.Location = New System.Drawing.Point(3, 126)
         Me.btnPaymentInformation.Name = "btnPaymentInformation"
-        Me.btnPaymentInformation.Size = New System.Drawing.Size(114, 43)
+        Me.btnPaymentInformation.Size = New System.Drawing.Size(114, 35)
         Me.btnPaymentInformation.TabIndex = 3
         Me.btnPaymentInformation.Text = "Payment Information"
         Me.btnPaymentInformation.UseVisualStyleBackColor = True
@@ -112,12 +116,22 @@ Partial Class frmStaff
         'btnSystemReport
         '
         Me.btnSystemReport.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSystemReport.Location = New System.Drawing.Point(3, 199)
+        Me.btnSystemReport.Location = New System.Drawing.Point(3, 167)
         Me.btnSystemReport.Name = "btnSystemReport"
-        Me.btnSystemReport.Size = New System.Drawing.Size(114, 46)
+        Me.btnSystemReport.Size = New System.Drawing.Size(114, 35)
         Me.btnSystemReport.TabIndex = 4
         Me.btnSystemReport.Text = "System Report"
         Me.btnSystemReport.UseVisualStyleBackColor = True
+        '
+        'btnStudentManagement
+        '
+        Me.btnStudentManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnStudentManagement.Location = New System.Drawing.Point(3, 208)
+        Me.btnStudentManagement.Name = "btnStudentManagement"
+        Me.btnStudentManagement.Size = New System.Drawing.Size(114, 37)
+        Me.btnStudentManagement.TabIndex = 5
+        Me.btnStudentManagement.Text = "Student Management"
+        Me.btnStudentManagement.UseVisualStyleBackColor = True
         '
         'frmStaff
         '
@@ -143,4 +157,5 @@ Partial Class frmStaff
     Friend WithEvents btnDocumentRequestList As Button
     Friend WithEvents btnPaymentInformation As Button
     Friend WithEvents btnSystemReport As Button
+    Friend WithEvents btnStudentManagement As Button
 End Class
