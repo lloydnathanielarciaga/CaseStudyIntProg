@@ -191,7 +191,7 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.03982!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.96028!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.rdoInactive, 4, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 2, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.txtCourse, 3, 0)
@@ -230,7 +230,7 @@ Partial Class frmStudentManagement
         Me.rdoInactive.AutoSize = True
         Me.rdoInactive.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoInactive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoInactive.Location = New System.Drawing.Point(780, 171)
+        Me.rdoInactive.Location = New System.Drawing.Point(776, 171)
         Me.rdoInactive.Name = "rdoInactive"
         Me.rdoInactive.Size = New System.Drawing.Size(86, 37)
         Me.rdoInactive.TabIndex = 37
@@ -243,7 +243,7 @@ Partial Class frmStudentManagement
         Me.Label2.AutoSize = True
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(397, 176)
+        Me.Label2.Location = New System.Drawing.Point(394, 176)
         Me.Label2.Margin = New System.Windows.Forms.Padding(8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(67, 27)
@@ -255,80 +255,80 @@ Partial Class frmStudentManagement
         '
         Me.txtCourse.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtCourse.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCourse.Location = New System.Drawing.Point(529, 10)
+        Me.txtCourse.Location = New System.Drawing.Point(526, 10)
         Me.txtCourse.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtCourse.Name = "txtCourse"
-        Me.txtCourse.Size = New System.Drawing.Size(240, 29)
+        Me.txtCourse.Size = New System.Drawing.Size(239, 29)
         Me.txtCourse.TabIndex = 30
         '
         'txtMiddleName
         '
         Me.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMiddleName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiddleName.Location = New System.Drawing.Point(144, 178)
+        Me.txtMiddleName.Location = New System.Drawing.Point(143, 178)
         Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(237, 29)
+        Me.txtMiddleName.Size = New System.Drawing.Size(235, 29)
         Me.txtMiddleName.TabIndex = 29
         '
         'txtContactNo
         '
         Me.txtContactNo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtContactNo.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(529, 136)
+        Me.txtContactNo.Location = New System.Drawing.Point(526, 136)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(240, 29)
+        Me.txtContactNo.Size = New System.Drawing.Size(239, 29)
         Me.txtContactNo.TabIndex = 28
         '
         'txtFirstName
         '
         Me.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtFirstName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstName.Location = New System.Drawing.Point(144, 136)
+        Me.txtFirstName.Location = New System.Drawing.Point(143, 136)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(237, 29)
+        Me.txtFirstName.Size = New System.Drawing.Size(235, 29)
         Me.txtFirstName.TabIndex = 27
         '
         'txtSection
         '
         Me.txtSection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSection.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSection.Location = New System.Drawing.Point(529, 94)
+        Me.txtSection.Location = New System.Drawing.Point(526, 94)
         Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtSection.Name = "txtSection"
-        Me.txtSection.Size = New System.Drawing.Size(240, 29)
+        Me.txtSection.Size = New System.Drawing.Size(239, 29)
         Me.txtSection.TabIndex = 26
         '
         'txtLastName
         '
         Me.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLastName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastName.Location = New System.Drawing.Point(144, 94)
+        Me.txtLastName.Location = New System.Drawing.Point(143, 94)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(237, 29)
+        Me.txtLastName.Size = New System.Drawing.Size(235, 29)
         Me.txtLastName.TabIndex = 25
         '
         'txtYearLevel
         '
         Me.txtYearLevel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtYearLevel.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtYearLevel.Location = New System.Drawing.Point(529, 52)
+        Me.txtYearLevel.Location = New System.Drawing.Point(526, 52)
         Me.txtYearLevel.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtYearLevel.Name = "txtYearLevel"
-        Me.txtYearLevel.Size = New System.Drawing.Size(240, 29)
+        Me.txtYearLevel.Size = New System.Drawing.Size(239, 29)
         Me.txtYearLevel.TabIndex = 24
         '
         'txtLRN
         '
         Me.txtLRN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLRN.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLRN.Location = New System.Drawing.Point(144, 52)
+        Me.txtLRN.Location = New System.Drawing.Point(143, 52)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLRN.Name = "txtLRN"
-        Me.txtLRN.Size = New System.Drawing.Size(237, 29)
+        Me.txtLRN.Size = New System.Drawing.Size(235, 29)
         Me.txtLRN.TabIndex = 23
         '
         'Label17
@@ -349,7 +349,7 @@ Partial Class frmStudentManagement
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(397, 134)
+        Me.Label15.Location = New System.Drawing.Point(394, 134)
         Me.Label15.Margin = New System.Windows.Forms.Padding(8)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(104, 26)
@@ -375,7 +375,7 @@ Partial Class frmStudentManagement
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(397, 92)
+        Me.Label11.Location = New System.Drawing.Point(394, 92)
         Me.Label11.Margin = New System.Windows.Forms.Padding(8)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 26)
@@ -401,7 +401,7 @@ Partial Class frmStudentManagement
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(397, 50)
+        Me.Label7.Location = New System.Drawing.Point(394, 50)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 26)
@@ -414,7 +414,7 @@ Partial Class frmStudentManagement
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(397, 8)
+        Me.Label3.Location = New System.Drawing.Point(394, 8)
         Me.Label3.Margin = New System.Windows.Forms.Padding(8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 26)
@@ -452,10 +452,10 @@ Partial Class frmStudentManagement
         '
         Me.txtStudentID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtStudentID.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStudentID.Location = New System.Drawing.Point(144, 10)
+        Me.txtStudentID.Location = New System.Drawing.Point(143, 10)
         Me.txtStudentID.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtStudentID.Name = "txtStudentID"
-        Me.txtStudentID.Size = New System.Drawing.Size(237, 29)
+        Me.txtStudentID.Size = New System.Drawing.Size(235, 29)
         Me.txtStudentID.TabIndex = 22
         '
         'rdoActive
@@ -463,7 +463,7 @@ Partial Class frmStudentManagement
         Me.rdoActive.AutoSize = True
         Me.rdoActive.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoActive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoActive.Location = New System.Drawing.Point(524, 171)
+        Me.rdoActive.Location = New System.Drawing.Point(521, 171)
         Me.rdoActive.Name = "rdoActive"
         Me.rdoActive.Size = New System.Drawing.Size(74, 37)
         Me.rdoActive.TabIndex = 32
