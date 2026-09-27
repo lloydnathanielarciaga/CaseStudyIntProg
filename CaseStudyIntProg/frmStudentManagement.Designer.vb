@@ -25,23 +25,23 @@ Partial Class frmStudentManagement
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lsvStudents = New System.Windows.Forms.ListView()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnClearSearch = New System.Windows.Forms.Button()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.btnDeactivate = New System.Windows.Forms.Button()
+        Me.btnActivate = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.rdoInactive = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCourse = New System.Windows.Forms.TextBox()
+        Me.rdoIrregular = New System.Windows.Forms.RadioButton()
+        Me.lblStudentType = New System.Windows.Forms.Label()
         Me.txtMiddleName = New System.Windows.Forms.TextBox()
         Me.txtContactNo = New System.Windows.Forms.TextBox()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.txtSection = New System.Windows.Forms.TextBox()
         Me.txtLastName = New System.Windows.Forms.TextBox()
-        Me.txtYearLevel = New System.Windows.Forms.TextBox()
         Me.txtLRN = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -53,8 +53,10 @@ Partial Class frmStudentManagement
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtStudentID = New System.Windows.Forms.TextBox()
-        Me.rdoActive = New System.Windows.Forms.RadioButton()
+        Me.rdoRegular = New System.Windows.Forms.RadioButton()
         Me.lblStudentManagement = New System.Windows.Forms.Label()
+        Me.cboCourse = New System.Windows.Forms.ComboBox()
+        Me.cboYearLevel = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -86,24 +88,38 @@ Partial Class frmStudentManagement
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.ColumnCount = 2
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.79221!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.20779!))
+        Me.TableLayoutPanel3.ColumnCount = 3
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.27617!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.36109!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.36276!))
+        Me.TableLayoutPanel3.Controls.Add(Me.btnClearSearch, 2, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.btnSearch, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.txtSearch, 0, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 332)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(385, 53)
         Me.TableLayoutPanel3.TabIndex = 5
+        '
+        'btnClearSearch
+        '
+        Me.btnClearSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnClearSearch.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnClearSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearSearch.Location = New System.Drawing.Point(293, 8)
+        Me.btnClearSearch.Name = "btnClearSearch"
+        Me.btnClearSearch.Size = New System.Drawing.Size(81, 37)
+        Me.btnClearSearch.TabIndex = 32
+        Me.btnClearSearch.Text = "Clear"
+        Me.btnClearSearch.UseVisualStyleBackColor = True
         '
         'btnSearch
         '
         Me.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSearch.Location = New System.Drawing.Point(264, 8)
+        Me.btnSearch.Location = New System.Drawing.Point(200, 8)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(81, 37)
         Me.btnSearch.TabIndex = 31
@@ -117,20 +133,20 @@ Partial Class frmStudentManagement
         Me.txtSearch.Location = New System.Drawing.Point(8, 10)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(245, 29)
+        Me.txtSearch.Size = New System.Drawing.Size(181, 29)
         Me.txtSearch.TabIndex = 30
-        Me.txtSearch.Text = "Search a Student"
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.ColumnCount = 4
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnClear, 3, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnDeactivate, 2, 0)
+        Me.TableLayoutPanel2.ColumnCount = 5
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.btnClear, 4, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnDeactivate, 3, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.btnActivate, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnEdit, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.btnAdd, 0, 0)
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(0, 278)
@@ -144,10 +160,10 @@ Partial Class frmStudentManagement
         '
         Me.btnClear.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnClear.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(474, 3)
+        Me.btnClear.Location = New System.Drawing.Point(503, 3)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(151, 33)
-        Me.btnClear.TabIndex = 3
+        Me.btnClear.Size = New System.Drawing.Size(122, 33)
+        Me.btnClear.TabIndex = 4
         Me.btnClear.Text = "CLEAR"
         Me.btnClear.UseVisualStyleBackColor = True
         '
@@ -155,20 +171,31 @@ Partial Class frmStudentManagement
         '
         Me.btnDeactivate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDeactivate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeactivate.Location = New System.Drawing.Point(317, 3)
+        Me.btnDeactivate.Location = New System.Drawing.Point(378, 3)
         Me.btnDeactivate.Name = "btnDeactivate"
-        Me.btnDeactivate.Size = New System.Drawing.Size(151, 33)
-        Me.btnDeactivate.TabIndex = 2
+        Me.btnDeactivate.Size = New System.Drawing.Size(119, 33)
+        Me.btnDeactivate.TabIndex = 3
         Me.btnDeactivate.Text = "DEACTIVATE"
         Me.btnDeactivate.UseVisualStyleBackColor = True
+        '
+        'btnActivate
+        '
+        Me.btnActivate.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnActivate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActivate.Location = New System.Drawing.Point(253, 3)
+        Me.btnActivate.Name = "btnActivate"
+        Me.btnActivate.Size = New System.Drawing.Size(119, 33)
+        Me.btnActivate.TabIndex = 2
+        Me.btnActivate.Text = "ACTIVATE"
+        Me.btnActivate.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
         Me.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnEdit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.Location = New System.Drawing.Point(160, 3)
+        Me.btnEdit.Location = New System.Drawing.Point(128, 3)
         Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(151, 33)
+        Me.btnEdit.Size = New System.Drawing.Size(119, 33)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "EDIT"
         Me.btnEdit.UseVisualStyleBackColor = True
@@ -179,7 +206,7 @@ Partial Class frmStudentManagement
         Me.btnAdd.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAdd.Location = New System.Drawing.Point(3, 3)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(151, 33)
+        Me.btnAdd.Size = New System.Drawing.Size(119, 33)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "ADD"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -191,16 +218,15 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.03982!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.96028!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.rdoInactive, 4, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label2, 2, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtCourse, 3, 0)
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.cboYearLevel, 3, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.rdoIrregular, 4, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblStudentType, 2, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.txtMiddleName, 1, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.txtContactNo, 3, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.txtFirstName, 1, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.txtSection, 3, 2)
         Me.TableLayoutPanel1.Controls.Add(Me.txtLastName, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtYearLevel, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.txtLRN, 1, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label17, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.Label15, 2, 3)
@@ -212,7 +238,8 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.Controls.Add(Me.Label5, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.txtStudentID, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.rdoActive, 3, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.rdoRegular, 3, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.cboCourse, 3, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 49)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -225,110 +252,90 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(902, 211)
         Me.TableLayoutPanel1.TabIndex = 3
         '
-        'rdoInactive
+        'rdoIrregular
         '
-        Me.rdoInactive.AutoSize = True
-        Me.rdoInactive.Dock = System.Windows.Forms.DockStyle.Left
-        Me.rdoInactive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoInactive.Location = New System.Drawing.Point(776, 171)
-        Me.rdoInactive.Name = "rdoInactive"
-        Me.rdoInactive.Size = New System.Drawing.Size(86, 37)
-        Me.rdoInactive.TabIndex = 37
-        Me.rdoInactive.TabStop = True
-        Me.rdoInactive.Text = "Inactive"
-        Me.rdoInactive.UseVisualStyleBackColor = True
+        Me.rdoIrregular.AutoSize = True
+        Me.rdoIrregular.Dock = System.Windows.Forms.DockStyle.Left
+        Me.rdoIrregular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoIrregular.Location = New System.Drawing.Point(772, 171)
+        Me.rdoIrregular.Name = "rdoIrregular"
+        Me.rdoIrregular.Size = New System.Drawing.Size(91, 37)
+        Me.rdoIrregular.TabIndex = 37
+        Me.rdoIrregular.TabStop = True
+        Me.rdoIrregular.Text = "Irregular"
+        Me.rdoIrregular.UseVisualStyleBackColor = True
         '
-        'Label2
+        'lblStudentType
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(394, 176)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(8)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(67, 27)
-        Me.Label2.TabIndex = 31
-        Me.Label2.Text = "Status:"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txtCourse
-        '
-        Me.txtCourse.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtCourse.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCourse.Location = New System.Drawing.Point(526, 10)
-        Me.txtCourse.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
-        Me.txtCourse.Name = "txtCourse"
-        Me.txtCourse.Size = New System.Drawing.Size(239, 29)
-        Me.txtCourse.TabIndex = 30
+        Me.lblStudentType.AutoSize = True
+        Me.lblStudentType.Dock = System.Windows.Forms.DockStyle.Left
+        Me.lblStudentType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStudentType.Location = New System.Drawing.Point(392, 176)
+        Me.lblStudentType.Margin = New System.Windows.Forms.Padding(8)
+        Me.lblStudentType.Name = "lblStudentType"
+        Me.lblStudentType.Size = New System.Drawing.Size(52, 27)
+        Me.lblStudentType.TabIndex = 31
+        Me.lblStudentType.Text = "Type:"
+        Me.lblStudentType.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtMiddleName
         '
         Me.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMiddleName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiddleName.Location = New System.Drawing.Point(143, 178)
+        Me.txtMiddleName.Location = New System.Drawing.Point(142, 178)
         Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(235, 29)
+        Me.txtMiddleName.Size = New System.Drawing.Size(234, 29)
         Me.txtMiddleName.TabIndex = 29
         '
         'txtContactNo
         '
         Me.txtContactNo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtContactNo.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(526, 136)
+        Me.txtContactNo.Location = New System.Drawing.Point(523, 136)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(239, 29)
+        Me.txtContactNo.Size = New System.Drawing.Size(238, 29)
         Me.txtContactNo.TabIndex = 28
         '
         'txtFirstName
         '
         Me.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtFirstName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstName.Location = New System.Drawing.Point(143, 136)
+        Me.txtFirstName.Location = New System.Drawing.Point(142, 136)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(235, 29)
+        Me.txtFirstName.Size = New System.Drawing.Size(234, 29)
         Me.txtFirstName.TabIndex = 27
         '
         'txtSection
         '
         Me.txtSection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSection.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSection.Location = New System.Drawing.Point(526, 94)
+        Me.txtSection.Location = New System.Drawing.Point(523, 94)
         Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtSection.Name = "txtSection"
-        Me.txtSection.Size = New System.Drawing.Size(239, 29)
+        Me.txtSection.Size = New System.Drawing.Size(238, 29)
         Me.txtSection.TabIndex = 26
         '
         'txtLastName
         '
         Me.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLastName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastName.Location = New System.Drawing.Point(143, 94)
+        Me.txtLastName.Location = New System.Drawing.Point(142, 94)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(235, 29)
+        Me.txtLastName.Size = New System.Drawing.Size(234, 29)
         Me.txtLastName.TabIndex = 25
-        '
-        'txtYearLevel
-        '
-        Me.txtYearLevel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txtYearLevel.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtYearLevel.Location = New System.Drawing.Point(526, 52)
-        Me.txtYearLevel.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
-        Me.txtYearLevel.Name = "txtYearLevel"
-        Me.txtYearLevel.Size = New System.Drawing.Size(239, 29)
-        Me.txtYearLevel.TabIndex = 24
         '
         'txtLRN
         '
         Me.txtLRN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLRN.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLRN.Location = New System.Drawing.Point(143, 52)
+        Me.txtLRN.Location = New System.Drawing.Point(142, 52)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLRN.Name = "txtLRN"
-        Me.txtLRN.Size = New System.Drawing.Size(235, 29)
+        Me.txtLRN.Size = New System.Drawing.Size(234, 29)
         Me.txtLRN.TabIndex = 23
         '
         'Label17
@@ -349,7 +356,7 @@ Partial Class frmStudentManagement
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(394, 134)
+        Me.Label15.Location = New System.Drawing.Point(392, 134)
         Me.Label15.Margin = New System.Windows.Forms.Padding(8)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(104, 26)
@@ -375,7 +382,7 @@ Partial Class frmStudentManagement
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(394, 92)
+        Me.Label11.Location = New System.Drawing.Point(392, 92)
         Me.Label11.Margin = New System.Windows.Forms.Padding(8)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 26)
@@ -401,7 +408,7 @@ Partial Class frmStudentManagement
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(394, 50)
+        Me.Label7.Location = New System.Drawing.Point(392, 50)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 26)
@@ -414,7 +421,7 @@ Partial Class frmStudentManagement
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(394, 8)
+        Me.Label3.Location = New System.Drawing.Point(392, 8)
         Me.Label3.Margin = New System.Windows.Forms.Padding(8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 26)
@@ -452,24 +459,24 @@ Partial Class frmStudentManagement
         '
         Me.txtStudentID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtStudentID.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStudentID.Location = New System.Drawing.Point(143, 10)
+        Me.txtStudentID.Location = New System.Drawing.Point(142, 10)
         Me.txtStudentID.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtStudentID.Name = "txtStudentID"
-        Me.txtStudentID.Size = New System.Drawing.Size(235, 29)
+        Me.txtStudentID.Size = New System.Drawing.Size(234, 29)
         Me.txtStudentID.TabIndex = 22
         '
-        'rdoActive
+        'rdoRegular
         '
-        Me.rdoActive.AutoSize = True
-        Me.rdoActive.Dock = System.Windows.Forms.DockStyle.Left
-        Me.rdoActive.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoActive.Location = New System.Drawing.Point(521, 171)
-        Me.rdoActive.Name = "rdoActive"
-        Me.rdoActive.Size = New System.Drawing.Size(74, 37)
-        Me.rdoActive.TabIndex = 32
-        Me.rdoActive.TabStop = True
-        Me.rdoActive.Text = "Active"
-        Me.rdoActive.UseVisualStyleBackColor = True
+        Me.rdoRegular.AutoSize = True
+        Me.rdoRegular.Dock = System.Windows.Forms.DockStyle.Left
+        Me.rdoRegular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoRegular.Location = New System.Drawing.Point(518, 171)
+        Me.rdoRegular.Name = "rdoRegular"
+        Me.rdoRegular.Size = New System.Drawing.Size(87, 37)
+        Me.rdoRegular.TabIndex = 32
+        Me.rdoRegular.TabStop = True
+        Me.rdoRegular.Text = "Regular"
+        Me.rdoRegular.UseVisualStyleBackColor = True
         '
         'lblStudentManagement
         '
@@ -480,6 +487,26 @@ Partial Class frmStudentManagement
         Me.lblStudentManagement.Size = New System.Drawing.Size(207, 22)
         Me.lblStudentManagement.TabIndex = 2
         Me.lblStudentManagement.Text = "Student Management"
+        '
+        'cboCourse
+        '
+        Me.cboCourse.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboCourse.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCourse.FormattingEnabled = True
+        Me.cboCourse.Location = New System.Drawing.Point(518, 3)
+        Me.cboCourse.Name = "cboCourse"
+        Me.cboCourse.Size = New System.Drawing.Size(248, 31)
+        Me.cboCourse.TabIndex = 38
+        '
+        'cboYearLevel
+        '
+        Me.cboYearLevel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cboYearLevel.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboYearLevel.FormattingEnabled = True
+        Me.cboYearLevel.Location = New System.Drawing.Point(518, 45)
+        Me.cboYearLevel.Name = "cboYearLevel"
+        Me.cboYearLevel.Size = New System.Drawing.Size(248, 31)
+        Me.cboYearLevel.TabIndex = 40
         '
         'frmStudentManagement
         '
@@ -502,15 +529,13 @@ Partial Class frmStudentManagement
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents rdoInactive As RadioButton
-    Friend WithEvents Label2 As Label
-    Friend WithEvents txtCourse As TextBox
+    Friend WithEvents rdoIrregular As RadioButton
+    Friend WithEvents lblStudentType As Label
     Friend WithEvents txtMiddleName As TextBox
     Friend WithEvents txtContactNo As TextBox
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents txtSection As TextBox
     Friend WithEvents txtLastName As TextBox
-    Friend WithEvents txtYearLevel As TextBox
     Friend WithEvents txtLRN As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Label15 As Label
@@ -522,15 +547,19 @@ Partial Class frmStudentManagement
     Friend WithEvents Label5 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txtStudentID As TextBox
-    Friend WithEvents rdoActive As RadioButton
+    Friend WithEvents rdoRegular As RadioButton
     Friend WithEvents lblStudentManagement As Label
     Friend WithEvents lsvStudents As ListView
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btnSearch As Button
     Friend WithEvents txtSearch As TextBox
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnClear As Button
     Friend WithEvents btnDeactivate As Button
+    Friend WithEvents btnActivate As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents btnAdd As Button
+    Friend WithEvents btnClearSearch As Button
+    Friend WithEvents btnClear As Button
+    Friend WithEvents cboYearLevel As ComboBox
+    Friend WithEvents cboCourse As ComboBox
 End Class
