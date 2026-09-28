@@ -22,51 +22,30 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.lblLogin = New System.Windows.Forms.Label()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.lblPassword = New System.Windows.Forms.Label()
         Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.Controls.Add(Me.lblLogin, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblUsername, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblPassword, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtUsername, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtPassword, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 3)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(270, 116)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99813!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(246, 173)
-        Me.TableLayoutPanel1.TabIndex = 0
         '
         'lblLogin
         '
         Me.lblLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLogin.AutoSize = True
-        Me.TableLayoutPanel1.SetColumnSpan(Me.lblLogin, 2)
-        Me.lblLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLogin.Location = New System.Drawing.Point(3, 15)
+        Me.lblLogin.Font = New System.Drawing.Font("Microsoft YaHei UI", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogin.ForeColor = System.Drawing.Color.Navy
+        Me.lblLogin.Location = New System.Drawing.Point(199, 35)
+        Me.lblLogin.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(240, 13)
+        Me.lblLogin.Size = New System.Drawing.Size(79, 31)
         Me.lblLogin.TabIndex = 0
         Me.lblLogin.Text = "Login"
         Me.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -75,9 +54,12 @@ Partial Class frmLogin
         '
         Me.lblUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblUsername.AutoSize = True
-        Me.lblUsername.Location = New System.Drawing.Point(3, 58)
+        Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsername.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.lblUsername.Location = New System.Drawing.Point(88, 114)
+        Me.lblUsername.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblUsername.Name = "lblUsername"
-        Me.lblUsername.Size = New System.Drawing.Size(58, 13)
+        Me.lblUsername.Size = New System.Drawing.Size(100, 20)
         Me.lblUsername.TabIndex = 1
         Me.lblUsername.Text = "Username:"
         Me.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -86,9 +68,12 @@ Partial Class frmLogin
         '
         Me.lblPassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(3, 101)
+        Me.lblPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPassword.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.lblPassword.Location = New System.Drawing.Point(88, 222)
+        Me.lblPassword.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(58, 13)
+        Me.lblPassword.Size = New System.Drawing.Size(97, 20)
         Me.lblPassword.TabIndex = 2
         Me.lblPassword.Text = "Password:"
         Me.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -96,79 +81,115 @@ Partial Class frmLogin
         'txtUsername
         '
         Me.txtUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtUsername.Location = New System.Drawing.Point(67, 54)
+        Me.txtUsername.Location = New System.Drawing.Point(91, 143)
+        Me.txtUsername.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(176, 20)
+        Me.txtUsername.Size = New System.Drawing.Size(311, 22)
         Me.txtUsername.TabIndex = 3
         '
         'txtPassword
         '
         Me.txtPassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPassword.Location = New System.Drawing.Point(67, 97)
+        Me.txtPassword.Location = New System.Drawing.Point(91, 246)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(176, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(311, 22)
         Me.txtPassword.TabIndex = 4
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel1.SetColumnSpan(Me.TableLayoutPanel2, 2)
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnLogin, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnClear, 1, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 132)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(240, 38)
-        Me.TableLayoutPanel2.TabIndex = 5
         '
         'btnLogin
         '
         Me.btnLogin.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnLogin.Location = New System.Drawing.Point(42, 7)
+        Me.btnLogin.BackColor = System.Drawing.Color.DarkBlue
+        Me.btnLogin.Font = New System.Drawing.Font("Microsoft YaHei", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogin.ForeColor = System.Drawing.Color.Lavender
+        Me.btnLogin.Location = New System.Drawing.Point(91, 363)
+        Me.btnLogin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnLogin.Name = "btnLogin"
-        Me.btnLogin.Size = New System.Drawing.Size(75, 23)
+        Me.btnLogin.Size = New System.Drawing.Size(138, 42)
         Me.btnLogin.TabIndex = 5
-        Me.btnLogin.Text = "SignIn"
-        Me.btnLogin.UseVisualStyleBackColor = True
+        Me.btnLogin.Text = "Sign in"
+        Me.btnLogin.UseVisualStyleBackColor = False
         '
         'btnClear
         '
         Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnClear.Location = New System.Drawing.Point(123, 7)
+        Me.btnClear.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.CornflowerBlue
+        Me.btnClear.Location = New System.Drawing.Point(264, 363)
+        Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.Size = New System.Drawing.Size(138, 42)
         Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
         Me.btnClear.UseVisualStyleBackColor = True
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(20, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(107, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(302, 1)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(481, 71)
+        Me.Panel1.TabIndex = 7
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(210, Byte), Integer), CType(CType(223, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.lblLogin)
+        Me.Panel2.Controls.Add(Me.lblUsername)
+        Me.Panel2.Controls.Add(Me.btnLogin)
+        Me.Panel2.Controls.Add(Me.btnClear)
+        Me.Panel2.Controls.Add(Me.lblPassword)
+        Me.Panel2.Controls.Add(Me.txtUsername)
+        Me.Panel2.Controls.Add(Me.txtPassword)
+        Me.Panel2.Location = New System.Drawing.Point(302, 61)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(481, 500)
+        Me.Panel2.TabIndex = 8
+        '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Nirmala Text", 13.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label1.Location = New System.Drawing.Point(40, 17)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(401, 31)
+        Me.Label1.TabIndex = 7
+        Me.Label1.Text = "Registrar Document Request System"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrar_bg
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmLogin"
         Me.Text = "frmLogin"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents lblLogin As Label
     Friend WithEvents lblUsername As Label
     Friend WithEvents lblPassword As Label
     Friend WithEvents txtUsername As TextBox
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents btnLogin As Button
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents btnClear As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
 End Class
