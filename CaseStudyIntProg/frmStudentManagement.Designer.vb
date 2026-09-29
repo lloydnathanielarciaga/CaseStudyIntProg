@@ -73,7 +73,7 @@ Partial Class frmStudentManagement
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(2, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(905, 580)
+        Me.Panel1.Size = New System.Drawing.Size(1628, 1015)
         Me.Panel1.TabIndex = 0
         '
         'lsvStudents
@@ -82,7 +82,7 @@ Partial Class frmStudentManagement
         Me.lsvStudents.HideSelection = False
         Me.lsvStudents.Location = New System.Drawing.Point(8, 384)
         Me.lsvStudents.Name = "lsvStudents"
-        Me.lsvStudents.Size = New System.Drawing.Size(880, 173)
+        Me.lsvStudents.Size = New System.Drawing.Size(1593, 601)
         Me.lsvStudents.TabIndex = 6
         Me.lsvStudents.UseCompatibleStateImageBehavior = False
         '
@@ -512,7 +512,7 @@ Partial Class frmStudentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(902, 578)
+        Me.ClientSize = New System.Drawing.Size(1628, 1011)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmStudentManagement"
         Me.Text = "frmStudentManagement"
