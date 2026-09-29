@@ -73,7 +73,7 @@ Partial Class frmStudentManagement
         Me.Panel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Panel1.Location = New System.Drawing.Point(2, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(905, 580)
+        Me.Panel1.Size = New System.Drawing.Size(1628, 1015)
         Me.Panel1.TabIndex = 0
         '
         'lsvStudents
@@ -82,7 +82,7 @@ Partial Class frmStudentManagement
         Me.lsvStudents.HideSelection = False
         Me.lsvStudents.Location = New System.Drawing.Point(8, 384)
         Me.lsvStudents.Name = "lsvStudents"
-        Me.lsvStudents.Size = New System.Drawing.Size(880, 173)
+        Me.lsvStudents.Size = New System.Drawing.Size(1593, 601)
         Me.lsvStudents.TabIndex = 6
         Me.lsvStudents.UseCompatibleStateImageBehavior = False
         '
@@ -218,7 +218,7 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.03982!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.96028!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.cboYearLevel, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.rdoIrregular, 4, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStudentType, 2, 4)
@@ -257,9 +257,9 @@ Partial Class frmStudentManagement
         Me.cboYearLevel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboYearLevel.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboYearLevel.FormattingEnabled = True
-        Me.cboYearLevel.Location = New System.Drawing.Point(517, 45)
+        Me.cboYearLevel.Location = New System.Drawing.Point(516, 45)
         Me.cboYearLevel.Name = "cboYearLevel"
-        Me.cboYearLevel.Size = New System.Drawing.Size(247, 31)
+        Me.cboYearLevel.Size = New System.Drawing.Size(246, 31)
         Me.cboYearLevel.TabIndex = 40
         '
         'rdoIrregular
@@ -267,7 +267,7 @@ Partial Class frmStudentManagement
         Me.rdoIrregular.AutoSize = True
         Me.rdoIrregular.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoIrregular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoIrregular.Location = New System.Drawing.Point(770, 171)
+        Me.rdoIrregular.Location = New System.Drawing.Point(768, 171)
         Me.rdoIrregular.Name = "rdoIrregular"
         Me.rdoIrregular.Size = New System.Drawing.Size(91, 37)
         Me.rdoIrregular.TabIndex = 37
@@ -302,10 +302,10 @@ Partial Class frmStudentManagement
         '
         Me.txtContactNo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtContactNo.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(522, 136)
+        Me.txtContactNo.Location = New System.Drawing.Point(521, 136)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtContactNo.Name = "txtContactNo"
-        Me.txtContactNo.Size = New System.Drawing.Size(237, 29)
+        Me.txtContactNo.Size = New System.Drawing.Size(236, 29)
         Me.txtContactNo.TabIndex = 28
         '
         'txtFirstName
@@ -322,10 +322,10 @@ Partial Class frmStudentManagement
         '
         Me.txtSection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSection.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSection.Location = New System.Drawing.Point(522, 94)
+        Me.txtSection.Location = New System.Drawing.Point(521, 94)
         Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtSection.Name = "txtSection"
-        Me.txtSection.Size = New System.Drawing.Size(237, 29)
+        Me.txtSection.Size = New System.Drawing.Size(236, 29)
         Me.txtSection.TabIndex = 26
         '
         'txtLastName
@@ -480,7 +480,7 @@ Partial Class frmStudentManagement
         Me.rdoRegular.AutoSize = True
         Me.rdoRegular.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoRegular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoRegular.Location = New System.Drawing.Point(517, 171)
+        Me.rdoRegular.Location = New System.Drawing.Point(516, 171)
         Me.rdoRegular.Name = "rdoRegular"
         Me.rdoRegular.Size = New System.Drawing.Size(87, 37)
         Me.rdoRegular.TabIndex = 32
@@ -493,9 +493,9 @@ Partial Class frmStudentManagement
         Me.cboCourse.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboCourse.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCourse.FormattingEnabled = True
-        Me.cboCourse.Location = New System.Drawing.Point(517, 3)
+        Me.cboCourse.Location = New System.Drawing.Point(516, 3)
         Me.cboCourse.Name = "cboCourse"
-        Me.cboCourse.Size = New System.Drawing.Size(247, 31)
+        Me.cboCourse.Size = New System.Drawing.Size(246, 31)
         Me.cboCourse.TabIndex = 38
         '
         'lblStudentManagement
@@ -512,7 +512,7 @@ Partial Class frmStudentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(902, 578)
+        Me.ClientSize = New System.Drawing.Size(1628, 1011)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmStudentManagement"
         Me.Text = "frmStudentManagement"
