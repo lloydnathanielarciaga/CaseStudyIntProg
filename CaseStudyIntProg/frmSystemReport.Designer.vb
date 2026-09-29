@@ -46,6 +46,7 @@ Partial Class frmSystemReport
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -68,6 +69,7 @@ Partial Class frmSystemReport
         '
         Me.lblSelectReport.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblSelectReport.AutoSize = True
+        Me.lblSelectReport.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblSelectReport.Location = New System.Drawing.Point(3, 79)
         Me.lblSelectReport.Name = "lblSelectReport"
         Me.lblSelectReport.Size = New System.Drawing.Size(75, 13)
@@ -80,6 +82,7 @@ Partial Class frmSystemReport
         Me.lblRecordPaymentInformation.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblRecordPaymentInformation, 2)
         Me.lblRecordPaymentInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecordPaymentInformation.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblRecordPaymentInformation.Location = New System.Drawing.Point(3, 22)
         Me.lblRecordPaymentInformation.Name = "lblRecordPaymentInformation"
         Me.lblRecordPaymentInformation.Size = New System.Drawing.Size(89, 13)
@@ -129,6 +132,7 @@ Partial Class frmSystemReport
         '
         Me.lblDateTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDateTo.AutoSize = True
+        Me.lblDateTo.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblDateTo.Location = New System.Drawing.Point(117, 13)
         Me.lblDateTo.Name = "lblDateTo"
         Me.lblDateTo.Size = New System.Drawing.Size(49, 13)
@@ -139,6 +143,7 @@ Partial Class frmSystemReport
         '
         Me.lblDateFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDateFrom.AutoSize = True
+        Me.lblDateFrom.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblDateFrom.Location = New System.Drawing.Point(3, 13)
         Me.lblDateFrom.Name = "lblDateFrom"
         Me.lblDateFrom.Size = New System.Drawing.Size(59, 13)
@@ -172,27 +177,32 @@ Partial Class frmSystemReport
         'btnClear
         '
         Me.btnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnClear.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnClear.Location = New System.Drawing.Point(3, 3)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(107, 20)
         Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnGenerateResult
         '
         Me.btnGenerateResult.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnGenerateResult.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnGenerateResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGenerateResult.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnGenerateResult.Location = New System.Drawing.Point(3, 29)
         Me.btnGenerateResult.Name = "btnGenerateResult"
         Me.btnGenerateResult.Size = New System.Drawing.Size(107, 21)
         Me.btnGenerateResult.TabIndex = 5
         Me.btnGenerateResult.Text = "Generate Result"
-        Me.btnGenerateResult.UseVisualStyleBackColor = True
+        Me.btnGenerateResult.UseVisualStyleBackColor = False
         '
         'ListViewReport
         '
+        Me.ListViewReport.BackColor = System.Drawing.Color.Lavender
         Me.ListViewReport.HideSelection = False
         Me.ListViewReport.Location = New System.Drawing.Point(12, 204)
         Me.ListViewReport.Name = "ListViewReport"
@@ -203,6 +213,7 @@ Partial Class frmSystemReport
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -218,29 +229,35 @@ Partial Class frmSystemReport
         'btnPrintReport
         '
         Me.btnPrintReport.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnPrintReport.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnPrintReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPrintReport.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnPrintReport.Location = New System.Drawing.Point(26, 8)
         Me.btnPrintReport.Name = "btnPrintReport"
         Me.btnPrintReport.Size = New System.Drawing.Size(87, 23)
         Me.btnPrintReport.TabIndex = 0
         Me.btnPrintReport.Text = "Print Report"
-        Me.btnPrintReport.UseVisualStyleBackColor = True
+        Me.btnPrintReport.UseVisualStyleBackColor = False
         '
         'btnExportCSV
         '
         Me.btnExportCSV.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExportCSV.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnExportCSV.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExportCSV.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.btnExportCSV.Location = New System.Drawing.Point(165, 8)
         Me.btnExportCSV.Name = "btnExportCSV"
         Me.btnExportCSV.Size = New System.Drawing.Size(87, 23)
         Me.btnExportCSV.TabIndex = 1
         Me.btnExportCSV.Text = "Export CSV"
-        Me.btnExportCSV.UseVisualStyleBackColor = True
+        Me.btnExportCSV.UseVisualStyleBackColor = False
         '
         'frmSystemReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Controls.Add(Me.ListViewReport)

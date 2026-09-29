@@ -65,6 +65,7 @@ Partial Class frmStudentManagement
         '
         'Panel1
         '
+        Me.Panel1.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.Panel1.Controls.Add(Me.lsvStudents)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel3)
         Me.Panel1.Controls.Add(Me.TableLayoutPanel2)
@@ -78,6 +79,7 @@ Partial Class frmStudentManagement
         '
         'lsvStudents
         '
+        Me.lsvStudents.BackColor = System.Drawing.Color.Lavender
         Me.lsvStudents.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvStudents.HideSelection = False
         Me.lsvStudents.Location = New System.Drawing.Point(8, 384)
@@ -88,6 +90,7 @@ Partial Class frmStudentManagement
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 3
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.27617!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.36109!))
@@ -105,26 +108,30 @@ Partial Class frmStudentManagement
         'btnClearSearch
         '
         Me.btnClearSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnClearSearch.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnClearSearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClearSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearSearch.ForeColor = System.Drawing.Color.White
         Me.btnClearSearch.Location = New System.Drawing.Point(293, 8)
         Me.btnClearSearch.Name = "btnClearSearch"
         Me.btnClearSearch.Size = New System.Drawing.Size(81, 37)
         Me.btnClearSearch.TabIndex = 32
         Me.btnClearSearch.Text = "Clear"
-        Me.btnClearSearch.UseVisualStyleBackColor = True
+        Me.btnClearSearch.UseVisualStyleBackColor = False
         '
         'btnSearch
         '
         Me.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnSearch.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnSearch.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSearch.ForeColor = System.Drawing.Color.White
         Me.btnSearch.Location = New System.Drawing.Point(200, 8)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(81, 37)
         Me.btnSearch.TabIndex = 31
         Me.btnSearch.Text = "Search"
-        Me.btnSearch.UseVisualStyleBackColor = True
+        Me.btnSearch.UseVisualStyleBackColor = False
         '
         'txtSearch
         '
@@ -138,6 +145,7 @@ Partial Class frmStudentManagement
         '
         'TableLayoutPanel2
         '
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel2.ColumnCount = 5
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
@@ -158,67 +166,78 @@ Partial Class frmStudentManagement
         '
         'btnClear
         '
+        Me.btnClear.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnClear.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnClear.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(503, 3)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(122, 33)
         Me.btnClear.TabIndex = 4
         Me.btnClear.Text = "CLEAR"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnDeactivate
         '
+        Me.btnDeactivate.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnDeactivate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDeactivate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeactivate.ForeColor = System.Drawing.Color.White
         Me.btnDeactivate.Location = New System.Drawing.Point(378, 3)
         Me.btnDeactivate.Name = "btnDeactivate"
         Me.btnDeactivate.Size = New System.Drawing.Size(119, 33)
         Me.btnDeactivate.TabIndex = 3
         Me.btnDeactivate.Text = "DEACTIVATE"
-        Me.btnDeactivate.UseVisualStyleBackColor = True
+        Me.btnDeactivate.UseVisualStyleBackColor = False
         '
         'btnActivate
         '
+        Me.btnActivate.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnActivate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnActivate.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnActivate.ForeColor = System.Drawing.Color.White
         Me.btnActivate.Location = New System.Drawing.Point(253, 3)
         Me.btnActivate.Name = "btnActivate"
         Me.btnActivate.Size = New System.Drawing.Size(119, 33)
         Me.btnActivate.TabIndex = 2
         Me.btnActivate.Text = "ACTIVATE"
-        Me.btnActivate.UseVisualStyleBackColor = True
+        Me.btnActivate.UseVisualStyleBackColor = False
         '
         'btnEdit
         '
+        Me.btnEdit.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnEdit.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.White
         Me.btnEdit.Location = New System.Drawing.Point(128, 3)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(119, 33)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "EDIT"
-        Me.btnEdit.UseVisualStyleBackColor = True
+        Me.btnEdit.UseVisualStyleBackColor = False
         '
         'btnAdd
         '
+        Me.btnAdd.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAdd.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
         Me.btnAdd.Location = New System.Drawing.Point(3, 3)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(119, 33)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "ADD"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.5!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.03982!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.96028!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.cboYearLevel, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.rdoIrregular, 4, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStudentType, 2, 4)
@@ -241,6 +260,7 @@ Partial Class frmStudentManagement
         Me.TableLayoutPanel1.Controls.Add(Me.rdoRegular, 3, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.cboCourse, 3, 0)
         Me.TableLayoutPanel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 49)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 5
@@ -257,7 +277,7 @@ Partial Class frmStudentManagement
         Me.cboYearLevel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboYearLevel.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboYearLevel.FormattingEnabled = True
-        Me.cboYearLevel.Location = New System.Drawing.Point(516, 45)
+        Me.cboYearLevel.Location = New System.Drawing.Point(514, 45)
         Me.cboYearLevel.Name = "cboYearLevel"
         Me.cboYearLevel.Size = New System.Drawing.Size(246, 31)
         Me.cboYearLevel.TabIndex = 40
@@ -267,7 +287,8 @@ Partial Class frmStudentManagement
         Me.rdoIrregular.AutoSize = True
         Me.rdoIrregular.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoIrregular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoIrregular.Location = New System.Drawing.Point(768, 171)
+        Me.rdoIrregular.ForeColor = System.Drawing.Color.White
+        Me.rdoIrregular.Location = New System.Drawing.Point(766, 171)
         Me.rdoIrregular.Name = "rdoIrregular"
         Me.rdoIrregular.Size = New System.Drawing.Size(91, 37)
         Me.rdoIrregular.TabIndex = 37
@@ -280,7 +301,8 @@ Partial Class frmStudentManagement
         Me.lblStudentType.AutoSize = True
         Me.lblStudentType.Dock = System.Windows.Forms.DockStyle.Left
         Me.lblStudentType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudentType.Location = New System.Drawing.Point(391, 176)
+        Me.lblStudentType.ForeColor = System.Drawing.Color.White
+        Me.lblStudentType.Location = New System.Drawing.Point(389, 176)
         Me.lblStudentType.Margin = New System.Windows.Forms.Padding(8)
         Me.lblStudentType.Name = "lblStudentType"
         Me.lblStudentType.Size = New System.Drawing.Size(52, 27)
@@ -292,17 +314,17 @@ Partial Class frmStudentManagement
         '
         Me.txtMiddleName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtMiddleName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtMiddleName.Location = New System.Drawing.Point(142, 178)
+        Me.txtMiddleName.Location = New System.Drawing.Point(141, 178)
         Me.txtMiddleName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtMiddleName.Name = "txtMiddleName"
-        Me.txtMiddleName.Size = New System.Drawing.Size(233, 29)
+        Me.txtMiddleName.Size = New System.Drawing.Size(232, 29)
         Me.txtMiddleName.TabIndex = 29
         '
         'txtContactNo
         '
         Me.txtContactNo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtContactNo.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtContactNo.Location = New System.Drawing.Point(521, 136)
+        Me.txtContactNo.Location = New System.Drawing.Point(519, 136)
         Me.txtContactNo.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtContactNo.Name = "txtContactNo"
         Me.txtContactNo.Size = New System.Drawing.Size(236, 29)
@@ -312,17 +334,17 @@ Partial Class frmStudentManagement
         '
         Me.txtFirstName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtFirstName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstName.Location = New System.Drawing.Point(142, 136)
+        Me.txtFirstName.Location = New System.Drawing.Point(141, 136)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(233, 29)
+        Me.txtFirstName.Size = New System.Drawing.Size(232, 29)
         Me.txtFirstName.TabIndex = 27
         '
         'txtSection
         '
         Me.txtSection.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtSection.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSection.Location = New System.Drawing.Point(521, 94)
+        Me.txtSection.Location = New System.Drawing.Point(519, 94)
         Me.txtSection.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtSection.Name = "txtSection"
         Me.txtSection.Size = New System.Drawing.Size(236, 29)
@@ -332,20 +354,20 @@ Partial Class frmStudentManagement
         '
         Me.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLastName.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastName.Location = New System.Drawing.Point(142, 94)
+        Me.txtLastName.Location = New System.Drawing.Point(141, 94)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(233, 29)
+        Me.txtLastName.Size = New System.Drawing.Size(232, 29)
         Me.txtLastName.TabIndex = 25
         '
         'txtLRN
         '
         Me.txtLRN.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtLRN.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLRN.Location = New System.Drawing.Point(142, 52)
+        Me.txtLRN.Location = New System.Drawing.Point(141, 52)
         Me.txtLRN.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtLRN.Name = "txtLRN"
-        Me.txtLRN.Size = New System.Drawing.Size(233, 29)
+        Me.txtLRN.Size = New System.Drawing.Size(232, 29)
         Me.txtLRN.TabIndex = 23
         '
         'Label17
@@ -353,6 +375,7 @@ Partial Class frmStudentManagement
         Me.Label17.AutoSize = True
         Me.Label17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
         Me.Label17.Location = New System.Drawing.Point(8, 176)
         Me.Label17.Margin = New System.Windows.Forms.Padding(8)
         Me.Label17.Name = "Label17"
@@ -366,7 +389,8 @@ Partial Class frmStudentManagement
         Me.Label15.AutoSize = True
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(391, 134)
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(389, 134)
         Me.Label15.Margin = New System.Windows.Forms.Padding(8)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(104, 26)
@@ -379,6 +403,7 @@ Partial Class frmStudentManagement
         Me.Label13.AutoSize = True
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
         Me.Label13.Location = New System.Drawing.Point(8, 134)
         Me.Label13.Margin = New System.Windows.Forms.Padding(8)
         Me.Label13.Name = "Label13"
@@ -392,7 +417,8 @@ Partial Class frmStudentManagement
         Me.Label11.AutoSize = True
         Me.Label11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(391, 92)
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(389, 92)
         Me.Label11.Margin = New System.Windows.Forms.Padding(8)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(75, 26)
@@ -405,6 +431,7 @@ Partial Class frmStudentManagement
         Me.Label9.AutoSize = True
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
         Me.Label9.Location = New System.Drawing.Point(8, 92)
         Me.Label9.Margin = New System.Windows.Forms.Padding(8)
         Me.Label9.Name = "Label9"
@@ -418,7 +445,8 @@ Partial Class frmStudentManagement
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(391, 50)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(389, 50)
         Me.Label7.Margin = New System.Windows.Forms.Padding(8)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(99, 26)
@@ -431,7 +459,8 @@ Partial Class frmStudentManagement
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(391, 8)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(389, 8)
         Me.Label3.Margin = New System.Windows.Forms.Padding(8)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(71, 26)
@@ -444,6 +473,7 @@ Partial Class frmStudentManagement
         Me.Label5.AutoSize = True
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(8, 50)
         Me.Label5.Margin = New System.Windows.Forms.Padding(8)
         Me.Label5.Name = "Label5"
@@ -457,6 +487,7 @@ Partial Class frmStudentManagement
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(8, 8)
         Me.Label1.Margin = New System.Windows.Forms.Padding(8)
         Me.Label1.Name = "Label1"
@@ -469,10 +500,10 @@ Partial Class frmStudentManagement
         '
         Me.txtStudentID.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtStudentID.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtStudentID.Location = New System.Drawing.Point(142, 10)
+        Me.txtStudentID.Location = New System.Drawing.Point(141, 10)
         Me.txtStudentID.Margin = New System.Windows.Forms.Padding(8, 10, 8, 10)
         Me.txtStudentID.Name = "txtStudentID"
-        Me.txtStudentID.Size = New System.Drawing.Size(233, 29)
+        Me.txtStudentID.Size = New System.Drawing.Size(232, 29)
         Me.txtStudentID.TabIndex = 22
         '
         'rdoRegular
@@ -480,7 +511,8 @@ Partial Class frmStudentManagement
         Me.rdoRegular.AutoSize = True
         Me.rdoRegular.Dock = System.Windows.Forms.DockStyle.Left
         Me.rdoRegular.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rdoRegular.Location = New System.Drawing.Point(516, 171)
+        Me.rdoRegular.ForeColor = System.Drawing.Color.White
+        Me.rdoRegular.Location = New System.Drawing.Point(514, 171)
         Me.rdoRegular.Name = "rdoRegular"
         Me.rdoRegular.Size = New System.Drawing.Size(87, 37)
         Me.rdoRegular.TabIndex = 32
@@ -493,7 +525,7 @@ Partial Class frmStudentManagement
         Me.cboCourse.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cboCourse.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCourse.FormattingEnabled = True
-        Me.cboCourse.Location = New System.Drawing.Point(516, 3)
+        Me.cboCourse.Location = New System.Drawing.Point(514, 3)
         Me.cboCourse.Name = "cboCourse"
         Me.cboCourse.Size = New System.Drawing.Size(246, 31)
         Me.cboCourse.TabIndex = 38
@@ -512,6 +544,7 @@ Partial Class frmStudentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(1628, 1011)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmStudentManagement"
@@ -528,7 +561,6 @@ Partial Class frmStudentManagement
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents rdoIrregular As RadioButton
     Friend WithEvents lblStudentType As Label
     Friend WithEvents txtMiddleName As TextBox
@@ -562,4 +594,5 @@ Partial Class frmStudentManagement
     Friend WithEvents btnClear As Button
     Friend WithEvents cboYearLevel As ComboBox
     Friend WithEvents cboCourse As ComboBox
+    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
 End Class

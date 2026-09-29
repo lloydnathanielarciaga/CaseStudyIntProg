@@ -63,6 +63,7 @@ Partial Class frmNewDocumentRequest
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 6
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -95,6 +96,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.Controls.Add(Me.txtFee, 5, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.lblRequestedDocument, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.btnAddRequest, 5, 7)
+        Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 8
@@ -115,6 +117,7 @@ Partial Class frmNewDocumentRequest
         Me.lblCreateNewDocumentRequest.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblCreateNewDocumentRequest, 2)
         Me.lblCreateNewDocumentRequest.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCreateNewDocumentRequest.ForeColor = System.Drawing.Color.White
         Me.lblCreateNewDocumentRequest.Location = New System.Drawing.Point(3, 5)
         Me.lblCreateNewDocumentRequest.Name = "lblCreateNewDocumentRequest"
         Me.lblCreateNewDocumentRequest.Size = New System.Drawing.Size(185, 13)
@@ -125,6 +128,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblRequestNo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblRequestNo.AutoSize = True
+        Me.lblRequestNo.ForeColor = System.Drawing.Color.White
         Me.lblRequestNo.Location = New System.Drawing.Point(3, 29)
         Me.lblRequestNo.Name = "lblRequestNo"
         Me.lblRequestNo.Size = New System.Drawing.Size(67, 13)
@@ -145,6 +149,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblProcessedBy.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblProcessedBy.AutoSize = True
+        Me.lblProcessedBy.ForeColor = System.Drawing.Color.White
         Me.lblProcessedBy.Location = New System.Drawing.Point(3, 53)
         Me.lblProcessedBy.Name = "lblProcessedBy"
         Me.lblProcessedBy.Size = New System.Drawing.Size(75, 13)
@@ -164,6 +169,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblDate.AutoSize = True
+        Me.lblDate.ForeColor = System.Drawing.Color.White
         Me.lblDate.Location = New System.Drawing.Point(243, 29)
         Me.lblDate.Name = "lblDate"
         Me.lblDate.Size = New System.Drawing.Size(33, 13)
@@ -186,6 +192,7 @@ Partial Class frmNewDocumentRequest
         Me.lblStudentInformation.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblStudentInformation, 2)
         Me.lblStudentInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStudentInformation.ForeColor = System.Drawing.Color.White
         Me.lblStudentInformation.Location = New System.Drawing.Point(3, 77)
         Me.lblStudentInformation.Name = "lblStudentInformation"
         Me.lblStudentInformation.Size = New System.Drawing.Size(118, 13)
@@ -196,6 +203,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblStudentId.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStudentId.AutoSize = True
+        Me.lblStudentId.ForeColor = System.Drawing.Color.White
         Me.lblStudentId.Location = New System.Drawing.Point(3, 101)
         Me.lblStudentId.Name = "lblStudentId"
         Me.lblStudentId.Size = New System.Drawing.Size(61, 13)
@@ -206,6 +214,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblStudentName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStudentName.AutoSize = True
+        Me.lblStudentName.ForeColor = System.Drawing.Color.White
         Me.lblStudentName.Location = New System.Drawing.Point(3, 125)
         Me.lblStudentName.Name = "lblStudentName"
         Me.lblStudentName.Size = New System.Drawing.Size(78, 13)
@@ -234,6 +243,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblCourse.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblCourse.AutoSize = True
+        Me.lblCourse.ForeColor = System.Drawing.Color.White
         Me.lblCourse.Location = New System.Drawing.Point(243, 101)
         Me.lblCourse.Name = "lblCourse"
         Me.lblCourse.Size = New System.Drawing.Size(43, 13)
@@ -244,6 +254,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblYear.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblYear.AutoSize = True
+        Me.lblYear.ForeColor = System.Drawing.Color.White
         Me.lblYear.Location = New System.Drawing.Point(243, 125)
         Me.lblYear.Name = "lblYear"
         Me.lblYear.Size = New System.Drawing.Size(32, 13)
@@ -275,6 +286,7 @@ Partial Class frmNewDocumentRequest
         Me.lblAddRequestItem.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblAddRequestItem.AutoSize = True
         Me.lblAddRequestItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAddRequestItem.ForeColor = System.Drawing.Color.White
         Me.lblAddRequestItem.Location = New System.Drawing.Point(410, 77)
         Me.lblAddRequestItem.Name = "lblAddRequestItem"
         Me.lblAddRequestItem.Size = New System.Drawing.Size(108, 13)
@@ -285,6 +297,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblDocumentName.AutoSize = True
+        Me.lblDocumentName.ForeColor = System.Drawing.Color.White
         Me.lblDocumentName.Location = New System.Drawing.Point(410, 101)
         Me.lblDocumentName.Name = "lblDocumentName"
         Me.lblDocumentName.Size = New System.Drawing.Size(90, 13)
@@ -295,6 +308,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblQuantity.AutoSize = True
+        Me.lblQuantity.ForeColor = System.Drawing.Color.White
         Me.lblQuantity.Location = New System.Drawing.Point(410, 125)
         Me.lblQuantity.Name = "lblQuantity"
         Me.lblQuantity.Size = New System.Drawing.Size(49, 13)
@@ -322,6 +336,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.lblFee.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblFee.AutoSize = True
+        Me.lblFee.ForeColor = System.Drawing.Color.White
         Me.lblFee.Location = New System.Drawing.Point(410, 149)
         Me.lblFee.Name = "lblFee"
         Me.lblFee.Size = New System.Drawing.Size(28, 13)
@@ -352,15 +367,18 @@ Partial Class frmNewDocumentRequest
         '
         'btnAddRequest
         '
+        Me.btnAddRequest.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnAddRequest.ForeColor = System.Drawing.Color.White
         Me.btnAddRequest.Location = New System.Drawing.Point(524, 171)
         Me.btnAddRequest.Name = "btnAddRequest"
         Me.btnAddRequest.Size = New System.Drawing.Size(105, 23)
         Me.btnAddRequest.TabIndex = 24
         Me.btnAddRequest.Text = "Add Request"
-        Me.btnAddRequest.UseVisualStyleBackColor = True
+        Me.btnAddRequest.UseVisualStyleBackColor = False
         '
         'ListViewNewRequest
         '
+        Me.ListViewNewRequest.BackColor = System.Drawing.Color.Lavender
         Me.ListViewNewRequest.HideSelection = False
         Me.ListViewNewRequest.Location = New System.Drawing.Point(12, 216)
         Me.ListViewNewRequest.Name = "ListViewNewRequest"
@@ -404,6 +422,7 @@ Partial Class frmNewDocumentRequest
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 2
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -418,21 +437,25 @@ Partial Class frmNewDocumentRequest
         '
         'btnCancelRequest
         '
+        Me.btnCancelRequest.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnCancelRequest.ForeColor = System.Drawing.Color.White
         Me.btnCancelRequest.Location = New System.Drawing.Point(103, 3)
         Me.btnCancelRequest.Name = "btnCancelRequest"
         Me.btnCancelRequest.Size = New System.Drawing.Size(94, 23)
         Me.btnCancelRequest.TabIndex = 26
         Me.btnCancelRequest.Text = "Cancel Request"
-        Me.btnCancelRequest.UseVisualStyleBackColor = True
+        Me.btnCancelRequest.UseVisualStyleBackColor = False
         '
         'btnSaveRequest
         '
+        Me.btnSaveRequest.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnSaveRequest.ForeColor = System.Drawing.Color.White
         Me.btnSaveRequest.Location = New System.Drawing.Point(3, 3)
         Me.btnSaveRequest.Name = "btnSaveRequest"
         Me.btnSaveRequest.Size = New System.Drawing.Size(94, 23)
         Me.btnSaveRequest.TabIndex = 25
         Me.btnSaveRequest.Text = "Save Request"
-        Me.btnSaveRequest.UseVisualStyleBackColor = True
+        Me.btnSaveRequest.UseVisualStyleBackColor = False
         '
         'frmNewDocumentRequest
         '

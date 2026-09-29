@@ -45,6 +45,7 @@ Partial Class frmRecordPaymentInformation
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 4
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -64,6 +65,7 @@ Partial Class frmRecordPaymentInformation
         Me.TableLayoutPanel1.Controls.Add(Me.lblPaymentStatus, 2, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.txtPaymentStatus, 3, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 5)
+        Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 6
@@ -82,6 +84,7 @@ Partial Class frmRecordPaymentInformation
         Me.lblRecordPaymentInformation.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblRecordPaymentInformation, 2)
         Me.lblRecordPaymentInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecordPaymentInformation.ForeColor = System.Drawing.Color.White
         Me.lblRecordPaymentInformation.Location = New System.Drawing.Point(3, 13)
         Me.lblRecordPaymentInformation.Name = "lblRecordPaymentInformation"
         Me.lblRecordPaymentInformation.Size = New System.Drawing.Size(231, 13)
@@ -93,6 +96,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblRequestNo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblRequestNo.AutoSize = True
+        Me.lblRequestNo.ForeColor = System.Drawing.Color.White
         Me.lblRequestNo.Location = New System.Drawing.Point(3, 52)
         Me.lblRequestNo.Name = "lblRequestNo"
         Me.lblRequestNo.Size = New System.Drawing.Size(67, 13)
@@ -103,6 +107,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblTotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblTotalAmount.AutoSize = True
+        Me.lblTotalAmount.ForeColor = System.Drawing.Color.White
         Me.lblTotalAmount.Location = New System.Drawing.Point(3, 91)
         Me.lblTotalAmount.Name = "lblTotalAmount"
         Me.lblTotalAmount.Size = New System.Drawing.Size(73, 13)
@@ -132,6 +137,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblORNo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblORNo.AutoSize = True
+        Me.lblORNo.ForeColor = System.Drawing.Color.White
         Me.lblORNo.Location = New System.Drawing.Point(240, 52)
         Me.lblORNo.Name = "lblORNo"
         Me.lblORNo.Size = New System.Drawing.Size(43, 13)
@@ -142,6 +148,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblORDate.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblORDate.AutoSize = True
+        Me.lblORDate.ForeColor = System.Drawing.Color.White
         Me.lblORDate.Location = New System.Drawing.Point(240, 91)
         Me.lblORDate.Name = "lblORDate"
         Me.lblORDate.Size = New System.Drawing.Size(52, 13)
@@ -172,6 +179,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblAmountPaid.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblAmountPaid.AutoSize = True
+        Me.lblAmountPaid.ForeColor = System.Drawing.Color.White
         Me.lblAmountPaid.Location = New System.Drawing.Point(240, 130)
         Me.lblAmountPaid.Name = "lblAmountPaid"
         Me.lblAmountPaid.Size = New System.Drawing.Size(70, 13)
@@ -190,6 +198,7 @@ Partial Class frmRecordPaymentInformation
         '
         Me.lblPaymentStatus.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblPaymentStatus.AutoSize = True
+        Me.lblPaymentStatus.ForeColor = System.Drawing.Color.White
         Me.lblPaymentStatus.Location = New System.Drawing.Point(240, 169)
         Me.lblPaymentStatus.Name = "lblPaymentStatus"
         Me.lblPaymentStatus.Size = New System.Drawing.Size(84, 13)
@@ -224,29 +233,34 @@ Partial Class frmRecordPaymentInformation
         'btnSavePayment
         '
         Me.btnSavePayment.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.btnSavePayment.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnSavePayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSavePayment.ForeColor = System.Drawing.Color.White
         Me.btnSavePayment.Location = New System.Drawing.Point(114, 7)
         Me.btnSavePayment.Name = "btnSavePayment"
         Me.btnSavePayment.Size = New System.Drawing.Size(98, 23)
         Me.btnSavePayment.TabIndex = 0
         Me.btnSavePayment.Text = "Save Payment"
-        Me.btnSavePayment.UseVisualStyleBackColor = True
+        Me.btnSavePayment.UseVisualStyleBackColor = False
         '
         'btnClear
         '
         Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnClear.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(218, 7)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 1
         Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'frmRecordPaymentInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmRecordPaymentInformation"

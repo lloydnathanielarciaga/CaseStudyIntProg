@@ -38,6 +38,7 @@ Partial Class frmRequestDetails
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
@@ -51,6 +52,7 @@ Partial Class frmRequestDetails
         Me.TableLayoutPanel1.Controls.Add(Me.btnStatus, 0, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.btnSave, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.btnCancel, 2, 5)
+        Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 6
@@ -66,6 +68,7 @@ Partial Class frmRequestDetails
         'lblRequestNo
         '
         Me.lblRequestNo.AutoSize = True
+        Me.lblRequestNo.ForeColor = System.Drawing.Color.White
         Me.lblRequestNo.Location = New System.Drawing.Point(3, 0)
         Me.lblRequestNo.Name = "lblRequestNo"
         Me.lblRequestNo.Size = New System.Drawing.Size(67, 13)
@@ -75,6 +78,7 @@ Partial Class frmRequestDetails
         'lblStudentName
         '
         Me.lblStudentName.AutoSize = True
+        Me.lblStudentName.ForeColor = System.Drawing.Color.White
         Me.lblStudentName.Location = New System.Drawing.Point(3, 33)
         Me.lblStudentName.Name = "lblStudentName"
         Me.lblStudentName.Size = New System.Drawing.Size(78, 13)
@@ -84,6 +88,7 @@ Partial Class frmRequestDetails
         'lblDocument
         '
         Me.lblDocument.AutoSize = True
+        Me.lblDocument.ForeColor = System.Drawing.Color.White
         Me.lblDocument.Location = New System.Drawing.Point(3, 66)
         Me.lblDocument.Name = "lblDocument"
         Me.lblDocument.Size = New System.Drawing.Size(59, 13)
@@ -93,6 +98,7 @@ Partial Class frmRequestDetails
         'lblAmount
         '
         Me.lblAmount.AutoSize = True
+        Me.lblAmount.ForeColor = System.Drawing.Color.White
         Me.lblAmount.Location = New System.Drawing.Point(3, 99)
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.Size = New System.Drawing.Size(43, 13)
@@ -102,6 +108,7 @@ Partial Class frmRequestDetails
         'lblSubtotal
         '
         Me.lblSubtotal.AutoSize = True
+        Me.lblSubtotal.ForeColor = System.Drawing.Color.White
         Me.lblSubtotal.Location = New System.Drawing.Point(3, 132)
         Me.lblSubtotal.Name = "lblSubtotal"
         Me.lblSubtotal.Size = New System.Drawing.Size(49, 13)
@@ -119,35 +126,42 @@ Partial Class frmRequestDetails
         '
         'btnStatus
         '
+        Me.btnStatus.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnStatus.ForeColor = System.Drawing.Color.White
         Me.btnStatus.Location = New System.Drawing.Point(3, 168)
         Me.btnStatus.Name = "btnStatus"
         Me.btnStatus.Size = New System.Drawing.Size(75, 23)
         Me.btnStatus.TabIndex = 6
         Me.btnStatus.Text = "Status"
-        Me.btnStatus.UseVisualStyleBackColor = True
+        Me.btnStatus.UseVisualStyleBackColor = False
         '
         'btnSave
         '
+        Me.btnSave.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnSave.ForeColor = System.Drawing.Color.White
         Me.btnSave.Location = New System.Drawing.Point(92, 168)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 7
         Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
+        Me.btnSave.UseVisualStyleBackColor = False
         '
         'btnCancel
         '
+        Me.btnCancel.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnCancel.ForeColor = System.Drawing.Color.White
         Me.btnCancel.Location = New System.Drawing.Point(181, 168)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 8
         Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.UseVisualStyleBackColor = False
         '
         'frmRequestDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmRequestDetails"

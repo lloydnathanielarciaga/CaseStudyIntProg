@@ -23,48 +23,49 @@ Partial Class frmUserManagement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblStatus = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
+        Me.rdoInactive = New System.Windows.Forms.RadioButton()
+        Me.rdoActive = New System.Windows.Forms.RadioButton()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblRole = New System.Windows.Forms.Label()
+        Me.cboRole = New System.Windows.Forms.ComboBox()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblFullName = New System.Windows.Forms.Label()
+        Me.txtFullName = New System.Windows.Forms.TextBox()
         Me.lblUserManagement = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.lblUserId = New System.Windows.Forms.Label()
         Me.cboUserId = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblPassword = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblFullName = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblRole = New System.Windows.Forms.Label()
-        Me.cboRole = New System.Windows.Forms.ComboBox()
-        Me.txtFullName = New System.Windows.Forms.TextBox()
-        Me.txtUsername = New System.Windows.Forms.TextBox()
         Me.txtPassword = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
-        Me.lblStatus = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel8 = New System.Windows.Forms.TableLayoutPanel()
-        Me.rdoActive = New System.Windows.Forms.RadioButton()
-        Me.rdoInactive = New System.Windows.Forms.RadioButton()
+        Me.lblPassword = New System.Windows.Forms.Label()
         Me.TableLayoutPanel9 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAddUser = New System.Windows.Forms.Button()
-        Me.btnEditUser = New System.Windows.Forms.Button()
         Me.btnDeleteUser = New System.Windows.Forms.Button()
-        Me.ListViewUser = New System.Windows.Forms.ListView()
+        Me.btnAddUser = New System.Windows.Forms.Button()
         Me.TableLayoutPanel10 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnEditUser = New System.Windows.Forms.Button()
+        Me.ListViewUser = New System.Windows.Forms.ListView()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
+        Me.TableLayoutPanel8.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
-        Me.TableLayoutPanel7.SuspendLayout()
-        Me.TableLayoutPanel8.SuspendLayout()
         Me.TableLayoutPanel9.SuspendLayout()
         Me.TableLayoutPanel10.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -87,12 +88,141 @@ Partial Class frmUserManagement
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(344, 426)
         Me.TableLayoutPanel1.TabIndex = 0
         '
+        'TableLayoutPanel7
+        '
+        Me.TableLayoutPanel7.ColumnCount = 1
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel7.Controls.Add(Me.lblStatus, 0, 0)
+        Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel8, 0, 1)
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(171, 258)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 2
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(162, 45)
+        Me.TableLayoutPanel7.TabIndex = 7
+        '
+        'lblStatus
+        '
+        Me.lblStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.ForeColor = System.Drawing.Color.White
+        Me.lblStatus.Location = New System.Drawing.Point(3, 0)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(40, 13)
+        Me.lblStatus.TabIndex = 0
+        Me.lblStatus.Text = "Status:"
+        '
+        'TableLayoutPanel8
+        '
+        Me.TableLayoutPanel8.ColumnCount = 2
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel8.Controls.Add(Me.rdoInactive, 1, 0)
+        Me.TableLayoutPanel8.Controls.Add(Me.rdoActive, 0, 0)
+        Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 16)
+        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
+        Me.TableLayoutPanel8.RowCount = 1
+        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel8.Size = New System.Drawing.Size(159, 29)
+        Me.TableLayoutPanel8.TabIndex = 1
+        '
+        'rdoInactive
+        '
+        Me.rdoInactive.AutoSize = True
+        Me.rdoInactive.ForeColor = System.Drawing.Color.White
+        Me.rdoInactive.Location = New System.Drawing.Point(82, 3)
+        Me.rdoInactive.Name = "rdoInactive"
+        Me.rdoInactive.Size = New System.Drawing.Size(63, 17)
+        Me.rdoInactive.TabIndex = 1
+        Me.rdoInactive.TabStop = True
+        Me.rdoInactive.Text = "Inactive"
+        Me.rdoInactive.UseVisualStyleBackColor = True
+        '
+        'rdoActive
+        '
+        Me.rdoActive.AutoSize = True
+        Me.rdoActive.ForeColor = System.Drawing.Color.White
+        Me.rdoActive.Location = New System.Drawing.Point(3, 3)
+        Me.rdoActive.Name = "rdoActive"
+        Me.rdoActive.Size = New System.Drawing.Size(55, 17)
+        Me.rdoActive.TabIndex = 0
+        Me.rdoActive.TabStop = True
+        Me.rdoActive.Text = "Active"
+        Me.rdoActive.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 1
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel6.Controls.Add(Me.lblRole, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.cboRole, 0, 1)
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 258)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 2
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(162, 45)
+        Me.TableLayoutPanel6.TabIndex = 6
+        '
+        'lblRole
+        '
+        Me.lblRole.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblRole.AutoSize = True
+        Me.lblRole.ForeColor = System.Drawing.Color.White
+        Me.lblRole.Location = New System.Drawing.Point(3, 0)
+        Me.lblRole.Name = "lblRole"
+        Me.lblRole.Size = New System.Drawing.Size(32, 13)
+        Me.lblRole.TabIndex = 0
+        Me.lblRole.Text = "Role:"
+        '
+        'cboRole
+        '
+        Me.cboRole.FormattingEnabled = True
+        Me.cboRole.Location = New System.Drawing.Point(3, 16)
+        Me.cboRole.Name = "cboRole"
+        Me.cboRole.Size = New System.Drawing.Size(149, 21)
+        Me.cboRole.TabIndex = 1
+        '
+        'TableLayoutPanel5
+        '
+        Me.TableLayoutPanel5.ColumnCount = 1
+        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel5.Controls.Add(Me.lblFullName, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.txtFullName, 0, 1)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(171, 88)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        Me.TableLayoutPanel5.RowCount = 2
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(162, 45)
+        Me.TableLayoutPanel5.TabIndex = 5
+        '
+        'lblFullName
+        '
+        Me.lblFullName.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.ForeColor = System.Drawing.Color.White
+        Me.lblFullName.Location = New System.Drawing.Point(3, 0)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(57, 13)
+        Me.lblFullName.TabIndex = 0
+        Me.lblFullName.Text = "Full Name:"
+        '
+        'txtFullName
+        '
+        Me.txtFullName.Location = New System.Drawing.Point(3, 16)
+        Me.txtFullName.Name = "txtFullName"
+        Me.txtFullName.Size = New System.Drawing.Size(149, 20)
+        Me.txtFullName.TabIndex = 1
+        '
         'lblUserManagement
         '
         Me.lblUserManagement.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblUserManagement.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblUserManagement, 2)
         Me.lblUserManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUserManagement.ForeColor = System.Drawing.Color.White
         Me.lblUserManagement.Location = New System.Drawing.Point(3, 36)
         Me.lblUserManagement.Name = "lblUserManagement"
         Me.lblUserManagement.Size = New System.Drawing.Size(109, 13)
@@ -118,6 +248,7 @@ Partial Class frmUserManagement
         '
         Me.lblUserId.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblUserId.AutoSize = True
+        Me.lblUserId.ForeColor = System.Drawing.Color.White
         Me.lblUserId.Location = New System.Drawing.Point(3, 0)
         Me.lblUserId.Name = "lblUserId"
         Me.lblUserId.Size = New System.Drawing.Size(46, 13)
@@ -146,10 +277,18 @@ Partial Class frmUserManagement
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(162, 64)
         Me.TableLayoutPanel3.TabIndex = 3
         '
+        'txtUsername
+        '
+        Me.txtUsername.Location = New System.Drawing.Point(3, 16)
+        Me.txtUsername.Name = "txtUsername"
+        Me.txtUsername.Size = New System.Drawing.Size(149, 20)
+        Me.txtUsername.TabIndex = 2
+        '
         'lblUsername
         '
         Me.lblUsername.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblUsername.AutoSize = True
+        Me.lblUsername.ForeColor = System.Drawing.Color.White
         Me.lblUsername.Location = New System.Drawing.Point(3, 0)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(58, 13)
@@ -170,86 +309,6 @@ Partial Class frmUserManagement
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(162, 45)
         Me.TableLayoutPanel4.TabIndex = 4
         '
-        'lblPassword
-        '
-        Me.lblPassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblPassword.AutoSize = True
-        Me.lblPassword.Location = New System.Drawing.Point(3, 0)
-        Me.lblPassword.Name = "lblPassword"
-        Me.lblPassword.Size = New System.Drawing.Size(56, 13)
-        Me.lblPassword.TabIndex = 0
-        Me.lblPassword.Text = "Password:"
-        '
-        'TableLayoutPanel5
-        '
-        Me.TableLayoutPanel5.ColumnCount = 1
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel5.Controls.Add(Me.lblFullName, 0, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.txtFullName, 0, 1)
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(171, 88)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 2
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(162, 45)
-        Me.TableLayoutPanel5.TabIndex = 5
-        '
-        'lblFullName
-        '
-        Me.lblFullName.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblFullName.AutoSize = True
-        Me.lblFullName.Location = New System.Drawing.Point(3, 0)
-        Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(57, 13)
-        Me.lblFullName.TabIndex = 0
-        Me.lblFullName.Text = "Full Name:"
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 1
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel6.Controls.Add(Me.lblRole, 0, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.cboRole, 0, 1)
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(3, 258)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 2
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(162, 45)
-        Me.TableLayoutPanel6.TabIndex = 6
-        '
-        'lblRole
-        '
-        Me.lblRole.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblRole.AutoSize = True
-        Me.lblRole.Location = New System.Drawing.Point(3, 0)
-        Me.lblRole.Name = "lblRole"
-        Me.lblRole.Size = New System.Drawing.Size(32, 13)
-        Me.lblRole.TabIndex = 0
-        Me.lblRole.Text = "Role:"
-        '
-        'cboRole
-        '
-        Me.cboRole.FormattingEnabled = True
-        Me.cboRole.Location = New System.Drawing.Point(3, 16)
-        Me.cboRole.Name = "cboRole"
-        Me.cboRole.Size = New System.Drawing.Size(149, 21)
-        Me.cboRole.TabIndex = 1
-        '
-        'txtFullName
-        '
-        Me.txtFullName.Location = New System.Drawing.Point(3, 16)
-        Me.txtFullName.Name = "txtFullName"
-        Me.txtFullName.Size = New System.Drawing.Size(149, 20)
-        Me.txtFullName.TabIndex = 1
-        '
-        'txtUsername
-        '
-        Me.txtUsername.Location = New System.Drawing.Point(3, 16)
-        Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(149, 20)
-        Me.txtUsername.TabIndex = 2
-        '
         'txtPassword
         '
         Me.txtPassword.Location = New System.Drawing.Point(3, 16)
@@ -257,65 +316,16 @@ Partial Class frmUserManagement
         Me.txtPassword.Size = New System.Drawing.Size(149, 20)
         Me.txtPassword.TabIndex = 2
         '
-        'TableLayoutPanel7
+        'lblPassword
         '
-        Me.TableLayoutPanel7.ColumnCount = 1
-        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel7.Controls.Add(Me.lblStatus, 0, 0)
-        Me.TableLayoutPanel7.Controls.Add(Me.TableLayoutPanel8, 0, 1)
-        Me.TableLayoutPanel7.Location = New System.Drawing.Point(171, 258)
-        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
-        Me.TableLayoutPanel7.RowCount = 2
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel7.Size = New System.Drawing.Size(162, 45)
-        Me.TableLayoutPanel7.TabIndex = 7
-        '
-        'lblStatus
-        '
-        Me.lblStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(3, 0)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(40, 13)
-        Me.lblStatus.TabIndex = 0
-        Me.lblStatus.Text = "Status:"
-        '
-        'TableLayoutPanel8
-        '
-        Me.TableLayoutPanel8.ColumnCount = 2
-        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.Controls.Add(Me.rdoInactive, 1, 0)
-        Me.TableLayoutPanel8.Controls.Add(Me.rdoActive, 0, 0)
-        Me.TableLayoutPanel8.Location = New System.Drawing.Point(3, 16)
-        Me.TableLayoutPanel8.Name = "TableLayoutPanel8"
-        Me.TableLayoutPanel8.RowCount = 1
-        Me.TableLayoutPanel8.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel8.Size = New System.Drawing.Size(159, 29)
-        Me.TableLayoutPanel8.TabIndex = 1
-        '
-        'rdoActive
-        '
-        Me.rdoActive.AutoSize = True
-        Me.rdoActive.Location = New System.Drawing.Point(3, 3)
-        Me.rdoActive.Name = "rdoActive"
-        Me.rdoActive.Size = New System.Drawing.Size(55, 17)
-        Me.rdoActive.TabIndex = 0
-        Me.rdoActive.TabStop = True
-        Me.rdoActive.Text = "Active"
-        Me.rdoActive.UseVisualStyleBackColor = True
-        '
-        'rdoInactive
-        '
-        Me.rdoInactive.AutoSize = True
-        Me.rdoInactive.Location = New System.Drawing.Point(82, 3)
-        Me.rdoInactive.Name = "rdoInactive"
-        Me.rdoInactive.Size = New System.Drawing.Size(63, 17)
-        Me.rdoInactive.TabIndex = 1
-        Me.rdoInactive.TabStop = True
-        Me.rdoInactive.Text = "Inactive"
-        Me.rdoInactive.UseVisualStyleBackColor = True
+        Me.lblPassword.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblPassword.AutoSize = True
+        Me.lblPassword.ForeColor = System.Drawing.Color.White
+        Me.lblPassword.Location = New System.Drawing.Point(3, 0)
+        Me.lblPassword.Name = "lblPassword"
+        Me.lblPassword.Size = New System.Drawing.Size(56, 13)
+        Me.lblPassword.TabIndex = 0
+        Me.lblPassword.Text = "Password:"
         '
         'TableLayoutPanel9
         '
@@ -335,43 +345,28 @@ Partial Class frmUserManagement
         Me.TableLayoutPanel9.Size = New System.Drawing.Size(338, 80)
         Me.TableLayoutPanel9.TabIndex = 8
         '
-        'btnAddUser
-        '
-        Me.btnAddUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnAddUser.Location = New System.Drawing.Point(34, 3)
-        Me.btnAddUser.Name = "btnAddUser"
-        Me.btnAddUser.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddUser.TabIndex = 0
-        Me.btnAddUser.Text = "Add User"
-        Me.btnAddUser.UseVisualStyleBackColor = True
-        '
-        'btnEditUser
-        '
-        Me.btnEditUser.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.btnEditUser.Location = New System.Drawing.Point(15, 3)
-        Me.btnEditUser.Name = "btnEditUser"
-        Me.btnEditUser.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditUser.TabIndex = 1
-        Me.btnEditUser.Text = "Edit User"
-        Me.btnEditUser.UseVisualStyleBackColor = True
-        '
         'btnDeleteUser
         '
+        Me.btnDeleteUser.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnDeleteUser.ForeColor = System.Drawing.Color.White
         Me.btnDeleteUser.Location = New System.Drawing.Point(227, 3)
         Me.btnDeleteUser.Name = "btnDeleteUser"
         Me.btnDeleteUser.Size = New System.Drawing.Size(75, 23)
         Me.btnDeleteUser.TabIndex = 2
         Me.btnDeleteUser.Text = "Delete User"
-        Me.btnDeleteUser.UseVisualStyleBackColor = True
+        Me.btnDeleteUser.UseVisualStyleBackColor = False
         '
-        'ListViewUser
+        'btnAddUser
         '
-        Me.ListViewUser.HideSelection = False
-        Me.ListViewUser.Location = New System.Drawing.Point(375, 12)
-        Me.ListViewUser.Name = "ListViewUser"
-        Me.ListViewUser.Size = New System.Drawing.Size(413, 426)
-        Me.ListViewUser.TabIndex = 1
-        Me.ListViewUser.UseCompatibleStateImageBehavior = False
+        Me.btnAddUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnAddUser.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnAddUser.ForeColor = System.Drawing.Color.White
+        Me.btnAddUser.Location = New System.Drawing.Point(34, 3)
+        Me.btnAddUser.Name = "btnAddUser"
+        Me.btnAddUser.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddUser.TabIndex = 0
+        Me.btnAddUser.Text = "Add User"
+        Me.btnAddUser.UseVisualStyleBackColor = False
         '
         'TableLayoutPanel10
         '
@@ -390,17 +385,43 @@ Partial Class frmUserManagement
         'btnClear
         '
         Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnClear.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnClear.ForeColor = System.Drawing.Color.White
         Me.btnClear.Location = New System.Drawing.Point(15, 32)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 20)
         Me.btnClear.TabIndex = 2
         Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
+        '
+        'btnEditUser
+        '
+        Me.btnEditUser.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.btnEditUser.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEditUser.ForeColor = System.Drawing.Color.White
+        Me.btnEditUser.Location = New System.Drawing.Point(15, 3)
+        Me.btnEditUser.Name = "btnEditUser"
+        Me.btnEditUser.Size = New System.Drawing.Size(75, 23)
+        Me.btnEditUser.TabIndex = 1
+        Me.btnEditUser.Text = "Edit User"
+        Me.btnEditUser.UseVisualStyleBackColor = False
+        '
+        'ListViewUser
+        '
+        Me.ListViewUser.BackColor = System.Drawing.Color.Lavender
+        Me.ListViewUser.HideSelection = False
+        Me.ListViewUser.Location = New System.Drawing.Point(375, 12)
+        Me.ListViewUser.Name = "ListViewUser"
+        Me.ListViewUser.Size = New System.Drawing.Size(413, 426)
+        Me.ListViewUser.TabIndex = 1
+        Me.ListViewUser.UseCompatibleStateImageBehavior = False
         '
         'frmUserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ListViewUser)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -408,20 +429,20 @@ Partial Class frmUserManagement
         Me.Text = "frmUserManagement"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
+        Me.TableLayoutPanel7.PerformLayout()
+        Me.TableLayoutPanel8.ResumeLayout(False)
+        Me.TableLayoutPanel8.PerformLayout()
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel5.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
-        Me.TableLayoutPanel5.ResumeLayout(False)
-        Me.TableLayoutPanel5.PerformLayout()
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
-        Me.TableLayoutPanel7.ResumeLayout(False)
-        Me.TableLayoutPanel7.PerformLayout()
-        Me.TableLayoutPanel8.ResumeLayout(False)
-        Me.TableLayoutPanel8.PerformLayout()
         Me.TableLayoutPanel9.ResumeLayout(False)
         Me.TableLayoutPanel10.ResumeLayout(False)
         Me.ResumeLayout(False)
