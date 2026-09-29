@@ -12,28 +12,19 @@ Public Class frmLogin
     End Sub
 
 
-    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
+    Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs)
 
         ValidateInputs()
 
     End Sub
 
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs)
 
         ValidateInputs()
-
-    End Sub
-
-    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-
-        txtUsername.Text = ""
-        txtPassword.Text = ""
-        txtUsername.Focus()
 
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
-
         If txtUsername.Text = "" Or txtPassword.Text = "" Then
             MessageBox.Show("Please enter username and password.", "Input Validation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
@@ -84,11 +75,12 @@ Public Class frmLogin
         Finally
             cn.Close()
         End Try
-
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
-
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        txtUsername.Text = ""
+        txtPassword.Text = ""
+        txtUsername.Focus()
     End Sub
-
 End Class
+
