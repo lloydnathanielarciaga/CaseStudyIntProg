@@ -2,6 +2,7 @@
 
 Public Class frmLogin
 
+
     Private Sub ValidateInputs()
         If txtUsername.Text = "" Or txtPassword.Text = "" Then
             btnLogin.Enabled = False
@@ -9,6 +10,7 @@ Public Class frmLogin
             btnLogin.Enabled = True
         End If
     End Sub
+
 
     Private Sub txtUsername_TextChanged(sender As Object, e As EventArgs) Handles txtUsername.TextChanged
 
@@ -88,4 +90,5 @@ Public Class frmLogin
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
 End Class

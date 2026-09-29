@@ -24,13 +24,13 @@ Partial Class frmAdmin
     Private Sub InitializeComponent()
         Me.SplitContainerMain = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanelButtons = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnStudentManagement = New System.Windows.Forms.Button()
         Me.btnDocumentManagement = New System.Windows.Forms.Button()
         Me.btnDocumentRequest = New System.Windows.Forms.Button()
         Me.btnDocumentRequestList = New System.Windows.Forms.Button()
         Me.btnPaymentInformation = New System.Windows.Forms.Button()
         Me.btnSystemReport = New System.Windows.Forms.Button()
         Me.btnUserManagement = New System.Windows.Forms.Button()
-        Me.btnStudentManagement = New System.Windows.Forms.Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -45,9 +45,14 @@ Partial Class frmAdmin
         '
         'SplitContainerMain.Panel1
         '
+        Me.SplitContainerMain.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SplitContainerMain.Panel1.Controls.Add(Me.TableLayoutPanelButtons)
-        Me.SplitContainerMain.Size = New System.Drawing.Size(800, 450)
-        Me.SplitContainerMain.SplitterDistance = 120
+        '
+        'SplitContainerMain.Panel2
+        '
+        Me.SplitContainerMain.Panel2.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
+        Me.SplitContainerMain.Size = New System.Drawing.Size(1707, 813)
+        Me.SplitContainerMain.SplitterDistance = 256
         Me.SplitContainerMain.TabIndex = 1
         '
         'TableLayoutPanelButtons
@@ -72,84 +77,98 @@ Partial Class frmAdmin
         Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531!))
         Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531!))
         Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28817!))
-        Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(120, 313)
+        Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(256, 313)
         Me.TableLayoutPanelButtons.TabIndex = 0
-        '
-        'btnDocumentManagement
-        '
-        Me.btnDocumentManagement.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentManagement.Location = New System.Drawing.Point(3, 3)
-        Me.btnDocumentManagement.Name = "btnDocumentManagement"
-        Me.btnDocumentManagement.Size = New System.Drawing.Size(114, 38)
-        Me.btnDocumentManagement.TabIndex = 0
-        Me.btnDocumentManagement.Text = "Document Management"
-        Me.btnDocumentManagement.UseVisualStyleBackColor = True
-        '
-        'btnDocumentRequest
-        '
-        Me.btnDocumentRequest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 47)
-        Me.btnDocumentRequest.Name = "btnDocumentRequest"
-        Me.btnDocumentRequest.Size = New System.Drawing.Size(114, 38)
-        Me.btnDocumentRequest.TabIndex = 1
-        Me.btnDocumentRequest.Text = "Document Request"
-        Me.btnDocumentRequest.UseVisualStyleBackColor = True
-        '
-        'btnDocumentRequestList
-        '
-        Me.btnDocumentRequestList.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDocumentRequestList.Location = New System.Drawing.Point(3, 91)
-        Me.btnDocumentRequestList.Name = "btnDocumentRequestList"
-        Me.btnDocumentRequestList.Size = New System.Drawing.Size(114, 38)
-        Me.btnDocumentRequestList.TabIndex = 2
-        Me.btnDocumentRequestList.Text = "Request List"
-        Me.btnDocumentRequestList.UseVisualStyleBackColor = True
-        '
-        'btnPaymentInformation
-        '
-        Me.btnPaymentInformation.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnPaymentInformation.Location = New System.Drawing.Point(3, 135)
-        Me.btnPaymentInformation.Name = "btnPaymentInformation"
-        Me.btnPaymentInformation.Size = New System.Drawing.Size(114, 38)
-        Me.btnPaymentInformation.TabIndex = 3
-        Me.btnPaymentInformation.Text = "Payment Information"
-        Me.btnPaymentInformation.UseVisualStyleBackColor = True
-        '
-        'btnSystemReport
-        '
-        Me.btnSystemReport.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnSystemReport.Location = New System.Drawing.Point(3, 179)
-        Me.btnSystemReport.Name = "btnSystemReport"
-        Me.btnSystemReport.Size = New System.Drawing.Size(114, 38)
-        Me.btnSystemReport.TabIndex = 4
-        Me.btnSystemReport.Text = "System Report"
-        Me.btnSystemReport.UseVisualStyleBackColor = True
-        '
-        'btnUserManagement
-        '
-        Me.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnUserManagement.Location = New System.Drawing.Point(3, 267)
-        Me.btnUserManagement.Name = "btnUserManagement"
-        Me.btnUserManagement.Size = New System.Drawing.Size(114, 43)
-        Me.btnUserManagement.TabIndex = 5
-        Me.btnUserManagement.Text = "User Management"
-        Me.btnUserManagement.UseVisualStyleBackColor = True
         '
         'btnStudentManagement
         '
+        Me.btnStudentManagement.BackColor = System.Drawing.Color.Black
         Me.btnStudentManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnStudentManagement.ForeColor = System.Drawing.Color.White
         Me.btnStudentManagement.Location = New System.Drawing.Point(3, 223)
         Me.btnStudentManagement.Name = "btnStudentManagement"
-        Me.btnStudentManagement.Size = New System.Drawing.Size(114, 38)
+        Me.btnStudentManagement.Size = New System.Drawing.Size(250, 38)
         Me.btnStudentManagement.TabIndex = 6
         Me.btnStudentManagement.Text = "Student Management"
-        Me.btnStudentManagement.UseVisualStyleBackColor = True
+        Me.btnStudentManagement.UseVisualStyleBackColor = False
+        '
+        'btnDocumentManagement
+        '
+        Me.btnDocumentManagement.BackColor = System.Drawing.Color.Black
+        Me.btnDocumentManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDocumentManagement.ForeColor = System.Drawing.Color.White
+        Me.btnDocumentManagement.Location = New System.Drawing.Point(3, 3)
+        Me.btnDocumentManagement.Name = "btnDocumentManagement"
+        Me.btnDocumentManagement.Size = New System.Drawing.Size(250, 38)
+        Me.btnDocumentManagement.TabIndex = 0
+        Me.btnDocumentManagement.Text = "Document Management"
+        Me.btnDocumentManagement.UseVisualStyleBackColor = False
+        '
+        'btnDocumentRequest
+        '
+        Me.btnDocumentRequest.BackColor = System.Drawing.Color.Black
+        Me.btnDocumentRequest.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDocumentRequest.ForeColor = System.Drawing.Color.White
+        Me.btnDocumentRequest.Location = New System.Drawing.Point(3, 47)
+        Me.btnDocumentRequest.Name = "btnDocumentRequest"
+        Me.btnDocumentRequest.Size = New System.Drawing.Size(250, 38)
+        Me.btnDocumentRequest.TabIndex = 1
+        Me.btnDocumentRequest.Text = "Document Request"
+        Me.btnDocumentRequest.UseVisualStyleBackColor = False
+        '
+        'btnDocumentRequestList
+        '
+        Me.btnDocumentRequestList.BackColor = System.Drawing.Color.Black
+        Me.btnDocumentRequestList.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDocumentRequestList.ForeColor = System.Drawing.Color.White
+        Me.btnDocumentRequestList.Location = New System.Drawing.Point(3, 91)
+        Me.btnDocumentRequestList.Name = "btnDocumentRequestList"
+        Me.btnDocumentRequestList.Size = New System.Drawing.Size(250, 38)
+        Me.btnDocumentRequestList.TabIndex = 2
+        Me.btnDocumentRequestList.Text = "Request List"
+        Me.btnDocumentRequestList.UseVisualStyleBackColor = False
+        '
+        'btnPaymentInformation
+        '
+        Me.btnPaymentInformation.BackColor = System.Drawing.Color.Black
+        Me.btnPaymentInformation.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnPaymentInformation.ForeColor = System.Drawing.Color.White
+        Me.btnPaymentInformation.Location = New System.Drawing.Point(3, 135)
+        Me.btnPaymentInformation.Name = "btnPaymentInformation"
+        Me.btnPaymentInformation.Size = New System.Drawing.Size(250, 38)
+        Me.btnPaymentInformation.TabIndex = 3
+        Me.btnPaymentInformation.Text = "Payment Information"
+        Me.btnPaymentInformation.UseVisualStyleBackColor = False
+        '
+        'btnSystemReport
+        '
+        Me.btnSystemReport.BackColor = System.Drawing.Color.Black
+        Me.btnSystemReport.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnSystemReport.ForeColor = System.Drawing.Color.White
+        Me.btnSystemReport.Location = New System.Drawing.Point(3, 179)
+        Me.btnSystemReport.Name = "btnSystemReport"
+        Me.btnSystemReport.Size = New System.Drawing.Size(250, 38)
+        Me.btnSystemReport.TabIndex = 4
+        Me.btnSystemReport.Text = "System Report"
+        Me.btnSystemReport.UseVisualStyleBackColor = False
+        '
+        'btnUserManagement
+        '
+        Me.btnUserManagement.BackColor = System.Drawing.Color.Black
+        Me.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUserManagement.ForeColor = System.Drawing.Color.White
+        Me.btnUserManagement.Location = New System.Drawing.Point(3, 267)
+        Me.btnUserManagement.Name = "btnUserManagement"
+        Me.btnUserManagement.Size = New System.Drawing.Size(250, 43)
+        Me.btnUserManagement.TabIndex = 5
+        Me.btnUserManagement.Text = "User Management"
+        Me.btnUserManagement.UseVisualStyleBackColor = False
         '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1707, 813)
         Me.Controls.Add(Me.SplitContainerMain)
         Me.Name = "frmAdmin"
         Me.Text = "frmAdmin"

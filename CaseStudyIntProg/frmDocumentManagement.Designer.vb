@@ -40,8 +40,8 @@ Partial Class frmDocumentManagement
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
-        Me.ListViewDocument = New System.Windows.Forms.ListView()
         Me.btnClear = New System.Windows.Forms.Button()
+        Me.ListViewDocument = New System.Windows.Forms.ListView()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -49,6 +49,7 @@ Partial Class frmDocumentManagement
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -66,6 +67,7 @@ Partial Class frmDocumentManagement
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 2, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.btnClear, 2, 1)
+        Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 7
@@ -82,6 +84,7 @@ Partial Class frmDocumentManagement
         'txtFee
         '
         Me.txtFee.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtFee.ForeColor = System.Drawing.Color.Black
         Me.txtFee.Location = New System.Drawing.Point(99, 129)
         Me.txtFee.Name = "txtFee"
         Me.txtFee.Size = New System.Drawing.Size(63, 20)
@@ -90,6 +93,7 @@ Partial Class frmDocumentManagement
         'txtDescription
         '
         Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtDescription.ForeColor = System.Drawing.Color.Black
         Me.txtDescription.Location = New System.Drawing.Point(99, 98)
         Me.txtDescription.Multiline = True
         Me.txtDescription.Name = "txtDescription"
@@ -99,6 +103,7 @@ Partial Class frmDocumentManagement
         'txtDocumentName
         '
         Me.txtDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtDocumentName.ForeColor = System.Drawing.Color.Black
         Me.txtDocumentName.Location = New System.Drawing.Point(99, 67)
         Me.txtDocumentName.Name = "txtDocumentName"
         Me.txtDocumentName.Size = New System.Drawing.Size(172, 20)
@@ -168,6 +173,7 @@ Partial Class frmDocumentManagement
         'txtDocumentId
         '
         Me.txtDocumentId.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtDocumentId.ForeColor = System.Drawing.Color.Black
         Me.txtDocumentId.Location = New System.Drawing.Point(99, 36)
         Me.txtDocumentId.Name = "txtDocumentId"
         Me.txtDocumentId.Size = New System.Drawing.Size(63, 20)
@@ -192,6 +198,7 @@ Partial Class frmDocumentManagement
         '
         Me.rdoActive.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.rdoActive.AutoSize = True
+        Me.rdoActive.ForeColor = System.Drawing.Color.White
         Me.rdoActive.Location = New System.Drawing.Point(3, 4)
         Me.rdoActive.Name = "rdoActive"
         Me.rdoActive.Size = New System.Drawing.Size(55, 17)
@@ -204,6 +211,7 @@ Partial Class frmDocumentManagement
         '
         Me.rdoInactive.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.rdoInactive.AutoSize = True
+        Me.rdoInactive.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.rdoInactive.Location = New System.Drawing.Point(89, 4)
         Me.rdoInactive.Name = "rdoInactive"
         Me.rdoInactive.Size = New System.Drawing.Size(63, 17)
@@ -231,36 +239,52 @@ Partial Class frmDocumentManagement
         '
         'btnAdd
         '
+        Me.btnAdd.BackColor = System.Drawing.Color.SteelBlue
         Me.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnAdd.Location = New System.Drawing.Point(3, 3)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(91, 22)
         Me.btnAdd.TabIndex = 0
         Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnEdit
         '
+        Me.btnEdit.BackColor = System.Drawing.Color.SteelBlue
         Me.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnEdit.Location = New System.Drawing.Point(100, 3)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(91, 22)
         Me.btnEdit.TabIndex = 1
         Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = True
+        Me.btnEdit.UseVisualStyleBackColor = False
         '
         'btnDelete
         '
+        Me.btnDelete.BackColor = System.Drawing.Color.SteelBlue
         Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btnDelete.Location = New System.Drawing.Point(197, 3)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(94, 22)
         Me.btnDelete.TabIndex = 2
         Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnClear
+        '
+        Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnClear.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnClear.ForeColor = System.Drawing.Color.White
+        Me.btnClear.Location = New System.Drawing.Point(277, 35)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(75, 23)
+        Me.btnClear.TabIndex = 12
+        Me.btnClear.Text = "Clear"
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'ListViewDocument
         '
+        Me.ListViewDocument.BackColor = System.Drawing.Color.Lavender
         Me.ListViewDocument.HideSelection = False
         Me.ListViewDocument.Location = New System.Drawing.Point(12, 238)
         Me.ListViewDocument.Name = "ListViewDocument"
@@ -269,20 +293,11 @@ Partial Class frmDocumentManagement
         Me.ListViewDocument.UseCompatibleStateImageBehavior = False
         Me.ListViewDocument.View = System.Windows.Forms.View.Details
         '
-        'btnClear
-        '
-        Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnClear.Location = New System.Drawing.Point(277, 35)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 23)
-        Me.btnClear.TabIndex = 12
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
-        '
         'frmDocumentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ListViewDocument)
         Me.Controls.Add(Me.TableLayoutPanel1)

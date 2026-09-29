@@ -43,6 +43,7 @@ Partial Class frmDocumentRequestList
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.ColumnCount = 3
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -87,8 +88,10 @@ Partial Class frmDocumentRequestList
         '
         Me.lblDocumentRequestList.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblDocumentRequestList.AutoSize = True
+        Me.lblDocumentRequestList.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblDocumentRequestList, 2)
         Me.lblDocumentRequestList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDocumentRequestList.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblDocumentRequestList.Location = New System.Drawing.Point(3, 12)
         Me.lblDocumentRequestList.Name = "lblDocumentRequestList"
         Me.lblDocumentRequestList.Size = New System.Drawing.Size(139, 13)
@@ -99,6 +102,8 @@ Partial Class frmDocumentRequestList
         '
         Me.lblSearchRequest.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblSearchRequest.AutoSize = True
+        Me.lblSearchRequest.BackColor = System.Drawing.Color.Transparent
+        Me.lblSearchRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblSearchRequest.Location = New System.Drawing.Point(3, 50)
         Me.lblSearchRequest.Name = "lblSearchRequest"
         Me.lblSearchRequest.Size = New System.Drawing.Size(87, 13)
@@ -109,6 +114,8 @@ Partial Class frmDocumentRequestList
         '
         Me.lblSearchStudent.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblSearchStudent.AutoSize = True
+        Me.lblSearchStudent.BackColor = System.Drawing.Color.Transparent
+        Me.lblSearchStudent.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblSearchStudent.Location = New System.Drawing.Point(3, 88)
         Me.lblSearchStudent.Name = "lblSearchStudent"
         Me.lblSearchStudent.Size = New System.Drawing.Size(84, 13)
@@ -119,6 +126,8 @@ Partial Class frmDocumentRequestList
         '
         Me.lblStatusFilter.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStatusFilter.AutoSize = True
+        Me.lblStatusFilter.BackColor = System.Drawing.Color.Transparent
+        Me.lblStatusFilter.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lblStatusFilter.Location = New System.Drawing.Point(3, 127)
         Me.lblStatusFilter.Name = "lblStatusFilter"
         Me.lblStatusFilter.Size = New System.Drawing.Size(65, 13)
@@ -137,16 +146,19 @@ Partial Class frmDocumentRequestList
         'btnClearAllSearch
         '
         Me.btnClearAllSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.btnClearAllSearch.BackColor = System.Drawing.Color.LightSteelBlue
         Me.btnClearAllSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnClearAllSearch.Location = New System.Drawing.Point(251, 45)
         Me.btnClearAllSearch.Name = "btnClearAllSearch"
         Me.btnClearAllSearch.Size = New System.Drawing.Size(107, 23)
         Me.btnClearAllSearch.TabIndex = 7
         Me.btnClearAllSearch.Text = "Clear All Search"
-        Me.btnClearAllSearch.UseVisualStyleBackColor = True
+        Me.btnClearAllSearch.UseVisualStyleBackColor = False
         '
         'ListViewRequestList
         '
+        Me.ListViewRequestList.BackColor = System.Drawing.Color.Lavender
+        Me.ListViewRequestList.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListViewRequestList.HideSelection = False
         Me.ListViewRequestList.Location = New System.Drawing.Point(12, 202)
         Me.ListViewRequestList.Name = "ListViewRequestList"
@@ -157,6 +169,7 @@ Partial Class frmDocumentRequestList
         '
         'TableLayoutPanel2
         '
+        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel2.ColumnCount = 3
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
@@ -174,32 +187,38 @@ Partial Class frmDocumentRequestList
         'btnProcessPayment
         '
         Me.btnProcessPayment.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnProcessPayment.Location = New System.Drawing.Point(293, 4)
+        Me.btnProcessPayment.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnProcessPayment.ForeColor = System.Drawing.Color.White
+        Me.btnProcessPayment.Location = New System.Drawing.Point(293, 3)
         Me.btnProcessPayment.Name = "btnProcessPayment"
-        Me.btnProcessPayment.Size = New System.Drawing.Size(120, 23)
+        Me.btnProcessPayment.Size = New System.Drawing.Size(120, 26)
         Me.btnProcessPayment.TabIndex = 2
         Me.btnProcessPayment.Text = "Process Payment"
-        Me.btnProcessPayment.UseVisualStyleBackColor = True
+        Me.btnProcessPayment.UseVisualStyleBackColor = False
         '
         'btnEditSelectedRequest
         '
         Me.btnEditSelectedRequest.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnEditSelectedRequest.Location = New System.Drawing.Point(151, 4)
+        Me.btnEditSelectedRequest.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnEditSelectedRequest.ForeColor = System.Drawing.Color.White
+        Me.btnEditSelectedRequest.Location = New System.Drawing.Point(151, 3)
         Me.btnEditSelectedRequest.Name = "btnEditSelectedRequest"
-        Me.btnEditSelectedRequest.Size = New System.Drawing.Size(120, 23)
+        Me.btnEditSelectedRequest.Size = New System.Drawing.Size(120, 26)
         Me.btnEditSelectedRequest.TabIndex = 1
         Me.btnEditSelectedRequest.Text = "Edit Request"
-        Me.btnEditSelectedRequest.UseVisualStyleBackColor = True
+        Me.btnEditSelectedRequest.UseVisualStyleBackColor = False
         '
         'btnViewRequestDetails
         '
         Me.btnViewRequestDetails.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnViewRequestDetails.Location = New System.Drawing.Point(10, 4)
+        Me.btnViewRequestDetails.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.btnViewRequestDetails.ForeColor = System.Drawing.Color.White
+        Me.btnViewRequestDetails.Location = New System.Drawing.Point(10, 3)
         Me.btnViewRequestDetails.Name = "btnViewRequestDetails"
-        Me.btnViewRequestDetails.Size = New System.Drawing.Size(120, 23)
+        Me.btnViewRequestDetails.Size = New System.Drawing.Size(120, 26)
         Me.btnViewRequestDetails.TabIndex = 0
         Me.btnViewRequestDetails.Text = "View Request Details"
-        Me.btnViewRequestDetails.UseVisualStyleBackColor = True
+        Me.btnViewRequestDetails.UseVisualStyleBackColor = False
         '
         'txtMode
         '
@@ -214,6 +233,7 @@ Partial Class frmDocumentRequestList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.txtMode)
         Me.Controls.Add(Me.TableLayoutPanel2)
