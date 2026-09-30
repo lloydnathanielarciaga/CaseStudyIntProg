@@ -16,4 +16,7 @@ Module DbContext
 
     End Sub
 
+    Public CurrentUserID As Integer
+    Public CurrentFullName As String
+
 End Module
