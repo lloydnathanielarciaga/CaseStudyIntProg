@@ -140,7 +140,9 @@
     <Compile Include="frmDocumentRequestList.Designer.vb">
       <DependentUpon>frmDocumentRequestList.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmDocumentRequestList.vb" />
+    <Compile Include="frmDocumentRequestList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
