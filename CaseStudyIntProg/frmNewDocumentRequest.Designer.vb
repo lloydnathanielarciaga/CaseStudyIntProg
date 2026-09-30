@@ -26,19 +26,9 @@ Partial Class frmNewDocumentRequest
         Me.lblCreateNewDocumentRequest = New System.Windows.Forms.Label()
         Me.lblRequestNo = New System.Windows.Forms.Label()
         Me.txtRequestNo = New System.Windows.Forms.Label()
-        Me.lblProcessedBy = New System.Windows.Forms.Label()
-        Me.cboProcessedBy = New System.Windows.Forms.ComboBox()
-        Me.lblDate = New System.Windows.Forms.Label()
-        Me.DateTimePickerDate = New System.Windows.Forms.DateTimePicker()
         Me.lblStudentInformation = New System.Windows.Forms.Label()
         Me.lblStudentId = New System.Windows.Forms.Label()
         Me.lblStudentName = New System.Windows.Forms.Label()
-        Me.cboStudentId = New System.Windows.Forms.ComboBox()
-        Me.cboStudentName = New System.Windows.Forms.ComboBox()
-        Me.lblCourse = New System.Windows.Forms.Label()
-        Me.lblYear = New System.Windows.Forms.Label()
-        Me.txtCourse = New System.Windows.Forms.Label()
-        Me.txtYear = New System.Windows.Forms.Label()
         Me.lblAddRequestItem = New System.Windows.Forms.Label()
         Me.lblDocumentName = New System.Windows.Forms.Label()
         Me.lblQuantity = New System.Windows.Forms.Label()
@@ -48,6 +38,19 @@ Partial Class frmNewDocumentRequest
         Me.txtFee = New System.Windows.Forms.Label()
         Me.lblRequestedDocument = New System.Windows.Forms.Label()
         Me.btnAddRequest = New System.Windows.Forms.Button()
+        Me.lblPurpose = New System.Windows.Forms.Label()
+        Me.txtPurpose = New System.Windows.Forms.TextBox()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.DateTimePickerDate = New System.Windows.Forms.DateTimePicker()
+        Me.txtSearchStudentIdOrStudentLastName = New System.Windows.Forms.TextBox()
+        Me.txtStudentName = New System.Windows.Forms.Label()
+        Me.lblYear = New System.Windows.Forms.Label()
+        Me.txtYear = New System.Windows.Forms.Label()
+        Me.lblCourse = New System.Windows.Forms.Label()
+        Me.txtCourse = New System.Windows.Forms.Label()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.lblRecordedBy = New System.Windows.Forms.Label()
+        Me.txtRecordedBy = New System.Windows.Forms.Label()
         Me.ListViewNewRequest = New System.Windows.Forms.ListView()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.txtTotalAmount = New System.Windows.Forms.Label()
@@ -74,19 +77,9 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.Controls.Add(Me.lblCreateNewDocumentRequest, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.lblRequestNo, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.txtRequestNo, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblProcessedBy, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.cboProcessedBy, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDate, 2, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.DateTimePickerDate, 3, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStudentInformation, 0, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStudentId, 0, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.lblStudentName, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.cboStudentId, 1, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.cboStudentName, 1, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblCourse, 2, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblYear, 2, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtCourse, 3, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtYear, 3, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.lblAddRequestItem, 4, 3)
         Me.TableLayoutPanel1.Controls.Add(Me.lblDocumentName, 4, 4)
         Me.TableLayoutPanel1.Controls.Add(Me.lblQuantity, 4, 5)
@@ -96,6 +89,19 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.Controls.Add(Me.txtFee, 5, 6)
         Me.TableLayoutPanel1.Controls.Add(Me.lblRequestedDocument, 0, 7)
         Me.TableLayoutPanel1.Controls.Add(Me.btnAddRequest, 5, 7)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblPurpose, 0, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtPurpose, 1, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblDate, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.DateTimePickerDate, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtSearchStudentIdOrStudentLastName, 1, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtStudentName, 1, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblYear, 2, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtYear, 3, 6)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblCourse, 2, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtCourse, 3, 5)
+        Me.TableLayoutPanel1.Controls.Add(Me.btnSearch, 2, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblRecordedBy, 2, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.txtRecordedBy, 3, 1)
         Me.TableLayoutPanel1.ForeColor = System.Drawing.Color.White
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
@@ -108,7 +114,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.49917!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50167!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50328!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(776, 198)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(776, 208)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'lblCreateNewDocumentRequest
@@ -118,7 +124,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblCreateNewDocumentRequest, 2)
         Me.lblCreateNewDocumentRequest.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCreateNewDocumentRequest.ForeColor = System.Drawing.Color.White
-        Me.lblCreateNewDocumentRequest.Location = New System.Drawing.Point(3, 5)
+        Me.lblCreateNewDocumentRequest.Location = New System.Drawing.Point(3, 6)
         Me.lblCreateNewDocumentRequest.Name = "lblCreateNewDocumentRequest"
         Me.lblCreateNewDocumentRequest.Size = New System.Drawing.Size(185, 13)
         Me.lblCreateNewDocumentRequest.TabIndex = 0
@@ -129,7 +135,7 @@ Partial Class frmNewDocumentRequest
         Me.lblRequestNo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblRequestNo.AutoSize = True
         Me.lblRequestNo.ForeColor = System.Drawing.Color.White
-        Me.lblRequestNo.Location = New System.Drawing.Point(3, 29)
+        Me.lblRequestNo.Location = New System.Drawing.Point(3, 31)
         Me.lblRequestNo.Name = "lblRequestNo"
         Me.lblRequestNo.Size = New System.Drawing.Size(67, 13)
         Me.lblRequestNo.TabIndex = 1
@@ -139,52 +145,11 @@ Partial Class frmNewDocumentRequest
         '
         Me.txtRequestNo.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtRequestNo.AutoSize = True
-        Me.txtRequestNo.Location = New System.Drawing.Point(87, 29)
+        Me.txtRequestNo.Location = New System.Drawing.Point(87, 31)
         Me.txtRequestNo.Name = "txtRequestNo"
         Me.txtRequestNo.Size = New System.Drawing.Size(10, 13)
         Me.txtRequestNo.TabIndex = 2
         Me.txtRequestNo.Text = "-"
-        '
-        'lblProcessedBy
-        '
-        Me.lblProcessedBy.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblProcessedBy.AutoSize = True
-        Me.lblProcessedBy.ForeColor = System.Drawing.Color.White
-        Me.lblProcessedBy.Location = New System.Drawing.Point(3, 53)
-        Me.lblProcessedBy.Name = "lblProcessedBy"
-        Me.lblProcessedBy.Size = New System.Drawing.Size(75, 13)
-        Me.lblProcessedBy.TabIndex = 3
-        Me.lblProcessedBy.Text = "Processed By:"
-        '
-        'cboProcessedBy
-        '
-        Me.cboProcessedBy.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboProcessedBy.FormattingEnabled = True
-        Me.cboProcessedBy.Location = New System.Drawing.Point(87, 51)
-        Me.cboProcessedBy.Name = "cboProcessedBy"
-        Me.cboProcessedBy.Size = New System.Drawing.Size(150, 21)
-        Me.cboProcessedBy.TabIndex = 4
-        '
-        'lblDate
-        '
-        Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblDate.AutoSize = True
-        Me.lblDate.ForeColor = System.Drawing.Color.White
-        Me.lblDate.Location = New System.Drawing.Point(243, 29)
-        Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(33, 13)
-        Me.lblDate.TabIndex = 5
-        Me.lblDate.Text = "Date:"
-        '
-        'DateTimePickerDate
-        '
-        Me.DateTimePickerDate.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.DateTimePickerDate.CustomFormat = "yyyy-MM-dd"
-        Me.DateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerDate.Location = New System.Drawing.Point(292, 27)
-        Me.DateTimePickerDate.Name = "DateTimePickerDate"
-        Me.DateTimePickerDate.Size = New System.Drawing.Size(112, 20)
-        Me.DateTimePickerDate.TabIndex = 6
         '
         'lblStudentInformation
         '
@@ -193,7 +158,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblStudentInformation, 2)
         Me.lblStudentInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStudentInformation.ForeColor = System.Drawing.Color.White
-        Me.lblStudentInformation.Location = New System.Drawing.Point(3, 77)
+        Me.lblStudentInformation.Location = New System.Drawing.Point(3, 81)
         Me.lblStudentInformation.Name = "lblStudentInformation"
         Me.lblStudentInformation.Size = New System.Drawing.Size(118, 13)
         Me.lblStudentInformation.TabIndex = 7
@@ -204,7 +169,7 @@ Partial Class frmNewDocumentRequest
         Me.lblStudentId.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStudentId.AutoSize = True
         Me.lblStudentId.ForeColor = System.Drawing.Color.White
-        Me.lblStudentId.Location = New System.Drawing.Point(3, 101)
+        Me.lblStudentId.Location = New System.Drawing.Point(3, 106)
         Me.lblStudentId.Name = "lblStudentId"
         Me.lblStudentId.Size = New System.Drawing.Size(61, 13)
         Me.lblStudentId.TabIndex = 8
@@ -215,71 +180,11 @@ Partial Class frmNewDocumentRequest
         Me.lblStudentName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStudentName.AutoSize = True
         Me.lblStudentName.ForeColor = System.Drawing.Color.White
-        Me.lblStudentName.Location = New System.Drawing.Point(3, 125)
+        Me.lblStudentName.Location = New System.Drawing.Point(3, 131)
         Me.lblStudentName.Name = "lblStudentName"
         Me.lblStudentName.Size = New System.Drawing.Size(78, 13)
         Me.lblStudentName.TabIndex = 9
         Me.lblStudentName.Text = "Student Name:"
-        '
-        'cboStudentId
-        '
-        Me.cboStudentId.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboStudentId.FormattingEnabled = True
-        Me.cboStudentId.Location = New System.Drawing.Point(87, 99)
-        Me.cboStudentId.Name = "cboStudentId"
-        Me.cboStudentId.Size = New System.Drawing.Size(150, 21)
-        Me.cboStudentId.TabIndex = 10
-        '
-        'cboStudentName
-        '
-        Me.cboStudentName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboStudentName.FormattingEnabled = True
-        Me.cboStudentName.Location = New System.Drawing.Point(87, 123)
-        Me.cboStudentName.Name = "cboStudentName"
-        Me.cboStudentName.Size = New System.Drawing.Size(150, 21)
-        Me.cboStudentName.TabIndex = 11
-        '
-        'lblCourse
-        '
-        Me.lblCourse.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblCourse.AutoSize = True
-        Me.lblCourse.ForeColor = System.Drawing.Color.White
-        Me.lblCourse.Location = New System.Drawing.Point(243, 101)
-        Me.lblCourse.Name = "lblCourse"
-        Me.lblCourse.Size = New System.Drawing.Size(43, 13)
-        Me.lblCourse.TabIndex = 12
-        Me.lblCourse.Text = "Course:"
-        '
-        'lblYear
-        '
-        Me.lblYear.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblYear.AutoSize = True
-        Me.lblYear.ForeColor = System.Drawing.Color.White
-        Me.lblYear.Location = New System.Drawing.Point(243, 125)
-        Me.lblYear.Name = "lblYear"
-        Me.lblYear.Size = New System.Drawing.Size(32, 13)
-        Me.lblYear.TabIndex = 13
-        Me.lblYear.Text = "Year:"
-        '
-        'txtCourse
-        '
-        Me.txtCourse.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtCourse.AutoSize = True
-        Me.txtCourse.Location = New System.Drawing.Point(292, 101)
-        Me.txtCourse.Name = "txtCourse"
-        Me.txtCourse.Size = New System.Drawing.Size(10, 13)
-        Me.txtCourse.TabIndex = 14
-        Me.txtCourse.Text = "-"
-        '
-        'txtYear
-        '
-        Me.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtYear.AutoSize = True
-        Me.txtYear.Location = New System.Drawing.Point(292, 125)
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(10, 13)
-        Me.txtYear.TabIndex = 15
-        Me.txtYear.Text = "-"
         '
         'lblAddRequestItem
         '
@@ -287,7 +192,7 @@ Partial Class frmNewDocumentRequest
         Me.lblAddRequestItem.AutoSize = True
         Me.lblAddRequestItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAddRequestItem.ForeColor = System.Drawing.Color.White
-        Me.lblAddRequestItem.Location = New System.Drawing.Point(410, 77)
+        Me.lblAddRequestItem.Location = New System.Drawing.Point(340, 81)
         Me.lblAddRequestItem.Name = "lblAddRequestItem"
         Me.lblAddRequestItem.Size = New System.Drawing.Size(108, 13)
         Me.lblAddRequestItem.TabIndex = 16
@@ -298,7 +203,7 @@ Partial Class frmNewDocumentRequest
         Me.lblDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblDocumentName.AutoSize = True
         Me.lblDocumentName.ForeColor = System.Drawing.Color.White
-        Me.lblDocumentName.Location = New System.Drawing.Point(410, 101)
+        Me.lblDocumentName.Location = New System.Drawing.Point(340, 106)
         Me.lblDocumentName.Name = "lblDocumentName"
         Me.lblDocumentName.Size = New System.Drawing.Size(90, 13)
         Me.lblDocumentName.TabIndex = 17
@@ -309,7 +214,7 @@ Partial Class frmNewDocumentRequest
         Me.lblQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblQuantity.AutoSize = True
         Me.lblQuantity.ForeColor = System.Drawing.Color.White
-        Me.lblQuantity.Location = New System.Drawing.Point(410, 125)
+        Me.lblQuantity.Location = New System.Drawing.Point(340, 131)
         Me.lblQuantity.Name = "lblQuantity"
         Me.lblQuantity.Size = New System.Drawing.Size(49, 13)
         Me.lblQuantity.TabIndex = 18
@@ -319,7 +224,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.cboDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.cboDocumentName.FormattingEnabled = True
-        Me.cboDocumentName.Location = New System.Drawing.Point(524, 99)
+        Me.cboDocumentName.Location = New System.Drawing.Point(454, 103)
         Me.cboDocumentName.Name = "cboDocumentName"
         Me.cboDocumentName.Size = New System.Drawing.Size(156, 21)
         Me.cboDocumentName.TabIndex = 19
@@ -327,17 +232,18 @@ Partial Class frmNewDocumentRequest
         'NumericUpDownQuantity
         '
         Me.NumericUpDownQuantity.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.NumericUpDownQuantity.Location = New System.Drawing.Point(524, 123)
+        Me.NumericUpDownQuantity.Location = New System.Drawing.Point(454, 128)
         Me.NumericUpDownQuantity.Name = "NumericUpDownQuantity"
         Me.NumericUpDownQuantity.Size = New System.Drawing.Size(53, 20)
         Me.NumericUpDownQuantity.TabIndex = 20
+        Me.NumericUpDownQuantity.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'lblFee
         '
         Me.lblFee.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblFee.AutoSize = True
         Me.lblFee.ForeColor = System.Drawing.Color.White
-        Me.lblFee.Location = New System.Drawing.Point(410, 149)
+        Me.lblFee.Location = New System.Drawing.Point(340, 156)
         Me.lblFee.Name = "lblFee"
         Me.lblFee.Size = New System.Drawing.Size(28, 13)
         Me.lblFee.TabIndex = 22
@@ -347,7 +253,7 @@ Partial Class frmNewDocumentRequest
         '
         Me.txtFee.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.txtFee.AutoSize = True
-        Me.txtFee.Location = New System.Drawing.Point(524, 149)
+        Me.txtFee.Location = New System.Drawing.Point(454, 156)
         Me.txtFee.Name = "txtFee"
         Me.txtFee.Size = New System.Drawing.Size(10, 13)
         Me.txtFee.TabIndex = 23
@@ -359,7 +265,7 @@ Partial Class frmNewDocumentRequest
         Me.lblRequestedDocument.AutoSize = True
         Me.TableLayoutPanel1.SetColumnSpan(Me.lblRequestedDocument, 2)
         Me.lblRequestedDocument.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRequestedDocument.Location = New System.Drawing.Point(3, 176)
+        Me.lblRequestedDocument.Location = New System.Drawing.Point(3, 185)
         Me.lblRequestedDocument.Name = "lblRequestedDocument"
         Me.lblRequestedDocument.Size = New System.Drawing.Size(135, 13)
         Me.lblRequestedDocument.TabIndex = 21
@@ -369,18 +275,148 @@ Partial Class frmNewDocumentRequest
         '
         Me.btnAddRequest.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnAddRequest.ForeColor = System.Drawing.Color.White
-        Me.btnAddRequest.Location = New System.Drawing.Point(524, 171)
+        Me.btnAddRequest.Location = New System.Drawing.Point(454, 179)
         Me.btnAddRequest.Name = "btnAddRequest"
         Me.btnAddRequest.Size = New System.Drawing.Size(105, 23)
         Me.btnAddRequest.TabIndex = 24
         Me.btnAddRequest.Text = "Add Request"
         Me.btnAddRequest.UseVisualStyleBackColor = False
         '
+        'lblPurpose
+        '
+        Me.lblPurpose.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblPurpose.AutoSize = True
+        Me.lblPurpose.ForeColor = System.Drawing.Color.White
+        Me.lblPurpose.Location = New System.Drawing.Point(3, 156)
+        Me.lblPurpose.Name = "lblPurpose"
+        Me.lblPurpose.Size = New System.Drawing.Size(49, 13)
+        Me.lblPurpose.TabIndex = 25
+        Me.lblPurpose.Text = "Purpose:"
+        '
+        'txtPurpose
+        '
+        Me.txtPurpose.Location = New System.Drawing.Point(87, 153)
+        Me.txtPurpose.Name = "txtPurpose"
+        Me.txtPurpose.Size = New System.Drawing.Size(150, 20)
+        Me.txtPurpose.TabIndex = 26
+        '
+        'lblDate
+        '
+        Me.lblDate.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblDate.AutoSize = True
+        Me.lblDate.ForeColor = System.Drawing.Color.White
+        Me.lblDate.Location = New System.Drawing.Point(3, 56)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(33, 13)
+        Me.lblDate.TabIndex = 5
+        Me.lblDate.Text = "Date:"
+        '
+        'DateTimePickerDate
+        '
+        Me.DateTimePickerDate.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.DateTimePickerDate.CustomFormat = "yyyy-MM-dd"
+        Me.DateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerDate.Location = New System.Drawing.Point(87, 53)
+        Me.DateTimePickerDate.Name = "DateTimePickerDate"
+        Me.DateTimePickerDate.Size = New System.Drawing.Size(112, 20)
+        Me.DateTimePickerDate.TabIndex = 6
+        '
+        'txtSearchStudentIdOrStudentLastName
+        '
+        Me.txtSearchStudentIdOrStudentLastName.Location = New System.Drawing.Point(87, 103)
+        Me.txtSearchStudentIdOrStudentLastName.Name = "txtSearchStudentIdOrStudentLastName"
+        Me.txtSearchStudentIdOrStudentLastName.Size = New System.Drawing.Size(150, 20)
+        Me.txtSearchStudentIdOrStudentLastName.TabIndex = 27
+        '
+        'txtStudentName
+        '
+        Me.txtStudentName.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtStudentName.AutoSize = True
+        Me.txtStudentName.Location = New System.Drawing.Point(87, 131)
+        Me.txtStudentName.Name = "txtStudentName"
+        Me.txtStudentName.Size = New System.Drawing.Size(10, 13)
+        Me.txtStudentName.TabIndex = 28
+        Me.txtStudentName.Text = "-"
+        '
+        'lblYear
+        '
+        Me.lblYear.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblYear.AutoSize = True
+        Me.lblYear.ForeColor = System.Drawing.Color.White
+        Me.lblYear.Location = New System.Drawing.Point(243, 156)
+        Me.lblYear.Name = "lblYear"
+        Me.lblYear.Size = New System.Drawing.Size(32, 13)
+        Me.lblYear.TabIndex = 13
+        Me.lblYear.Text = "Year:"
+        '
+        'txtYear
+        '
+        Me.txtYear.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtYear.AutoSize = True
+        Me.txtYear.Location = New System.Drawing.Point(324, 156)
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(10, 13)
+        Me.txtYear.TabIndex = 15
+        Me.txtYear.Text = "-"
+        '
+        'lblCourse
+        '
+        Me.lblCourse.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblCourse.AutoSize = True
+        Me.lblCourse.ForeColor = System.Drawing.Color.White
+        Me.lblCourse.Location = New System.Drawing.Point(243, 131)
+        Me.lblCourse.Name = "lblCourse"
+        Me.lblCourse.Size = New System.Drawing.Size(43, 13)
+        Me.lblCourse.TabIndex = 12
+        Me.lblCourse.Text = "Course:"
+        '
+        'txtCourse
+        '
+        Me.txtCourse.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtCourse.AutoSize = True
+        Me.txtCourse.Location = New System.Drawing.Point(324, 131)
+        Me.txtCourse.Name = "txtCourse"
+        Me.txtCourse.Size = New System.Drawing.Size(10, 13)
+        Me.txtCourse.TabIndex = 14
+        Me.txtCourse.Text = "-"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnSearch.ForeColor = System.Drawing.Color.Black
+        Me.btnSearch.Location = New System.Drawing.Point(243, 103)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 19)
+        Me.btnSearch.TabIndex = 29
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'lblRecordedBy
+        '
+        Me.lblRecordedBy.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.lblRecordedBy.AutoSize = True
+        Me.lblRecordedBy.ForeColor = System.Drawing.Color.White
+        Me.lblRecordedBy.Location = New System.Drawing.Point(243, 31)
+        Me.lblRecordedBy.Name = "lblRecordedBy"
+        Me.lblRecordedBy.Size = New System.Drawing.Size(72, 13)
+        Me.lblRecordedBy.TabIndex = 30
+        Me.lblRecordedBy.Text = "Recorded By:"
+        '
+        'txtRecordedBy
+        '
+        Me.txtRecordedBy.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.txtRecordedBy.AutoSize = True
+        Me.txtRecordedBy.Location = New System.Drawing.Point(324, 31)
+        Me.txtRecordedBy.Name = "txtRecordedBy"
+        Me.txtRecordedBy.Size = New System.Drawing.Size(10, 13)
+        Me.txtRecordedBy.TabIndex = 31
+        Me.txtRecordedBy.Text = "-"
+        '
         'ListViewNewRequest
         '
         Me.ListViewNewRequest.BackColor = System.Drawing.Color.Lavender
         Me.ListViewNewRequest.HideSelection = False
-        Me.ListViewNewRequest.Location = New System.Drawing.Point(12, 216)
+        Me.ListViewNewRequest.Location = New System.Drawing.Point(12, 235)
         Me.ListViewNewRequest.Name = "ListViewNewRequest"
         Me.ListViewNewRequest.Size = New System.Drawing.Size(776, 154)
         Me.ListViewNewRequest.TabIndex = 1
@@ -393,7 +429,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.txtTotalAmount, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.lblTotalAmount, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(588, 376)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(588, 395)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -428,7 +464,7 @@ Partial Class frmNewDocumentRequest
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.btnCancelRequest, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.btnSaveRequest, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(307, 376)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(307, 395)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -483,15 +519,11 @@ Partial Class frmNewDocumentRequest
     Friend WithEvents lblCreateNewDocumentRequest As Label
     Friend WithEvents lblRequestNo As Label
     Friend WithEvents txtRequestNo As Label
-    Friend WithEvents lblProcessedBy As Label
-    Friend WithEvents cboProcessedBy As ComboBox
     Friend WithEvents lblDate As Label
     Friend WithEvents DateTimePickerDate As DateTimePicker
     Friend WithEvents lblStudentInformation As Label
     Friend WithEvents lblStudentId As Label
     Friend WithEvents lblStudentName As Label
-    Friend WithEvents cboStudentId As ComboBox
-    Friend WithEvents cboStudentName As ComboBox
     Friend WithEvents lblCourse As Label
     Friend WithEvents lblYear As Label
     Friend WithEvents txtCourse As Label
@@ -512,4 +544,11 @@ Partial Class frmNewDocumentRequest
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents btnCancelRequest As Button
     Friend WithEvents btnSaveRequest As Button
+    Friend WithEvents lblPurpose As Label
+    Friend WithEvents txtPurpose As TextBox
+    Friend WithEvents txtSearchStudentIdOrStudentLastName As TextBox
+    Friend WithEvents txtStudentName As Label
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents lblRecordedBy As Label
+    Friend WithEvents txtRecordedBy As Label
 End Class

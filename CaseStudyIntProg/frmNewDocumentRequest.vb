@@ -1,115 +1,51 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.IO
 
 Public Class frmNewDocumentRequest
+    Public LoggedInUserID As Integer
+    Public LoggedInFullName As String
+
+    Private CurrentTotalAmount As Decimal = 0.00D
+    Private SelectedStudentID As String = ""
+
     Private Sub frmNewDocumentRequest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Call SetupListView()
-        Call LoadProcessedBy()
-        Call LoadStudents()
-        Call LoadDocuments()
-        Call GenerateRequestNo()
-        Call ResetInputFields()
+        txtRecordedBy.Text = LoggedInFullName
+        DateTimePickerDate.Value = DateTime.Now
 
+        NumericUpDownQuantity.Minimum = 1
+        NumericUpDownQuantity.Value = 1
+
+        SetupListView()
+        LoadDocuments()
+        SetupPredictiveSearch()
+        GenerateNextRequestNo()
     End Sub
 
-    ' Step 4: Setup ListView Columns
     Private Sub SetupListView()
         ListViewNewRequest.View = View.Details
-        ListViewNewRequest.FullRowSelect = True
         ListViewNewRequest.GridLines = True
-        ListViewNewRequest.Columns.Clear()
-
-        ListViewNewRequest.Columns.Add("Document ID", 90)
-        ListViewNewRequest.Columns.Add("Document Name", 180)
-        ListViewNewRequest.Columns.Add("Quantity", 70)
-        ListViewNewRequest.Columns.Add("Fee", 80)
-        ListViewNewRequest.Columns.Add("Subtotal", 90)
-        ListViewNewRequest.Columns.Add("Student ID", 100)
-        ListViewNewRequest.Columns.Add("Student Full Name", 180)
-        ListViewNewRequest.Columns.Add("Payment Status", 110)
-        ListViewNewRequest.Columns.Add("OR No", 90)
-        ListViewNewRequest.Columns.Add("OR Date", 90)
-        ListViewNewRequest.Columns.Add("Status", 100)
+        ListViewNewRequest.FullRowSelect = True
+        ListViewNewRequest.Columns.Add("Doc ID", 0)
+        ListViewNewRequest.Columns.Add("Document Name", 250)
+        ListViewNewRequest.Columns.Add("Quantity", 80)
+        ListViewNewRequest.Columns.Add("Fee", 100)
+        ListViewNewRequest.Columns.Add("Subtotal", 100)
     End Sub
 
-    ' Step 3: Automatically generate Request No (Format: REQ-YYYY-XXXXX)
-    Private Sub GenerateRequestNo()
-        Try
-            Call connection()
-            sql = "SELECT RequestID FROM tblrequest ORDER BY RequestID DESC LIMIT 1"
-            cmd = New MySqlCommand(sql, cn)
-            dr = cmd.ExecuteReader()
-
-            Dim nextId As Integer = 1
-            While dr.Read()
-                nextId = Convert.ToInt32(dr("RequestID")) + 1
-            End While
-            dr.Close()
-
-            txtRequestNo.Text = "REQ-" & DateTimePickerDate.Value.Year.ToString() & "-" & nextId.ToString("D5")
-        Catch ex As Exception
-            MessageBox.Show("Error generating Request Number: " & ex.Message, "System Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            cn.Close()
-        End Try
-    End Sub
-
-    ' Step 2: Load Registrar Staff into cboProcessedBy
-    Private Sub LoadProcessedBy()
-        Try
-            cboProcessedBy.Items.Clear()
-            Call connection()
-            sql = "SELECT FullName FROM tblusers WHERE Role = 'Registrar Staff' AND Status = 'Active'"
-            cmd = New MySqlCommand(sql, cn)
-            dr = cmd.ExecuteReader()
-
-            While dr.Read()
-                cboProcessedBy.Items.Add(dr("FullName").ToString())
-            End While
-            dr.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error loading staff: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            cn.Close()
-        End Try
-    End Sub
-
-    ' Step 2: Load Student IDs and Full Names
-    Private Sub LoadStudents()
-        Try
-            cboStudentId.Items.Clear()
-            cboStudentName.Items.Clear()
-            Call connection()
-            sql = "SELECT StudentID, LastName, FirstName, MiddleName FROM tblstudents WHERE Status = 'Active'"
-            cmd = New MySqlCommand(sql, cn)
-            dr = cmd.ExecuteReader()
-
-            While dr.Read()
-                cboStudentId.Items.Add(dr("StudentID").ToString())
-                Dim fullName As String = dr("LastName").ToString() & ", " & dr("FirstName").ToString() & " " & dr("MiddleName").ToString()
-                cboStudentName.Items.Add(fullName)
-            End While
-            dr.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error loading students: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            cn.Close()
-        End Try
-    End Sub
-
-    ' Step 2: Load Active Documents
     Private Sub LoadDocuments()
         Try
-            cboDocumentName.Items.Clear()
-            Call connection()
-            sql = "SELECT DocumentName FROM tbldocuments WHERE Status = 'Active'"
+            connection()
+            sql = "SELECT DocumentID, DocumentName, Fee FROM tbldocuments WHERE Status = 'Active'"
             cmd = New MySqlCommand(sql, cn)
-            dr = cmd.ExecuteReader()
+            Dim da As New MySqlDataAdapter(cmd)
+            Dim dt As New DataTable()
+            da.Fill(dt)
 
-            While dr.Read()
-                cboDocumentName.Items.Add(dr("DocumentName").ToString())
-            End While
-            dr.Close()
+            cboDocumentName.DataSource = dt
+            cboDocumentName.DisplayMember = "DocumentName"
+            cboDocumentName.ValueMember = "DocumentID"
+            cboDocumentName.SelectedIndex = -1
         Catch ex As Exception
             MessageBox.Show("Error loading documents: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
@@ -117,288 +53,284 @@ Public Class frmNewDocumentRequest
         End Try
     End Sub
 
-    Private Sub cboStudentId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboStudentId.SelectedIndexChanged
-
-        If cboStudentId.SelectedIndex = -1 Then Exit Sub
-
+    Private Sub SetupPredictiveSearch()
         Try
-            Call connection()
-            sql = "SELECT LastName, FirstName, MiddleName, Course, YearLevel FROM tblstudents WHERE StudentID = @StudentID"
+            connection()
+            sql = "SELECT StudentID, LastName FROM tblstudents WHERE Status = 'Active'"
             cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@StudentID", cboStudentId.Text)
             dr = cmd.ExecuteReader()
 
+            Dim autoCompleteCollection As New AutoCompleteStringCollection()
             While dr.Read()
-                cboStudentName.Text = dr("LastName").ToString() & ", " & dr("FirstName").ToString() & " " & dr("MiddleName").ToString()
-                txtCourse.Text = dr("Course").ToString()
-                txtYear.Text = dr("YearLevel").ToString()
+                autoCompleteCollection.Add(dr("StudentID").ToString())
+                autoCompleteCollection.Add(dr("LastName").ToString())
             End While
             dr.Close()
+
+            txtSearchStudentIdOrStudentLastName.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            txtSearchStudentIdOrStudentLastName.AutoCompleteSource = AutoCompleteSource.CustomSource
+            txtSearchStudentIdOrStudentLastName.AutoCompleteCustomSource = autoCompleteCollection
         Catch ex As Exception
-            MessageBox.Show("Error retrieving student details: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error loading predictive search: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             cn.Close()
         End Try
-
     End Sub
 
-    Private Sub cboStudentName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboStudentName.SelectedIndexChanged
+    Private Sub GenerateNextRequestNo()
+        Try
+            connection()
+            sql = "SELECT RequestNo FROM tblrequest ORDER BY RequestID DESC LIMIT 1"
+            cmd = New MySqlCommand(sql, cn)
+            Dim lastRequestNo As Object = cmd.ExecuteScalar()
 
-        If cboStudentName.SelectedIndex = -1 Then Exit Sub
-        cboStudentId.SelectedIndex = cboStudentName.SelectedIndex
-
+            If lastRequestNo IsNot Nothing AndAlso lastRequestNo IsNot DBNull.Value Then
+                Dim lastNum As Integer = Convert.ToInt32(lastRequestNo.ToString().Split("-"c)(2))
+                txtRequestNo.Text = $"REQ-{DateTime.Now.Year}-{ (lastNum + 1).ToString("D5") }"
+            Else
+                txtRequestNo.Text = $"REQ-{DateTime.Now.Year}-00001"
+            End If
+        Catch ex As Exception
+            txtRequestNo.Text = $"REQ-{DateTime.Now.Year}-ERROR"
+        Finally
+            cn.Close()
+        End Try
     End Sub
 
-    Private Sub UpdateFeeCalculation()
-        If cboDocumentName.SelectedIndex = -1 Then
-            txtFee.Text = "0.00"
-            Exit Sub
+    Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        If String.IsNullOrWhiteSpace(txtSearchStudentIdOrStudentLastName.Text) Then
+            MessageBox.Show("Please enter a Student ID or Last Name.", "Input Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
         End If
 
         Try
-            Call connection()
-            sql = "SELECT Fee FROM tbldocuments WHERE DocumentName = @DocName"
+            connection()
+            sql = "SELECT StudentID, FirstName, MiddleName, LastName, Course, YearLevel FROM tblstudents WHERE (StudentID = @search OR LastName = @search) AND Status = 'Active' LIMIT 1"
             cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@DocName", cboDocumentName.Text)
+            cmd.Parameters.AddWithValue("@search", txtSearchStudentIdOrStudentLastName.Text.Trim())
             dr = cmd.ExecuteReader()
 
-            While dr.Read()
-                Dim originalFee As Decimal = Convert.ToDecimal(dr("Fee"))
-                Dim totalFee As Decimal = originalFee * NumericUpDownQuantity.Value
-                txtFee.Text = totalFee.ToString("0.00")
-            End While
-            dr.Close()
+            If dr.Read() Then
+                SelectedStudentID = dr("StudentID").ToString()
+                txtStudentName.Text = $"{dr("FirstName")} {dr("MiddleName")} {dr("LastName")}"
+                txtCourse.Text = dr("Course").ToString()
+                txtYear.Text = dr("YearLevel").ToString()
+            Else
+                MessageBox.Show("Student not found or inactive.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                SelectedStudentID = ""
+                txtStudentName.Text = "-"
+                txtCourse.Text = "-"
+                txtYear.Text = "-"
+            End If
         Catch ex As Exception
-            MessageBox.Show("Error calculating fee: " & ex.Message, "Calculation Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error searching student: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
+            If dr IsNot Nothing Then dr.Close()
             cn.Close()
         End Try
     End Sub
 
     Private Sub cboDocumentName_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboDocumentName.SelectedIndexChanged
-
-        Call UpdateFeeCalculation()
-
-    End Sub
-
-    Private Sub NumericUpDownQuantity_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDownQuantity.ValueChanged
-
-        Call UpdateFeeCalculation()
-
+        If cboDocumentName.SelectedIndex <> -1 AndAlso TypeOf cboDocumentName.SelectedItem Is DataRowView Then
+            Dim row As DataRowView = DirectCast(cboDocumentName.SelectedItem, DataRowView)
+            txtFee.Text = Convert.ToDecimal(row("Fee")).ToString("F2")
+        Else
+            txtFee.Text = "0.00"
+        End If
     End Sub
 
     Private Sub btnAddRequest_Click(sender As Object, e As EventArgs) Handles btnAddRequest.Click
 
-        ' Validations
-        If cboStudentId.SelectedIndex = -1 Then
-            MessageBox.Show("Please select a Student ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            cboStudentId.Focus()
-            Exit Sub
-        End If
-
         If cboDocumentName.SelectedIndex = -1 Then
-            MessageBox.Show("Please select a Document.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            cboDocumentName.Focus()
-            Exit Sub
+            MessageBox.Show("Please select a document.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
         End If
 
         If NumericUpDownQuantity.Value <= 0 Then
-            MessageBox.Show("Quantity must be greater than zero.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            NumericUpDownQuantity.Focus()
-            Exit Sub
+            MessageBox.Show("Quantity must be at least 1.", "Invalid Quantity", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            NumericUpDownQuantity.Value = 1
+            Return
         End If
 
-        ' Prevent duplicate items in ListView
-        For Each item As ListViewItem In ListViewNewRequest.Items
-            If item.SubItems(1).Text = cboDocumentName.Text Then
-                MessageBox.Show("This document is already added to the request list.", "Duplicate Item", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
+        Dim docId As Integer = Convert.ToInt32(cboDocumentName.SelectedValue)
+
+        For Each existingItem As ListViewItem In ListViewNewRequest.Items
+            If existingItem.Text = docId.ToString() Then
+                MessageBox.Show($"{cboDocumentName.Text} is already in the list. Please remove it first if you want to change the quantity.", "Duplicate Document", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
             End If
         Next
 
-        ' Fetch Document ID and Base Fee for entry
-        Dim docID As String = ""
-        Dim baseFee As Decimal = 0.00
+        Dim docName As String = cboDocumentName.Text
+        Dim qty As Integer = Convert.ToInt32(NumericUpDownQuantity.Value)
+        Dim fee As Decimal = Convert.ToDecimal(txtFee.Text)
+        Dim subtotal As Decimal = qty * fee
 
-        Try
-            Call connection()
-            sql = "SELECT DocumentID, Fee FROM tbldocuments WHERE DocumentName = @DocName"
-            cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@DocName", cboDocumentName.Text)
-            dr = cmd.ExecuteReader()
+        Dim item As New ListViewItem(docId.ToString())
+        item.SubItems.Add(docName)
+        item.SubItems.Add(qty.ToString())
+        item.SubItems.Add(fee.ToString("F2"))
+        item.SubItems.Add(subtotal.ToString("F2"))
+        ListViewNewRequest.Items.Add(item)
 
-            While dr.Read()
-                docID = dr("DocumentID").ToString()
-                baseFee = Convert.ToDecimal(dr("Fee"))
-            End While
-            dr.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error fetching document info: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            cn.Close()
-        End Try
+        UpdateTotalAmount()
 
-        ' Step 6: Create Item with hardcoded initial values (Unpaid, N/A, N/A, Pending)
-        Dim subtotal As Decimal = Convert.ToDecimal(txtFee.Text)
-        Dim newItem As New ListViewItem(docID)
-        newItem.SubItems.Add(cboDocumentName.Text)
-        newItem.SubItems.Add(NumericUpDownQuantity.Value.ToString())
-        newItem.SubItems.Add(baseFee.ToString("0.00"))
-        newItem.SubItems.Add(subtotal.ToString("0.00"))
-        newItem.SubItems.Add(cboStudentId.Text)
-        newItem.SubItems.Add(cboStudentName.Text)
-        newItem.SubItems.Add("Unpaid")
-        newItem.SubItems.Add("N/A")
-        newItem.SubItems.Add("N/A")
-        newItem.SubItems.Add("Pending")
-
-        ListViewNewRequest.Items.Add(newItem)
-
-        ' Lock Student selection once request items are added
-        cboStudentId.Enabled = False
-        cboStudentName.Enabled = False
-
-        ' Step 7: Update Total Amount & Enable Save Button
-        Call CalculateTotalAmount()
-        btnSaveRequest.Enabled = True
-
-        ' Reset item input controls
         cboDocumentName.SelectedIndex = -1
         NumericUpDownQuantity.Value = 1
-        txtFee.Text = "0.00"
-
     End Sub
 
-    ' Step 7: Calculate Total Amount from ListView
-    Private Sub CalculateTotalAmount()
-        Dim total As Decimal = 0.00
+    Private Sub UpdateTotalAmount()
+        CurrentTotalAmount = 0
         For Each item As ListViewItem In ListViewNewRequest.Items
-            total = total + Convert.ToDecimal(item.SubItems(4).Text)
+            CurrentTotalAmount += Convert.ToDecimal(item.SubItems(4).Text)
         Next
-        txtTotalAmount.Text = total.ToString("0.00")
+        txtTotalAmount.Text = CurrentTotalAmount.ToString("F2")
     End Sub
 
-    ' Helper to fetch UserID of selected Registrar Staff
-    Private Function GetProcessedByUserID() As Integer
-        Dim userID As Integer = 0
-        Try
-            Call connection()
-            sql = "SELECT UserID FROM tblusers WHERE FullName = @FullName AND Role = 'Registrar Staff'"
-            cmd = New MySqlCommand(sql, cn)
-            cmd.Parameters.AddWithValue("@FullName", cboProcessedBy.Text)
-            dr = cmd.ExecuteReader()
+    Private Function AuthenticateAction(actionName As String) As Boolean
+        Dim authForm As New Form() With {
+            .Width = 350,
+            .Height = 160,
+            .Text = $"Confirm Action: {actionName}",
+            .FormBorderStyle = FormBorderStyle.FixedDialog,
+            .StartPosition = FormStartPosition.CenterParent,
+            .MaximizeBox = False,
+            .MinimizeBox = False
+        }
 
-            While dr.Read()
-                userID = Convert.ToInt32(dr("UserID"))
-            End While
-            dr.Close()
-        Catch ex As Exception
-            MessageBox.Show("Error resolving staff ID: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            cn.Close()
-        End Try
-        Return userID
+        Dim lblPrompt As New Label() With {.Text = "Please enter your password to confirm this transaction:", .Left = 20, .Top = 20, .Width = 300}
+        Dim txtPwd As New TextBox() With {.Left = 20, .Top = 50, .Width = 290, .UseSystemPasswordChar = True}
+        Dim btnConfirm As New Button() With {.Text = "Confirm", .Left = 130, .Top = 80, .Width = 80, .DialogResult = DialogResult.OK}
+
+        authForm.Controls.AddRange(New Control() {lblPrompt, txtPwd, btnConfirm})
+        authForm.AcceptButton = btnConfirm
+
+        If authForm.ShowDialog() = DialogResult.OK Then
+            Dim isValid As Boolean = False
+            Try
+                connection()
+                sql = "SELECT UserID FROM tblusers WHERE UserID = @uid AND Password = @pwd AND Status = 'Active'"
+                cmd = New MySqlCommand(sql, cn)
+                cmd.Parameters.AddWithValue("@uid", LoggedInUserID)
+                cmd.Parameters.AddWithValue("@pwd", txtPwd.Text)
+                dr = cmd.ExecuteReader()
+                isValid = dr.Read()
+            Catch ex As Exception
+                MessageBox.Show("Authentication Error: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                If dr IsNot Nothing Then dr.Close()
+                cn.Close()
+            End Try
+
+            If Not isValid Then MessageBox.Show("Invalid password. Action aborted.", "Security", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return isValid
+        End If
+
+        Return False
     End Function
 
-    ' Step 8: Save Request to Database with Validations & Transaction Rollback
-    Private Sub btnSaveRequest_Click(sender As Object, e As EventArgs) Handles btnSaveRequest.Click
-
-        ' Validation checks
-        If cboProcessedBy.SelectedIndex = -1 Then
-            MessageBox.Show("Please select the Registrar Staff processing this request.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            cboProcessedBy.Focus()
-            Exit Sub
-        End If
-
-        If ListViewNewRequest.Items.Count = 0 Then
-            MessageBox.Show("No request items added to the list.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        End If
-
-        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to save this document request?", "Confirm Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If confirm = DialogResult.No Then Exit Sub
-
-        Dim staffID As Integer = GetProcessedByUserID()
-        If staffID = 0 Then
-            MessageBox.Show("Invalid staff processing selection.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
-
-        Call connection()
-        Dim transaction As MySqlTransaction = cn.BeginTransaction()
-
+    Private Sub WriteAuditLog(action As String, requestNo As String)
         Try
-            ' Insert into tblrequest
-            sql = "INSERT INTO tblrequest (RequestNo, StudentID, RequestDate, TotalAmount, PaymentStatus, ORNo, ORDate, Status, CreatedBy) " &
-                  "VALUES (@RequestNo, @StudentID, @RequestDate, @TotalAmount, 'Unpaid', NULL, NULL, 'Pending', @CreatedBy)"
+            Dim logEntry As String = $"[{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}] ACTION: {action} | REQUEST NO: {requestNo} | USER: {LoggedInFullName} (ID: {LoggedInUserID}){Environment.NewLine}"
+            File.AppendAllText("audit_log.txt", logEntry)
+        Catch ex As Exception
+            MessageBox.Show("Failed to write to audit log: " & ex.Message, "Audit Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
 
-            cmd = New MySqlCommand(sql, cn, transaction)
-            cmd.Parameters.AddWithValue("@RequestNo", txtRequestNo.Text)
-            cmd.Parameters.AddWithValue("@StudentID", cboStudentId.Text)
-            cmd.Parameters.AddWithValue("@RequestDate", DateTimePickerDate.Value.ToString("yyyy-MM-dd"))
-            cmd.Parameters.AddWithValue("@TotalAmount", Convert.ToDecimal(txtTotalAmount.Text))
-            cmd.Parameters.AddWithValue("@CreatedBy", staffID)
+    Private Sub btnSaveRequest_Click(sender As Object, e As EventArgs) Handles btnSaveRequest.Click
+        ' 1. Validate Student Selection
+        If String.IsNullOrEmpty(SelectedStudentID) Then
+            MessageBox.Show("Please search and select a valid student first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' 2. Validate Document List
+        If ListViewNewRequest.Items.Count = 0 Then
+            MessageBox.Show("Please add at least one document to the request.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' 3. Validate Purpose 
+        If String.IsNullOrWhiteSpace(txtPurpose.Text) Then
+            MessageBox.Show("Please enter the purpose of the request.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtPurpose.Focus()
+            Return
+        End If
+
+        ' 4. Authenticate Action
+        If Not AuthenticateAction("Save Request") Then Return
+
+        Dim trans As MySqlTransaction = Nothing
+        Try
+            connection()
+            trans = cn.BeginTransaction()
+
+            ' Insert Parent Record (tblrequest)
+            sql = "INSERT INTO tblrequest (RequestNo, StudentID, RequestDate, TotalAmount, PaymentStatus, Status, CreatedBy) " &
+                  "VALUES (@reqNo, @studId, @reqDate, @total, 'Unpaid', 'Pending', @createdBy)"
+            cmd = New MySqlCommand(sql, cn, trans)
+            cmd.Parameters.AddWithValue("@reqNo", txtRequestNo.Text)
+            cmd.Parameters.AddWithValue("@studId", SelectedStudentID)
+            cmd.Parameters.AddWithValue("@reqDate", DateTimePickerDate.Value.ToString("yyyy-MM-dd"))
+            cmd.Parameters.AddWithValue("@total", CurrentTotalAmount)
+            cmd.Parameters.AddWithValue("@createdBy", LoggedInUserID)
             cmd.ExecuteNonQuery()
 
-            ' Fetch auto-generated RequestID
-            sql = "SELECT LAST_INSERT_ID()"
-            cmd = New MySqlCommand(sql, cn, transaction)
-            Dim insertedRequestID As Integer = Convert.ToInt32(cmd.ExecuteScalar())
+            Dim newRequestID As Integer = Convert.ToInt32(cmd.LastInsertedId)
 
-            ' Insert details into tblrequestdetails
+            ' Insert Child Records (tblrequestdetails)
             For Each item As ListViewItem In ListViewNewRequest.Items
                 sql = "INSERT INTO tblrequestdetails (RequestID, DocumentID, Quantity, Amount, Subtotal) " &
-                      "VALUES (@RequestID, @DocumentID, @Quantity, @Amount, @Subtotal)"
-
-                cmd = New MySqlCommand(sql, cn, transaction)
-                cmd.Parameters.AddWithValue("@RequestID", insertedRequestID)
-                cmd.Parameters.AddWithValue("@DocumentID", Convert.ToInt32(item.Text))
-                cmd.Parameters.AddWithValue("@Quantity", Convert.ToInt32(item.SubItems(2).Text))
-                cmd.Parameters.AddWithValue("@Amount", Convert.ToDecimal(item.SubItems(3).Text))
-                cmd.Parameters.AddWithValue("@Subtotal", Convert.ToDecimal(item.SubItems(4).Text))
+                      "VALUES (@reqID, @docID, @qty, @amt, @sub)"
+                cmd = New MySqlCommand(sql, cn, trans)
+                cmd.Parameters.AddWithValue("@reqID", newRequestID)
+                cmd.Parameters.AddWithValue("@docID", Convert.ToInt32(item.SubItems(0).Text))
+                cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(item.SubItems(2).Text))
+                cmd.Parameters.AddWithValue("@amt", Convert.ToDecimal(item.SubItems(3).Text))
+                cmd.Parameters.AddWithValue("@sub", Convert.ToDecimal(item.SubItems(4).Text))
                 cmd.ExecuteNonQuery()
             Next
 
-            ' Commit transaction on success
-            transaction.Commit()
-            MessageBox.Show("Document Request " & txtRequestNo.Text & " saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            trans.Commit()
+            WriteAuditLog("SAVE_REQUEST", txtRequestNo.Text)
 
-            ' Reset Form State
-            Call btnCancelRequest_Click(sender, e)
+            MessageBox.Show("Request saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            ' Reset Form for next request
+            ListViewNewRequest.Items.Clear()
+            txtTotalAmount.Text = "-"
+            SelectedStudentID = ""
+            txtStudentName.Text = "-"
+            txtCourse.Text = "-"
+            txtYear.Text = "-"
+            txtSearchStudentIdOrStudentLastName.Clear()
+            txtPurpose.Clear()
+            GenerateNextRequestNo()
 
         Catch ex As Exception
-            ' Step 8: Rollback transaction if error occurs
-            transaction.Rollback()
-            MessageBox.Show("Failed to save request. All changes have been rolled back." & vbCrLf & "Error: " & ex.Message, "Transaction Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            If trans IsNot Nothing Then trans.Rollback()
+            MessageBox.Show("Transaction Failed. Changes rolled back. Error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             cn.Close()
         End Try
-
     End Sub
 
-    ' Step 9: Reset all user inputs and clear data
     Private Sub btnCancelRequest_Click(sender As Object, e As EventArgs) Handles btnCancelRequest.Click
+        If ListViewNewRequest.SelectedItems.Count = 0 Then
+            MessageBox.Show("Please select an item from the list to remove.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
 
-        Call ResetInputFields()
-        Call GenerateRequestNo()
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to remove the selected document(s) from this request?", "Remove Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-    End Sub
+        If result = DialogResult.Yes Then
+            For Each item As ListViewItem In ListViewNewRequest.SelectedItems
+                ListViewNewRequest.Items.Remove(item)
+            Next
 
-    Private Sub ResetInputFields()
-        cboProcessedBy.SelectedIndex = -1
-        cboStudentId.Enabled = True
-        cboStudentName.Enabled = True
-        cboStudentId.SelectedIndex = -1
-        cboStudentName.SelectedIndex = -1
-        txtCourse.Text = ""
-        txtYear.Text = ""
-        cboDocumentName.SelectedIndex = -1
-        NumericUpDownQuantity.Value = 1
-        txtFee.Text = "0.00"
-        txtTotalAmount.Text = "0.00"
-        ListViewNewRequest.Items.Clear()
-        btnSaveRequest.Enabled = False
-        DateTimePickerDate.Value = DateTime.Now
+            UpdateTotalAmount()
+        End If
     End Sub
 
 End Class
