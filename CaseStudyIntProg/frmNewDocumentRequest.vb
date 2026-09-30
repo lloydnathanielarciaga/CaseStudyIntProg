@@ -1,5 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports System.IO
+Imports System.Drawing.Printing
 
 Public Class frmNewDocumentRequest
     Public LoggedInUserID As Integer
@@ -95,6 +96,69 @@ Public Class frmNewDocumentRequest
         Finally
             cn.Close()
         End Try
+    End Sub
+
+    Private Sub GenerateReceipt()
+        Dim pd As New PrintDocument()
+        ' Bind the PrintPage event to our custom drawing method
+        AddHandler pd.PrintPage, AddressOf PrintReceiptPage
+
+        Dim preview As New PrintPreviewDialog()
+        preview.Document = pd
+        preview.Width = 600
+        preview.Height = 800
+        preview.Text = "Receipt Preview"
+        preview.ShowDialog()
+    End Sub
+
+    Private Sub PrintReceiptPage(sender As Object, e As PrintPageEventArgs)
+        Dim g As Graphics = e.Graphics
+        Dim fontTitle As New Font("Courier New", 16, FontStyle.Bold)
+        Dim fontHeader As New Font("Courier New", 12, FontStyle.Bold)
+        Dim fontRegular As New Font("Courier New", 10)
+
+        Dim startX As Integer = 50
+        Dim startY As Integer = 50
+        Dim offset As Integer = 25
+
+        ' Header
+        g.DrawString("OFFICIAL RECEIPT", fontTitle, Brushes.Black, startX + 100, startY)
+        g.DrawString("Request No : " & txtRequestNo.Text, fontRegular, Brushes.Black, startX, startY + offset * 2)
+        g.DrawString("Student ID : " & SelectedStudentID, fontRegular, Brushes.Black, startX, startY + offset * 3)
+        g.DrawString("Name       : " & txtStudentName.Text, fontRegular, Brushes.Black, startX, startY + offset * 4)
+        g.DrawString("Date       : " & DateTimePickerDate.Value.ToString("yyyy-MM-dd"), fontRegular, Brushes.Black, startX, startY + offset * 5)
+        g.DrawString("Served By  : " & LoggedInFullName, fontRegular, Brushes.Black, startX, startY + offset * 6)
+
+        ' Table Headers
+        Dim yPos As Integer = startY + offset * 8
+        g.DrawString("-------------------------------------------------------", fontRegular, Brushes.Black, startX, yPos)
+        yPos += offset
+        g.DrawString("DOCUMENT", fontHeader, Brushes.Black, startX, yPos)
+        g.DrawString("QTY", fontHeader, Brushes.Black, startX + 250, yPos)
+        g.DrawString("SUBTOTAL", fontHeader, Brushes.Black, startX + 350, yPos)
+        yPos += offset
+        g.DrawString("-------------------------------------------------------", fontRegular, Brushes.Black, startX, yPos)
+        yPos += offset
+
+        ' Items from ListView
+        For Each item As ListViewItem In ListViewNewRequest.Items
+            Dim docName As String = item.SubItems(1).Text
+            ' Truncate long document names to fit the receipt
+            If docName.Length > 25 Then docName = docName.Substring(0, 25) & "..."
+
+            g.DrawString(docName, fontRegular, Brushes.Black, startX, yPos)
+            g.DrawString(item.SubItems(2).Text, fontRegular, Brushes.Black, startX + 250, yPos)
+            g.DrawString(item.SubItems(4).Text, fontRegular, Brushes.Black, startX + 350, yPos)
+            yPos += offset
+        Next
+
+        ' Footer & Totals
+        g.DrawString("-------------------------------------------------------", fontRegular, Brushes.Black, startX, yPos)
+        yPos += offset
+        g.DrawString("TOTAL AMOUNT: P " & txtTotalAmount.Text, fontHeader, Brushes.Black, startX + 180, yPos)
+
+        yPos += offset * 3
+        g.DrawString("Thank you for your request!", fontRegular, Brushes.Black, startX + 100, yPos)
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
@@ -296,6 +360,8 @@ Public Class frmNewDocumentRequest
             WriteAuditLog("SAVE_REQUEST", txtRequestNo.Text)
 
             MessageBox.Show("Request saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            GenerateReceipt()
 
             ' Reset Form for next request
             ListViewNewRequest.Items.Clear()
