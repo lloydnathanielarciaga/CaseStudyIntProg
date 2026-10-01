@@ -25,14 +25,14 @@ Partial Class frmAdmin
         Me.SplitContainerMain = New System.Windows.Forms.SplitContainer()
         Me.cboSemester = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.TableLayoutPanelButtons = New System.Windows.Forms.TableLayoutPanel()
+        Me.btnDashboard = New System.Windows.Forms.Button()
+        Me.btnUserManagement = New System.Windows.Forms.Button()
         Me.btnStudentManagement = New System.Windows.Forms.Button()
         Me.btnDocumentManagement = New System.Windows.Forms.Button()
         Me.btnDocumentRequest = New System.Windows.Forms.Button()
         Me.btnDocumentRequestList = New System.Windows.Forms.Button()
         Me.btnPaymentInformation = New System.Windows.Forms.Button()
         Me.btnSystemReport = New System.Windows.Forms.Button()
-        Me.btnUserManagement = New System.Windows.Forms.Button()
-        Me.btnDashboard = New System.Windows.Forms.Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -50,10 +50,6 @@ Partial Class frmAdmin
         Me.SplitContainerMain.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SplitContainerMain.Panel1.Controls.Add(Me.cboSemester)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.TableLayoutPanelButtons)
-        '
-        'SplitContainerMain.Panel2
-        '
-        Me.SplitContainerMain.Panel2.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
         Me.SplitContainerMain.Size = New System.Drawing.Size(1707, 813)
         Me.SplitContainerMain.SplitterDistance = 256
         Me.SplitContainerMain.TabIndex = 1
@@ -99,6 +95,30 @@ Partial Class frmAdmin
         Me.TableLayoutPanelButtons.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.50328!))
         Me.TableLayoutPanelButtons.Size = New System.Drawing.Size(256, 313)
         Me.TableLayoutPanelButtons.TabIndex = 0
+        '
+        'btnDashboard
+        '
+        Me.btnDashboard.BackColor = System.Drawing.Color.Black
+        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnDashboard.ForeColor = System.Drawing.Color.White
+        Me.btnDashboard.Location = New System.Drawing.Point(3, 276)
+        Me.btnDashboard.Name = "btnDashboard"
+        Me.btnDashboard.Size = New System.Drawing.Size(250, 34)
+        Me.btnDashboard.TabIndex = 8
+        Me.btnDashboard.Text = "Dashboard"
+        Me.btnDashboard.UseVisualStyleBackColor = False
+        '
+        'btnUserManagement
+        '
+        Me.btnUserManagement.BackColor = System.Drawing.Color.Black
+        Me.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btnUserManagement.ForeColor = System.Drawing.Color.White
+        Me.btnUserManagement.Location = New System.Drawing.Point(3, 237)
+        Me.btnUserManagement.Name = "btnUserManagement"
+        Me.btnUserManagement.Size = New System.Drawing.Size(250, 33)
+        Me.btnUserManagement.TabIndex = 7
+        Me.btnUserManagement.Text = "User Management"
+        Me.btnUserManagement.UseVisualStyleBackColor = False
         '
         'btnStudentManagement
         '
@@ -171,30 +191,6 @@ Partial Class frmAdmin
         Me.btnSystemReport.TabIndex = 4
         Me.btnSystemReport.Text = "System Report"
         Me.btnSystemReport.UseVisualStyleBackColor = False
-        '
-        'btnUserManagement
-        '
-        Me.btnUserManagement.BackColor = System.Drawing.Color.Black
-        Me.btnUserManagement.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnUserManagement.ForeColor = System.Drawing.Color.White
-        Me.btnUserManagement.Location = New System.Drawing.Point(3, 237)
-        Me.btnUserManagement.Name = "btnUserManagement"
-        Me.btnUserManagement.Size = New System.Drawing.Size(250, 33)
-        Me.btnUserManagement.TabIndex = 7
-        Me.btnUserManagement.Text = "User Management"
-        Me.btnUserManagement.UseVisualStyleBackColor = False
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.BackColor = System.Drawing.Color.Black
-        Me.btnDashboard.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDashboard.ForeColor = System.Drawing.Color.White
-        Me.btnDashboard.Location = New System.Drawing.Point(3, 276)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(250, 34)
-        Me.btnDashboard.TabIndex = 8
-        Me.btnDashboard.Text = "Dashboard"
-        Me.btnDashboard.UseVisualStyleBackColor = False
         '
         'frmAdmin
         '

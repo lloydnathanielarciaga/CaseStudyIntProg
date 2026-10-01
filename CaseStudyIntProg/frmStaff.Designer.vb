@@ -48,7 +48,6 @@ Partial Class frmStaff
         '
         'SplitContainerMain.Panel2
         '
-        Me.SplitContainerMain.Panel2.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrar_bg
         Me.SplitContainerMain.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.SplitContainerMain.Size = New System.Drawing.Size(1443, 862)
         Me.SplitContainerMain.SplitterDistance = 216
