@@ -161,11 +161,11 @@ Partial Class frmLogin
         '
         Me.lblLogin.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLogin.AutoSize = True
-        Me.lblLogin.Font = New System.Drawing.Font("Nirmala Text", 19.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogin.Font = New System.Drawing.Font("Nirmala Text", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLogin.ForeColor = System.Drawing.Color.Navy
-        Me.lblLogin.Location = New System.Drawing.Point(230, 139)
+        Me.lblLogin.Location = New System.Drawing.Point(213, 143)
         Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(99, 37)
+        Me.lblLogin.Size = New System.Drawing.Size(135, 50)
         Me.lblLogin.TabIndex = 9
         Me.lblLogin.Text = "LOGIN"
         Me.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
