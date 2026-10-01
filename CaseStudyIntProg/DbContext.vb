@@ -18,5 +18,6 @@ Module DbContext
 
     Public CurrentUserID As Integer
     Public CurrentFullName As String
+    Public CurrentSemester As Integer = 1
 
 End Module
