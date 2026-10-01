@@ -48,7 +48,7 @@
 
     End Sub
 
-    Private Sub btnPaymentInformation_Click(sender As Object, e As EventArgs) Handles btnPaymentInformation.Click
+    Private Sub btnPaymentInformation_Click(sender As Object, e As EventArgs)
 
         LoadFormInPanel(New frmRecordPaymentInformation())
 
@@ -60,9 +60,13 @@
 
     End Sub
 
-    Private Sub btnStudentManagement_Click(sender As Object, e As EventArgs) Handles btnStudentManagement.Click
+    Private Sub btnStudentManagement_Click(sender As Object, e As EventArgs) 
         LoadFormInPanel(New frmStudentManagement())
     End Sub
 
+    Private Sub btnRequestManagement_Click(sender As Object, e As EventArgs) Handles btnRequestManagement.Click
 
+        LoadFormInPanel(New frmRequestManagement())
+
+    End Sub
 End Class
