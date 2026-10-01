@@ -38,9 +38,21 @@
 
     End Sub
 
+    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequest.Click
+
+        LoadFormInPanel(New frmNewDocumentRequest())
+
+    End Sub
+
     Private Sub btnDocumentRequestList_Click(sender As Object, e As EventArgs) Handles btnDocumentRequestList.Click
 
         LoadFormInPanel(New frmDocumentRequestList())
+
+    End Sub
+
+    Private Sub btnPaymentInformation_Click(sender As Object, e As EventArgs) Handles btnPaymentInformation.Click
+
+        LoadFormInPanel(New frmRecordPaymentInformation())
 
     End Sub
 
@@ -58,9 +70,5 @@
 
     Private Sub btnStudentManagement_Click(sender As Object, e As EventArgs) Handles btnStudentManagement.Click
         LoadFormInPanel(New frmStudentManagement())
-    End Sub
-
-    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
-        LoadFormInPanel(New frmDashboard())
     End Sub
 End Class
