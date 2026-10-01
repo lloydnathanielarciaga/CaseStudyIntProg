@@ -161,6 +161,12 @@
     <Compile Include="frmPasswordPrompt.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPaymentPrompt.Designer.vb">
+      <DependentUpon>frmPaymentPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRecordPaymentInformation.Designer.vb">
       <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>
     </Compile>
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPasswordPrompt.resx">
       <DependentUpon>frmPasswordPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentPrompt.resx">
+      <DependentUpon>frmPaymentPrompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecordPaymentInformation.resx">
       <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>

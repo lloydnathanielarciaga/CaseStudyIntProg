@@ -4,13 +4,11 @@ Imports System.Windows.Forms
 Public Class frmDocumentRequestList
 
     Private Sub frmDocumentRequestList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Initialize ListView Properties based on standard presentation guidelines
         ListViewRequestList.View = View.Details
         ListViewRequestList.FullRowSelect = True
         ListViewRequestList.GridLines = True
         ListViewRequestList.MultiSelect = False
 
-        ' Setup ListView Columns
         ListViewRequestList.Columns.Clear()
         ListViewRequestList.Columns.Add("Request No.", 120)
         ListViewRequestList.Columns.Add("Student ID", 100)
@@ -20,17 +18,15 @@ Public Class frmDocumentRequestList
         ListViewRequestList.Columns.Add("Total Amount", 100)
         ListViewRequestList.Columns.Add("Status", 100)
 
-        ' Initialize ComboBoxes
         cboStatusFilter.Items.AddRange(New String() {"All", "Pending", "Processing", "Ready for Release", "Released", "Cancelled"})
-        cboStatusFilter.SelectedIndex = 0
+
+        cboStatusFilter.SelectedIndex = 1
 
         cboOrder.Items.AddRange(New String() {"Ascending", "Descending"})
         cboOrder.SelectedIndex = 0
 
-        ' Setup Autocomplete for predictive searching
         LoadAutoCompleteData()
 
-        ' Load initial data
         LoadData()
     End Sub
 
@@ -48,10 +44,8 @@ Public Class frmDocumentRequestList
                 Dim lastName As String = dr("LastName").ToString()
                 Dim firstName As String = dr("FirstName").ToString()
 
-                ' Keep StudentID so users can still search/autocomplete by ID numbers
                 autoCompleteCollection.Add(studentId)
 
-                ' Add ONLY the combined full name formats
                 autoCompleteCollection.Add($"{lastName}, {firstName}")
                 autoCompleteCollection.Add($"{firstName} {lastName}")
             End While
@@ -73,7 +67,6 @@ Public Class frmDocumentRequestList
             Call connection()
             ListViewRequestList.Items.Clear()
 
-            ' Expanded WHERE clause checking StudentID, LastName, FirstName, and concatenated Full Names
             sql = "SELECT r.RequestNo, r.StudentID, s.LastName, s.FirstName, r.RequestDate, r.TotalAmount, r.Status " &
       "FROM tblrequest r INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
       "WHERE (r.StudentID LIKE @search " &
@@ -93,7 +86,6 @@ Public Class frmDocumentRequestList
                 sql &= " ORDER BY r.RequestDate DESC"
             End If
 
-            ' Parameterized queries prevent SQL injection and errors[cite: 2]
             cmd = New MySqlCommand(sql, cn)
             cmd.Parameters.AddWithValue("@search", "%" & txtSearchStudentIdOrName.Text.Trim() & "%")
             cmd.Parameters.AddWithValue("@dateFrom", DateTimePickerFrom.Value.ToString("yyyy-MM-dd"))
@@ -110,7 +102,6 @@ Public Class frmDocumentRequestList
                 item.SubItems.Add(dr("StudentID").ToString())
                 item.SubItems.Add(dr("LastName").ToString())
                 item.SubItems.Add(dr("FirstName").ToString())
-                ' Format date to remove time portion if necessary
                 item.SubItems.Add(Convert.ToDateTime(dr("RequestDate")).ToString("yyyy-MM-dd"))
                 item.SubItems.Add("₱" & Convert.ToDecimal(dr("TotalAmount")).ToString("N2"))
                 item.SubItems.Add(dr("Status").ToString())
@@ -126,7 +117,6 @@ Public Class frmDocumentRequestList
     End Sub
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
-        ' Validation to ensure DateFrom is not greater than DateTo
         If DateTimePickerFrom.Value.Date > DateTimePickerTo.Value.Date Then
             MessageBox.Show("The 'Date From' cannot be later than the 'Date To'.", "Invalid Date Range", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -136,29 +126,43 @@ Public Class frmDocumentRequestList
     End Sub
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles btnReset.Click
-        ' Confirmation Prompt
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to clear all search filters?", "Confirm Reset", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.Yes Then
             txtSearchStudentIdOrName.Clear()
             cboStatusFilter.SelectedIndex = 0
             cboOrder.SelectedIndex = 0
-            DateTimePickerFrom.Value = DateTime.Now.AddMonths(-1) ' Default to 1 month ago
+            DateTimePickerFrom.Value = DateTime.Now.AddMonths(-1)
             DateTimePickerTo.Value = DateTime.Now
             LoadData()
         End If
     End Sub
 
     Private Sub ListViewRequestList_DoubleClick(sender As Object, e As EventArgs) Handles ListViewRequestList.DoubleClick
-        ' Progressive Disclosure: Double-clicking reveals a confirmation to view deeper details
         If ListViewRequestList.SelectedItems.Count > 0 Then
-            Dim reqNo As String = ListViewRequestList.SelectedItems(0).Text
-            Dim result As DialogResult = MessageBox.Show($"Would you like to open the full request details for {reqNo}?", "Explicit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information)
+            Dim selectedItem As ListViewItem = ListViewRequestList.SelectedItems(0)
 
-            If result = DialogResult.Yes Then
-                ' Logic to open a detailed view form would go here
-                MessageBox.Show("Detailed view module opening...", "Action", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            Dim reqNo As String = selectedItem.SubItems(0).Text
+            Dim studentId As String = selectedItem.SubItems(1).Text
+            Dim studentName As String = $"{selectedItem.SubItems(2).Text}, {selectedItem.SubItems(3).Text}"
+            Dim reqDate As DateTime = Convert.ToDateTime(selectedItem.SubItems(4).Text)
+            Dim currentStatus As String = selectedItem.SubItems(6).Text
+
+            If Not currentStatus.Equals("Pending", StringComparison.OrdinalIgnoreCase) Then
+                MessageBox.Show($"This request cannot accept payments because its current status is '{currentStatus}'. Only 'Pending' requests can be processed.", "Payment Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
             End If
+
+            Using paymentPrompt As New frmPaymentPrompt()
+                paymentPrompt.SelectedRequestNo = reqNo
+                paymentPrompt.SelectedStudentID = studentId
+                paymentPrompt.SelectedStudentName = studentName
+                paymentPrompt.SelectedRequestDate = reqDate
+
+                If paymentPrompt.ShowDialog() = DialogResult.OK Then
+                    LoadData()
+                End If
+            End Using
         End If
     End Sub
 End Class
