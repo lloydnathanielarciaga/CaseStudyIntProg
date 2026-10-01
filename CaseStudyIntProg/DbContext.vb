@@ -6,12 +6,10 @@ Module DbContext
     Public dr As MySqlDataReader
     Public sql As String
 
-    Public Const ConnString As String = "server=localhost;user id=root;password=;database=registrar_db"
-
     Public Sub connection()
 
         cn.Close()
-        cn.ConnectionString = ConnString
+        cn.ConnectionString = "server=localhost;user id=root;password=;database=registrar_db"
         cn.Open()
 
         'MsgBox("Database Connected Successfully!", MsgBoxStyle.Information, "Database Connection")
