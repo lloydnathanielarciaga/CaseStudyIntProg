@@ -170,15 +170,15 @@ Public Class frmStudentManagement
             .GridLines = True
             .Columns.Clear()
             .Columns.Add("Student ID", 115)
-            .Columns.Add("LRN", 135)
-            .Columns.Add("Last Name", 115)
-            .Columns.Add("First Name", 115)
-            .Columns.Add("Middle Name", 135)
-            .Columns.Add("Course", 215)
+            .Columns.Add("LRN", 145)
+            .Columns.Add("Last Name", 130)
+            .Columns.Add("First Name", 130)
+            .Columns.Add("Middle Name", 150)
+            .Columns.Add("Course", 275)
             .Columns.Add("Year Level", 110)
-            .Columns.Add("Section", 85)
-            .Columns.Add("Contact No", 125)
-            .Columns.Add("Type", 90)
+            .Columns.Add("Section", 145)
+            .Columns.Add("Contact No", 165)
+            .Columns.Add("Type", 100)
             .Columns.Add("Status", 85)
         End With
     End Sub
@@ -306,7 +306,7 @@ Public Class frmStudentManagement
         Return True
     End Function
 
-    Private Sub lsvStudents_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvStudents.SelectedIndexChanged
+    Private Sub lsvStudents_SelectedIndexChanged(sender As Object, e As EventArgs)
         If lsvStudents.SelectedItems.Count > 0 Then
             Dim selectedRow As ListViewItem = lsvStudents.SelectedItems(0)
             _loading = True      ' don't rebuild the section while fields are being filled
