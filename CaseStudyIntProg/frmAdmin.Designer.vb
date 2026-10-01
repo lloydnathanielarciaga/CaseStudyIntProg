@@ -30,6 +30,7 @@ Partial Class frmAdmin
         Me.btnDocumentRequestList = New System.Windows.Forms.Button()
         Me.btnSystemReport = New System.Windows.Forms.Button()
         Me.btnUserManagement = New System.Windows.Forms.Button()
+        Me.cboSemester = New Guna.UI2.WinForms.Guna2ComboBox()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -45,6 +46,7 @@ Partial Class frmAdmin
         'SplitContainerMain.Panel1
         '
         Me.SplitContainerMain.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.SplitContainerMain.Panel1.Controls.Add(Me.cboSemester)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.TableLayoutPanelButtons)
         '
         'SplitContainerMain.Panel2
@@ -151,6 +153,21 @@ Partial Class frmAdmin
         Me.btnUserManagement.Text = "User Management"
         Me.btnUserManagement.UseVisualStyleBackColor = False
         '
+        'cboSemester
+        '
+        Me.cboSemester.BackColor = System.Drawing.Color.Transparent
+        Me.cboSemester.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSemester.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSemester.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboSemester.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboSemester.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboSemester.ItemHeight = 30
+        Me.cboSemester.Location = New System.Drawing.Point(12, 692)
+        Me.cboSemester.Name = "cboSemester"
+        Me.cboSemester.Size = New System.Drawing.Size(228, 36)
+        Me.cboSemester.TabIndex = 1
+        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -175,5 +192,5 @@ Partial Class frmAdmin
     Friend WithEvents btnSystemReport As Button
     Friend WithEvents btnUserManagement As Button
     Friend WithEvents btnStudentManagement As Button
-    Friend WithEvents btnDashboard As Button
+    Friend WithEvents cboSemester As Guna.UI2.WinForms.Guna2ComboBox
 End Class

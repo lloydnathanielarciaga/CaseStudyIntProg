@@ -40,11 +40,33 @@ Partial Class frmSystemReport
         Me.lblTotalRevenue = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
+        'TableLayoutPanel1
+        '
+        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel1.ColumnCount = 3
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.lblSelectReport, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.lblRecordPaymentInformation, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.cboSelectReport, 1, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 2, 2)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
+        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.TableLayoutPanel1.RowCount = 3
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(419, 173)
+        Me.TableLayoutPanel1.TabIndex = 0
+        '
         'lblSelectReport
         '
         Me.lblSelectReport.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblSelectReport.AutoSize = True
-        Me.lblSelectReport.Location = New System.Drawing.Point(19, 95)
+        Me.lblSelectReport.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblSelectReport.Location = New System.Drawing.Point(3, 79)
         Me.lblSelectReport.Name = "lblSelectReport"
         Me.lblSelectReport.Size = New System.Drawing.Size(75, 13)
         Me.lblSelectReport.TabIndex = 2
@@ -55,7 +77,8 @@ Partial Class frmSystemReport
         Me.lblRecordPaymentInformation.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblRecordPaymentInformation.AutoSize = True
         Me.lblRecordPaymentInformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRecordPaymentInformation.Location = New System.Drawing.Point(19, 26)
+        Me.lblRecordPaymentInformation.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblRecordPaymentInformation.Location = New System.Drawing.Point(3, 22)
         Me.lblRecordPaymentInformation.Name = "lblRecordPaymentInformation"
         Me.lblRecordPaymentInformation.Size = New System.Drawing.Size(89, 13)
         Me.lblRecordPaymentInformation.TabIndex = 1
@@ -85,7 +108,8 @@ Partial Class frmSystemReport
         '
         Me.lblDateTo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDateTo.AutoSize = True
-        Me.lblDateTo.Location = New System.Drawing.Point(136, 151)
+        Me.lblDateTo.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblDateTo.Location = New System.Drawing.Point(117, 13)
         Me.lblDateTo.Name = "lblDateTo"
         Me.lblDateTo.Size = New System.Drawing.Size(49, 13)
         Me.lblDateTo.TabIndex = 4
@@ -95,7 +119,8 @@ Partial Class frmSystemReport
         '
         Me.lblDateFrom.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblDateFrom.AutoSize = True
-        Me.lblDateFrom.Location = New System.Drawing.Point(19, 151)
+        Me.lblDateFrom.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.lblDateFrom.Location = New System.Drawing.Point(3, 13)
         Me.lblDateFrom.Name = "lblDateFrom"
         Me.lblDateFrom.Size = New System.Drawing.Size(59, 13)
         Me.lblDateFrom.TabIndex = 3
@@ -114,27 +139,32 @@ Partial Class frmSystemReport
         'btnClear
         '
         Me.btnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnClear.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(266, 167)
+        Me.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnClear.Location = New System.Drawing.Point(3, 3)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(107, 20)
         Me.btnClear.TabIndex = 6
         Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = True
+        Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnGenerateResult
         '
         Me.btnGenerateResult.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btnGenerateResult.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnGenerateResult.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerateResult.Location = New System.Drawing.Point(379, 166)
+        Me.btnGenerateResult.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnGenerateResult.Location = New System.Drawing.Point(3, 29)
         Me.btnGenerateResult.Name = "btnGenerateResult"
         Me.btnGenerateResult.Size = New System.Drawing.Size(107, 21)
         Me.btnGenerateResult.TabIndex = 5
         Me.btnGenerateResult.Text = "Generate Result"
-        Me.btnGenerateResult.UseVisualStyleBackColor = True
+        Me.btnGenerateResult.UseVisualStyleBackColor = False
         '
         'ListViewReport
         '
+        Me.ListViewReport.BackColor = System.Drawing.Color.Lavender
         Me.ListViewReport.HideSelection = False
         Me.ListViewReport.Location = New System.Drawing.Point(22, 212)
         Me.ListViewReport.Name = "ListViewReport"
@@ -143,27 +173,46 @@ Partial Class frmSystemReport
         Me.ListViewReport.UseCompatibleStateImageBehavior = False
         Me.ListViewReport.View = System.Windows.Forms.View.Details
         '
+        'TableLayoutPanel3
+        '
+        Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
+        Me.TableLayoutPanel3.ColumnCount = 2
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.btnPrintReport, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.btnExportCSV, 1, 0)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(252, 389)
+        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
+        Me.TableLayoutPanel3.RowCount = 1
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(278, 40)
+        Me.TableLayoutPanel3.TabIndex = 4
+        '
         'btnPrintReport
         '
         Me.btnPrintReport.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnPrintReport.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnPrintReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPrintReport.Location = New System.Drawing.Point(570, 167)
+        Me.btnPrintReport.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPrintReport.Location = New System.Drawing.Point(26, 8)
         Me.btnPrintReport.Name = "btnPrintReport"
         Me.btnPrintReport.Size = New System.Drawing.Size(87, 23)
         Me.btnPrintReport.TabIndex = 0
         Me.btnPrintReport.Text = "Print Report"
-        Me.btnPrintReport.UseVisualStyleBackColor = True
+        Me.btnPrintReport.UseVisualStyleBackColor = False
         '
         'btnExportCSV
         '
         Me.btnExportCSV.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnExportCSV.BackColor = System.Drawing.Color.CornflowerBlue
         Me.btnExportCSV.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExportCSV.Location = New System.Drawing.Point(663, 168)
+        Me.btnExportCSV.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.btnExportCSV.Location = New System.Drawing.Point(165, 8)
         Me.btnExportCSV.Name = "btnExportCSV"
         Me.btnExportCSV.Size = New System.Drawing.Size(87, 23)
         Me.btnExportCSV.TabIndex = 1
         Me.btnExportCSV.Text = "Export CSV"
-        Me.btnExportCSV.UseVisualStyleBackColor = True
+        Me.btnExportCSV.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -208,21 +257,10 @@ Partial Class frmSystemReport
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1628, 1011)
-        Me.Controls.Add(Me.lblTotalRevenue)
-        Me.Controls.Add(Me.lblTotalDocs)
-        Me.Controls.Add(Me.btnPrintReport)
-        Me.Controls.Add(Me.txtLastName)
-        Me.Controls.Add(Me.btnExportCSV)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DateTimePickerDateFrom)
-        Me.Controls.Add(Me.lblDateFrom)
-        Me.Controls.Add(Me.DateTimePickerDateTo)
-        Me.Controls.Add(Me.btnGenerateResult)
-        Me.Controls.Add(Me.lblDateTo)
-        Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.lblRecordPaymentInformation)
-        Me.Controls.Add(Me.lblSelectReport)
+        Me.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.TableLayoutPanel3)
         Me.Controls.Add(Me.ListViewReport)
         Me.Controls.Add(Me.cboSelectReport)
         Me.Name = "frmSystemReport"

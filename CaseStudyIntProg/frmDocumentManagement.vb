@@ -118,6 +118,41 @@ Public Class frmDocumentManagement
             Exit Sub
         End If
 
+        Dim inputPass As String = ""
+        Using prompt As New frmPasswordPrompt()
+            If prompt.ShowDialog() = DialogResult.OK Then
+                inputPass = prompt.Password
+            Else
+                Exit Sub
+            End If
+        End Using
+
+        If String.IsNullOrWhiteSpace(inputPass) Then
+            MsgBox("Password cannot be blank.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        Dim isAuthorized As Boolean = False
+        Try
+            Call connection()
+            sql = "SELECT UserID FROM tblusers WHERE UserID = @uid AND Password = @pass"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@uid", CurrentUserID)
+            cmd.Parameters.AddWithValue("@pass", inputPass)
+            dr = cmd.ExecuteReader()
+            If dr.Read() Then isAuthorized = True
+        Catch ex As Exception
+            MsgBox("Database Error: " & ex.Message, MsgBoxStyle.Critical)
+            Exit Sub
+        Finally
+            cn.Close()
+        End Try
+
+        If Not isAuthorized Then
+            MsgBox("Incorrect password. Edit cancelled.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+
         Dim docStatus As String = If(rdoActive.Checked, "Active", "Inactive")
 
         If MsgBox("Are you sure you want to update this document?", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
@@ -151,21 +186,55 @@ Public Class frmDocumentManagement
             Exit Sub
         End If
 
-        If MsgBox("Are you sure you want to completely delete this document?", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
+        Dim inputPass As String = ""
+        Using prompt As New frmPasswordPrompt()
+            If prompt.ShowDialog() = DialogResult.OK Then
+                inputPass = prompt.Password
+            Else
+                Exit Sub
+            End If
+        End Using
+
+        If String.IsNullOrWhiteSpace(inputPass) Then
+            MsgBox("Password cannot be blank.", MsgBoxStyle.Exclamation)
+            Exit Sub
+        End If
+
+        Dim isAuthorized As Boolean = False
+        Try
+            Call connection()
+            sql = "SELECT UserID FROM tblusers WHERE UserID = @uid AND Password = @pass"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@uid", CurrentUserID)
+            cmd.Parameters.AddWithValue("@pass", inputPass)
+            dr = cmd.ExecuteReader()
+            If dr.Read() Then isAuthorized = True
+        Catch ex As Exception
+            MsgBox("Database Error: " & ex.Message, MsgBoxStyle.Critical)
+            Exit Sub
+        Finally
+            cn.Close()
+        End Try
+
+        If Not isAuthorized Then
+            MsgBox("Incorrect password. Action cancelled.", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+
+        If MsgBox("Are you sure you want to deactivate this document?", MsgBoxStyle.YesNo + MsgBoxStyle.Question) = MsgBoxResult.Yes Then
             Try
                 Call connection()
-                sql = "DELETE FROM tbldocuments WHERE DocumentID = @id"
+                sql = "UPDATE tbldocuments SET Status = 'Inactive' WHERE DocumentID = @id"
                 cmd = New MySqlCommand(sql, cn)
                 cmd.Parameters.AddWithValue("@id", txtDocumentId.Text)
 
                 cmd.ExecuteNonQuery()
-                MsgBox("Document deleted successfully!", MsgBoxStyle.Information)
+                MsgBox("Document status successfully changed to Inactive!", MsgBoxStyle.Information)
 
                 LoadDocuments()
-                ' Fixes the state machine bug by resetting the UI completely
                 btnClear.PerformClick()
             Catch ex As Exception
-                MsgBox("Error deleting document: " & ex.Message, MsgBoxStyle.Critical)
+                MsgBox("Error deactivating document: " & ex.Message, MsgBoxStyle.Critical)
             Finally
                 cn.Close()
             End Try

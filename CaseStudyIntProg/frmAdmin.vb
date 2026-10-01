@@ -1,6 +1,18 @@
 ﻿Public Class frmAdmin
     Private Sub frmAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadFormInPanel(New frmDashboard())
+        cboSemester.Items.Clear()
+        cboSemester.Items.AddRange({"1st Semester", "2nd Semester"})
+        cboSemester.SelectedIndex = 0
+    End Sub
+
+    Private Sub cboSemester_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboSemester.SelectedIndexChanged
+        If cboSemester.SelectedIndex = -1 Then Exit Sub
+        CurrentSemester = cboSemester.SelectedIndex + 1        ' 1st = 1, 2nd = 2
+
+        ' If Student Management is open, update its section preview right away
+        If TypeOf SplitContainerMain.Panel2.Tag Is frmStudentManagement Then
+            DirectCast(SplitContainerMain.Panel2.Tag, frmStudentManagement).RefreshSemester()
+        End If
     End Sub
 
     Private Sub LoadFormInPanel(ByVal childForm As Form)

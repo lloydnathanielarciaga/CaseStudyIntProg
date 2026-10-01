@@ -22,246 +22,170 @@ Partial Class frmDocumentRequestList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cboStatusFilter = New System.Windows.Forms.ComboBox()
-        Me.cboSearchStudent = New System.Windows.Forms.ComboBox()
-        Me.lblDocumentRequestList = New System.Windows.Forms.Label()
-        Me.lblSearchRequest = New System.Windows.Forms.Label()
-        Me.lblSearchStudent = New System.Windows.Forms.Label()
+        Me.lblSearchStudentIdOrName = New System.Windows.Forms.Label()
+        Me.txtSearchStudentIdOrName = New System.Windows.Forms.TextBox()
         Me.lblStatusFilter = New System.Windows.Forms.Label()
-        Me.cboSearchRequest = New System.Windows.Forms.ComboBox()
-        Me.btnClearAllSearch = New System.Windows.Forms.Button()
+        Me.cboStatusFilter = New System.Windows.Forms.ComboBox()
+        Me.lblDateFrom = New System.Windows.Forms.Label()
+        Me.DateTimePickerFrom = New System.Windows.Forms.DateTimePicker()
+        Me.lblDateTo = New System.Windows.Forms.Label()
+        Me.DateTimePickerTo = New System.Windows.Forms.DateTimePicker()
+        Me.lblOrder = New System.Windows.Forms.Label()
+        Me.cboOrder = New System.Windows.Forms.ComboBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.btnReset = New System.Windows.Forms.Button()
         Me.ListViewRequestList = New System.Windows.Forms.ListView()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnProcessPayment = New System.Windows.Forms.Button()
-        Me.btnEditSelectedRequest = New System.Windows.Forms.Button()
-        Me.btnViewRequestDetails = New System.Windows.Forms.Button()
-        Me.txtMode = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'lblSearchStudentIdOrName
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.cboStatusFilter, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.cboSearchStudent, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDocumentRequestList, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblSearchRequest, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblSearchStudent, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblStatusFilter, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.cboSearchRequest, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnClearAllSearch, 2, 1)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 4
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(363, 154)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.lblSearchStudentIdOrName.AutoSize = True
+        Me.lblSearchStudentIdOrName.Location = New System.Drawing.Point(18, 70)
+        Me.lblSearchStudentIdOrName.Name = "lblSearchStudentIdOrName"
+        Me.lblSearchStudentIdOrName.Size = New System.Drawing.Size(138, 13)
+        Me.lblSearchStudentIdOrName.TabIndex = 0
+        Me.lblSearchStudentIdOrName.Text = "Search StudentId Or Name:"
         '
-        'cboStatusFilter
+        'txtSearchStudentIdOrName
         '
-        Me.cboStatusFilter.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboStatusFilter.FormattingEnabled = True
-        Me.cboStatusFilter.Location = New System.Drawing.Point(96, 123)
-        Me.cboStatusFilter.Name = "cboStatusFilter"
-        Me.cboStatusFilter.Size = New System.Drawing.Size(149, 21)
-        Me.cboStatusFilter.TabIndex = 6
-        '
-        'cboSearchStudent
-        '
-        Me.cboSearchStudent.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboSearchStudent.FormattingEnabled = True
-        Me.cboSearchStudent.Location = New System.Drawing.Point(96, 84)
-        Me.cboSearchStudent.Name = "cboSearchStudent"
-        Me.cboSearchStudent.Size = New System.Drawing.Size(149, 21)
-        Me.cboSearchStudent.TabIndex = 5
-        '
-        'lblDocumentRequestList
-        '
-        Me.lblDocumentRequestList.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblDocumentRequestList.AutoSize = True
-        Me.lblDocumentRequestList.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.SetColumnSpan(Me.lblDocumentRequestList, 2)
-        Me.lblDocumentRequestList.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDocumentRequestList.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblDocumentRequestList.Location = New System.Drawing.Point(3, 12)
-        Me.lblDocumentRequestList.Name = "lblDocumentRequestList"
-        Me.lblDocumentRequestList.Size = New System.Drawing.Size(139, 13)
-        Me.lblDocumentRequestList.TabIndex = 0
-        Me.lblDocumentRequestList.Text = "Document Request List"
-        '
-        'lblSearchRequest
-        '
-        Me.lblSearchRequest.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblSearchRequest.AutoSize = True
-        Me.lblSearchRequest.BackColor = System.Drawing.Color.Transparent
-        Me.lblSearchRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblSearchRequest.Location = New System.Drawing.Point(3, 50)
-        Me.lblSearchRequest.Name = "lblSearchRequest"
-        Me.lblSearchRequest.Size = New System.Drawing.Size(87, 13)
-        Me.lblSearchRequest.TabIndex = 1
-        Me.lblSearchRequest.Text = "Search Request:"
-        '
-        'lblSearchStudent
-        '
-        Me.lblSearchStudent.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblSearchStudent.AutoSize = True
-        Me.lblSearchStudent.BackColor = System.Drawing.Color.Transparent
-        Me.lblSearchStudent.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblSearchStudent.Location = New System.Drawing.Point(3, 88)
-        Me.lblSearchStudent.Name = "lblSearchStudent"
-        Me.lblSearchStudent.Size = New System.Drawing.Size(84, 13)
-        Me.lblSearchStudent.TabIndex = 2
-        Me.lblSearchStudent.Text = "Search Student:"
+        Me.txtSearchStudentIdOrName.Location = New System.Drawing.Point(162, 67)
+        Me.txtSearchStudentIdOrName.Name = "txtSearchStudentIdOrName"
+        Me.txtSearchStudentIdOrName.Size = New System.Drawing.Size(181, 20)
+        Me.txtSearchStudentIdOrName.TabIndex = 1
         '
         'lblStatusFilter
         '
-        Me.lblStatusFilter.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.lblStatusFilter.AutoSize = True
-        Me.lblStatusFilter.BackColor = System.Drawing.Color.Transparent
-        Me.lblStatusFilter.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.lblStatusFilter.Location = New System.Drawing.Point(3, 127)
+        Me.lblStatusFilter.Location = New System.Drawing.Point(18, 100)
         Me.lblStatusFilter.Name = "lblStatusFilter"
         Me.lblStatusFilter.Size = New System.Drawing.Size(65, 13)
-        Me.lblStatusFilter.TabIndex = 3
+        Me.lblStatusFilter.TabIndex = 2
         Me.lblStatusFilter.Text = "Status Filter:"
         '
-        'cboSearchRequest
+        'cboStatusFilter
         '
-        Me.cboSearchRequest.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.cboSearchRequest.FormattingEnabled = True
-        Me.cboSearchRequest.Location = New System.Drawing.Point(96, 46)
-        Me.cboSearchRequest.Name = "cboSearchRequest"
-        Me.cboSearchRequest.Size = New System.Drawing.Size(149, 21)
-        Me.cboSearchRequest.TabIndex = 4
+        Me.cboStatusFilter.FormattingEnabled = True
+        Me.cboStatusFilter.Location = New System.Drawing.Point(89, 97)
+        Me.cboStatusFilter.Name = "cboStatusFilter"
+        Me.cboStatusFilter.Size = New System.Drawing.Size(132, 21)
+        Me.cboStatusFilter.TabIndex = 3
         '
-        'btnClearAllSearch
+        'lblDateFrom
         '
-        Me.btnClearAllSearch.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnClearAllSearch.BackColor = System.Drawing.Color.LightSteelBlue
-        Me.btnClearAllSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClearAllSearch.Location = New System.Drawing.Point(251, 45)
-        Me.btnClearAllSearch.Name = "btnClearAllSearch"
-        Me.btnClearAllSearch.Size = New System.Drawing.Size(107, 23)
-        Me.btnClearAllSearch.TabIndex = 7
-        Me.btnClearAllSearch.Text = "Clear All Search"
-        Me.btnClearAllSearch.UseVisualStyleBackColor = False
+        Me.lblDateFrom.AutoSize = True
+        Me.lblDateFrom.Location = New System.Drawing.Point(367, 74)
+        Me.lblDateFrom.Name = "lblDateFrom"
+        Me.lblDateFrom.Size = New System.Drawing.Size(59, 13)
+        Me.lblDateFrom.TabIndex = 4
+        Me.lblDateFrom.Text = "Date From:"
+        '
+        'DateTimePickerFrom
+        '
+        Me.DateTimePickerFrom.CustomFormat = "yyyy-MM-dd"
+        Me.DateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerFrom.Location = New System.Drawing.Point(432, 72)
+        Me.DateTimePickerFrom.Name = "DateTimePickerFrom"
+        Me.DateTimePickerFrom.Size = New System.Drawing.Size(100, 20)
+        Me.DateTimePickerFrom.TabIndex = 5
+        '
+        'lblDateTo
+        '
+        Me.lblDateTo.AutoSize = True
+        Me.lblDateTo.Location = New System.Drawing.Point(547, 74)
+        Me.lblDateTo.Name = "lblDateTo"
+        Me.lblDateTo.Size = New System.Drawing.Size(49, 13)
+        Me.lblDateTo.TabIndex = 6
+        Me.lblDateTo.Text = "Date To:"
+        '
+        'DateTimePickerTo
+        '
+        Me.DateTimePickerTo.CustomFormat = "yyyy-MM-dd"
+        Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerTo.Location = New System.Drawing.Point(602, 72)
+        Me.DateTimePickerTo.Name = "DateTimePickerTo"
+        Me.DateTimePickerTo.Size = New System.Drawing.Size(100, 20)
+        Me.DateTimePickerTo.TabIndex = 7
+        '
+        'lblOrder
+        '
+        Me.lblOrder.AutoSize = True
+        Me.lblOrder.Location = New System.Drawing.Point(254, 105)
+        Me.lblOrder.Name = "lblOrder"
+        Me.lblOrder.Size = New System.Drawing.Size(36, 13)
+        Me.lblOrder.TabIndex = 8
+        Me.lblOrder.Text = "Order:"
+        '
+        'cboOrder
+        '
+        Me.cboOrder.FormattingEnabled = True
+        Me.cboOrder.Location = New System.Drawing.Point(296, 102)
+        Me.cboOrder.Name = "cboOrder"
+        Me.cboOrder.Size = New System.Drawing.Size(132, 21)
+        Me.cboOrder.TabIndex = 9
+        '
+        'btnSearch
+        '
+        Me.btnSearch.Location = New System.Drawing.Point(345, 142)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
+        Me.btnSearch.TabIndex = 10
+        Me.btnSearch.Text = "Search"
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'btnReset
+        '
+        Me.btnReset.Location = New System.Drawing.Point(432, 142)
+        Me.btnReset.Name = "btnReset"
+        Me.btnReset.Size = New System.Drawing.Size(75, 23)
+        Me.btnReset.TabIndex = 11
+        Me.btnReset.Text = "Reset"
+        Me.btnReset.UseVisualStyleBackColor = True
         '
         'ListViewRequestList
         '
-        Me.ListViewRequestList.BackColor = System.Drawing.Color.Lavender
-        Me.ListViewRequestList.ForeColor = System.Drawing.Color.MidnightBlue
         Me.ListViewRequestList.HideSelection = False
-        Me.ListViewRequestList.Location = New System.Drawing.Point(12, 202)
+        Me.ListViewRequestList.Location = New System.Drawing.Point(12, 189)
         Me.ListViewRequestList.Name = "ListViewRequestList"
-        Me.ListViewRequestList.Size = New System.Drawing.Size(776, 198)
-        Me.ListViewRequestList.TabIndex = 1
+        Me.ListViewRequestList.Size = New System.Drawing.Size(942, 448)
+        Me.ListViewRequestList.TabIndex = 12
         Me.ListViewRequestList.UseCompatibleStateImageBehavior = False
-        Me.ListViewRequestList.View = System.Windows.Forms.View.Details
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel2.ColumnCount = 3
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.Controls.Add(Me.btnProcessPayment, 2, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnEditSelectedRequest, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.btnViewRequestDetails, 0, 0)
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(204, 406)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(425, 32)
-        Me.TableLayoutPanel2.TabIndex = 2
-        '
-        'btnProcessPayment
-        '
-        Me.btnProcessPayment.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnProcessPayment.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnProcessPayment.ForeColor = System.Drawing.Color.White
-        Me.btnProcessPayment.Location = New System.Drawing.Point(293, 3)
-        Me.btnProcessPayment.Name = "btnProcessPayment"
-        Me.btnProcessPayment.Size = New System.Drawing.Size(120, 26)
-        Me.btnProcessPayment.TabIndex = 2
-        Me.btnProcessPayment.Text = "Process Payment"
-        Me.btnProcessPayment.UseVisualStyleBackColor = False
-        '
-        'btnEditSelectedRequest
-        '
-        Me.btnEditSelectedRequest.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnEditSelectedRequest.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnEditSelectedRequest.ForeColor = System.Drawing.Color.White
-        Me.btnEditSelectedRequest.Location = New System.Drawing.Point(151, 3)
-        Me.btnEditSelectedRequest.Name = "btnEditSelectedRequest"
-        Me.btnEditSelectedRequest.Size = New System.Drawing.Size(120, 26)
-        Me.btnEditSelectedRequest.TabIndex = 1
-        Me.btnEditSelectedRequest.Text = "Edit Request"
-        Me.btnEditSelectedRequest.UseVisualStyleBackColor = False
-        '
-        'btnViewRequestDetails
-        '
-        Me.btnViewRequestDetails.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnViewRequestDetails.BackColor = System.Drawing.Color.CornflowerBlue
-        Me.btnViewRequestDetails.ForeColor = System.Drawing.Color.White
-        Me.btnViewRequestDetails.Location = New System.Drawing.Point(10, 3)
-        Me.btnViewRequestDetails.Name = "btnViewRequestDetails"
-        Me.btnViewRequestDetails.Size = New System.Drawing.Size(120, 26)
-        Me.btnViewRequestDetails.TabIndex = 0
-        Me.btnViewRequestDetails.Text = "View Request Details"
-        Me.btnViewRequestDetails.UseVisualStyleBackColor = False
-        '
-        'txtMode
-        '
-        Me.txtMode.AutoSize = True
-        Me.txtMode.Location = New System.Drawing.Point(9, 186)
-        Me.txtMode.Name = "txtMode"
-        Me.txtMode.Size = New System.Drawing.Size(60, 13)
-        Me.txtMode.TabIndex = 3
-        Me.txtMode.Text = "View Mode"
         '
         'frmDocumentRequestList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.txtMode)
-        Me.Controls.Add(Me.TableLayoutPanel2)
+        Me.ClientSize = New System.Drawing.Size(966, 649)
         Me.Controls.Add(Me.ListViewRequestList)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.btnReset)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.cboOrder)
+        Me.Controls.Add(Me.lblOrder)
+        Me.Controls.Add(Me.DateTimePickerTo)
+        Me.Controls.Add(Me.lblDateTo)
+        Me.Controls.Add(Me.DateTimePickerFrom)
+        Me.Controls.Add(Me.lblDateFrom)
+        Me.Controls.Add(Me.cboStatusFilter)
+        Me.Controls.Add(Me.lblStatusFilter)
+        Me.Controls.Add(Me.txtSearchStudentIdOrName)
+        Me.Controls.Add(Me.lblSearchStudentIdOrName)
         Me.Name = "frmDocumentRequestList"
         Me.Text = "frmDocumentRequestList"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents lblDocumentRequestList As Label
-    Friend WithEvents cboStatusFilter As ComboBox
-    Friend WithEvents cboSearchStudent As ComboBox
-    Friend WithEvents lblSearchRequest As Label
-    Friend WithEvents lblSearchStudent As Label
+    Friend WithEvents lblSearchStudentIdOrName As Label
+    Friend WithEvents txtSearchStudentIdOrName As TextBox
     Friend WithEvents lblStatusFilter As Label
-    Friend WithEvents cboSearchRequest As ComboBox
-    Friend WithEvents btnClearAllSearch As Button
+    Friend WithEvents cboStatusFilter As ComboBox
+    Friend WithEvents lblDateFrom As Label
+    Friend WithEvents DateTimePickerFrom As DateTimePicker
+    Friend WithEvents lblDateTo As Label
+    Friend WithEvents DateTimePickerTo As DateTimePicker
+    Friend WithEvents lblOrder As Label
+    Friend WithEvents cboOrder As ComboBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents btnReset As Button
     Friend WithEvents ListViewRequestList As ListView
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents btnEditSelectedRequest As Button
-    Friend WithEvents btnViewRequestDetails As Button
-    Friend WithEvents btnProcessPayment As Button
-    Friend WithEvents txtMode As Label
 End Class

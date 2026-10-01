@@ -161,6 +161,18 @@
     <Compile Include="frmNewDocumentRequest.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPasswordPrompt.Designer.vb">
+      <DependentUpon>frmPasswordPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPasswordPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentPrompt.Designer.vb">
+      <DependentUpon>frmPaymentPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRecordPaymentInformation.Designer.vb">
       <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>
     </Compile>
@@ -171,6 +183,12 @@
       <DependentUpon>frmRequestDetails.vb</DependentUpon>
     </Compile>
     <Compile Include="frmRequestDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestManagement.Designer.vb">
+      <DependentUpon>frmRequestManagement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRequestManagement.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmStaff.Designer.vb">
@@ -233,11 +251,20 @@
     <EmbeddedResource Include="frmNewDocumentRequest.resx">
       <DependentUpon>frmNewDocumentRequest.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPasswordPrompt.resx">
+      <DependentUpon>frmPasswordPrompt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentPrompt.resx">
+      <DependentUpon>frmPaymentPrompt.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRecordPaymentInformation.resx">
       <DependentUpon>frmRecordPaymentInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRequestDetails.resx">
       <DependentUpon>frmRequestDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequestManagement.resx">
+      <DependentUpon>frmRequestManagement.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
