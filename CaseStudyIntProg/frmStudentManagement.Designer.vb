@@ -255,11 +255,12 @@ Partial Class frmStudentManagement
         '
         Me.lblCourseCode.BackColor = System.Drawing.Color.Transparent
         Me.lblCourseCode.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCourseCode.Location = New System.Drawing.Point(20, 7)
+        Me.lblCourseCode.Location = New System.Drawing.Point(18, 7)
         Me.lblCourseCode.Name = "lblCourseCode"
         Me.lblCourseCode.Size = New System.Drawing.Size(45, 32)
         Me.lblCourseCode.TabIndex = 0
         Me.lblCourseCode.Text = "BSIT"
+        Me.lblCourseCode.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblGeneratedSection
         '

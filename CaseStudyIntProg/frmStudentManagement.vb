@@ -4,14 +4,6 @@ Imports MySql.Data.MySqlClient
 
 Public Class frmStudentManagement
 
-    ' ============================================================================
-    ' AUTOMATIC SECTIONING   Format:  <COURSE> <YEAR><SEMESTER><TIME><NUMBER>
-    '   BSIT 31E2  = 3rd Year, 1st Sem, Evening,   Section 2
-    '   BSCS 11M1  = 1st Year, 1st Sem, Morning,   Section 1
-    '   BSA  22A3  = 2nd Year, 2nd Sem, Afternoon, Section 3
-    ' Year comes from cboYearLevel, Semester from the sidebar (CurrentSemester in DbContext),
-    ' Time of Day from cboTimeOfDay, Number from cboSectionNo.  the result is shown in lblGeneratedSection.
-    ' ============================================================================
     Private _loading As Boolean = False
     Private _sectionCode As String = ""       ' the generated section, e.g. "BSIT 31E2" (this is what gets saved)
 
@@ -87,7 +79,8 @@ Public Class frmStudentManagement
     ' Called by frmAdmin when the sidebar semester combobox changes
     Public Sub RefreshSemester()
         txtSemester.Text = SemesterText()
-        If lsvStudents.SelectedItems.Count = 0 Then SetSection(BuildSection())
+        Dim built As String = BuildSection()
+        If built <> "" OrElse lsvStudents.SelectedItems.Count = 0 Then SetSection(built)
     End Sub
 
     ' Fills Time of Day / Section No. from a saved section like "BSIT 31E2" (old data like "A" is left as-is)
@@ -306,28 +299,36 @@ Public Class frmStudentManagement
         Return True
     End Function
 
-    Private Sub lsvStudents_SelectedIndexChanged(sender As Object, e As EventArgs)
-        If lsvStudents.SelectedItems.Count > 0 Then
-            Dim selectedRow As ListViewItem = lsvStudents.SelectedItems(0)
-            _loading = True      ' don't rebuild the section while fields are being filled
+    Private Sub lsvStudents_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lsvStudents.SelectedIndexChanged
+        If lsvStudents.SelectedItems.Count = 0 Then Exit Sub
+        Dim row As ListViewItem = lsvStudents.SelectedItems(0)
 
-            txtStudentID.ReadOnly = True
-            txtStudentID.Text = selectedRow.Text
-            txtLRN.Text = selectedRow.SubItems(1).Text
-            txtLastName.Text = selectedRow.SubItems(2).Text
-            txtFirstName.Text = selectedRow.SubItems(3).Text
-            txtMiddleName.Text = selectedRow.SubItems(4).Text
-            cboCourse.SelectedIndex = cboCourse.FindStringExact(selectedRow.SubItems(5).Text)
-            cboYearLevel.SelectedIndex = cboYearLevel.FindStringExact(selectedRow.SubItems(6).Text)
-            ParseSection(selectedRow.SubItems(7).Text)      ' shows the saved section, fills Time of Day / No.
-            txtContactNo.Text = selectedRow.SubItems(8).Text
+        ' 1) plain fields first, so they always fill in
+        txtStudentID.ReadOnly = True          ' Student ID can't be edited once saved
+        txtStudentID.Text = row.Text
+        txtLRN.Text = row.SubItems(1).Text
+        txtLastName.Text = row.SubItems(2).Text
+        txtFirstName.Text = row.SubItems(3).Text
+        txtMiddleName.Text = row.SubItems(4).Text
+        txtContactNo.Text = row.SubItems(8).Text
 
-            If selectedRow.SubItems(9).Text = "Regular" Then
-                rdoRegular.Checked = True
-            Else
-                rdoIrregular.Checked = True
-            End If
+        If row.SubItems(9).Text = "Regular" Then
+            rdoRegular.Checked = True
+        Else
+            rdoIrregular.Checked = True
         End If
+
+        ' 2) course / year / section (the part that can throw errors)
+        _loading = True       ' don't rebuild the section while these are being filled
+        Try
+            cboCourse.SelectedIndex = cboCourse.FindStringExact(row.SubItems(5).Text)
+            cboYearLevel.SelectedIndex = cboYearLevel.FindStringExact(row.SubItems(6).Text)
+            ParseSection(row.SubItems(7).Text)      ' shows the saved section, fills Time of Day / No.
+        Catch ex As Exception
+            MsgBox("Could not show the course/section details: " & ex.Message, MsgBoxStyle.Exclamation, "Student Management")
+        Finally
+            _loading = False
+        End Try
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
