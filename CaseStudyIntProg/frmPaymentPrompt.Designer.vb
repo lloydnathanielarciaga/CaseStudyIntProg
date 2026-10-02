@@ -161,6 +161,7 @@ Partial Class frmPaymentPrompt
         Me.Controls.Add(Me.lblORDate)
         Me.Controls.Add(Me.lblDisplayORNo)
         Me.Controls.Add(Me.lblORNo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmPaymentPrompt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPaymentPrompt"

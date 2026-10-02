@@ -76,6 +76,7 @@ Partial Class frmPasswordPrompt
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.lblMessage)
         Me.Controls.Add(Me.txtPassword)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmPasswordPrompt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPasswordPrompt"
