@@ -13,7 +13,7 @@ Public Class frmStudentManagement
     ' Time of Day from cboTimeOfDay, Number from cboSectionNo.  the result is shown in lblGeneratedSection.
     ' ============================================================================
     Private _loading As Boolean = False
-    Private _sectionCode As String = ""       ' the generated section, e.g. "BSIT 31E2" (this is what gets saved)
+    Private _sectionCode As String = ""
 
     Private ReadOnly CourseCodes As New Dictionary(Of String, String) From {
         {"BS Information Technology", "BSIT"},
@@ -32,7 +32,6 @@ Public Class frmStudentManagement
         Return If(CurrentSemester = 2, "2nd Semester", "1st Semester")
     End Function
 
-    ' Year digit read from the combobox TEXT ("3rd Year" -> "3"), so it works even if SelectedIndex isn't set
     Private Function YearDigit() As String
         Dim m As Match = Regex.Match(cboYearLevel.Text, "\d")
         Return If(m.Success, m.Value, "")
@@ -45,12 +44,11 @@ Public Class frmStudentManagement
         Dim code As String = ""
         If Not CourseCodes.TryGetValue(cboCourse.Text, code) Then Return ""
 
-        Dim yr As String = YearDigit()                              ' "3rd Year"  -> 3
-        Dim tod As String = cboTimeOfDay.Text.Substring(0, 1)      ' "Evening"   -> E
+        Dim yr As String = YearDigit()
+        Dim tod As String = cboTimeOfDay.Text.Substring(0, 1)
         Return code & " " & yr & CurrentSemester.ToString() & tod & cboSectionNo.Text
     End Function
 
-    ' Stores the generated section and refreshes the big label + the 5 boxes (BSIT | 3 | 1 | E | 2)
     Private Sub SetSection(code As String)
         _sectionCode = code
         lblGeneratedSection.Text = If(code = "", "SECTION", code)
@@ -60,14 +58,12 @@ Public Class frmStudentManagement
     Private Sub UpdateChips()
         Dim m As Match = Regex.Match(_sectionCode, "^([A-Za-z]+)\s(\d)(\d)([MAE])(\d{1,2})$")
         If m.Success Then
-            ' complete (or saved) section: show exactly what is stored
             lblCourseCode.Text = m.Groups(1).Value
             lblYearCode.Text = m.Groups(2).Value
             lblSemCode.Text = m.Groups(3).Value
             lblTimeCode.Text = m.Groups(4).Value
             lblNoCode.Text = m.Groups(5).Value
         Else
-            ' still choosing: show what has been picked so far
             Dim code As String = ""
             lblCourseCode.Text = If(cboCourse.SelectedIndex <> -1 AndAlso CourseCodes.TryGetValue(cboCourse.Text, code), code, "-")
             lblYearCode.Text = If(YearDigit() <> "", YearDigit(), "-")
@@ -77,20 +73,17 @@ Public Class frmStudentManagement
         End If
     End Sub
 
-    ' Re-builds the section whenever one of the four inputs changes
     Private Sub SectionInputsChanged(sender As Object, e As EventArgs) Handles cboCourse.SelectedIndexChanged,
         cboYearLevel.SelectedIndexChanged, cboYearLevel.TextChanged, cboTimeOfDay.SelectedIndexChanged, cboSectionNo.SelectedIndexChanged
         If _loading Then Exit Sub
         SetSection(BuildSection())
     End Sub
 
-    ' Called by frmAdmin when the sidebar semester combobox changes
     Public Sub RefreshSemester()
         txtSemester.Text = SemesterText()
         If lsvStudents.SelectedItems.Count = 0 Then SetSection(BuildSection())
     End Sub
 
-    ' Fills Time of Day / Section No. from a saved section like "BSIT 31E2" (old data like "A" is left as-is)
     Private Sub ParseSection(section As String)
         _loading = True
         cboTimeOfDay.SelectedIndex = -1
@@ -104,8 +97,6 @@ Public Class frmStudentManagement
         _loading = False
     End Sub
 
-    ' Finds the section in tblsections by its code (e.g. "BSIT 31E2"); creates it the first time it is used.
-    ' Must be called while cn is already open (inside the Try after connection()).
     Private Function GetOrCreateSectionID() As Integer
         Dim code As String = _sectionCode.Trim()
 
@@ -115,7 +106,6 @@ Public Class frmStudentManagement
             If found IsNot Nothing Then Return Convert.ToInt32(found)
         End Using
 
-        ' New section: read year / semester / time / number from the code itself
         Dim m As Match = Regex.Match(code, "^[A-Za-z]+\s(\d)(\d)([MAE])(\d{1,2})$")
         If Not m.Success Then Throw New Exception("Invalid section code: " & code)
 
@@ -309,7 +299,7 @@ Public Class frmStudentManagement
     Private Sub lsvStudents_SelectedIndexChanged(sender As Object, e As EventArgs)
         If lsvStudents.SelectedItems.Count > 0 Then
             Dim selectedRow As ListViewItem = lsvStudents.SelectedItems(0)
-            _loading = True      ' don't rebuild the section while fields are being filled
+            _loading = True
 
             txtStudentID.ReadOnly = True
             txtStudentID.Text = selectedRow.Text
@@ -319,7 +309,7 @@ Public Class frmStudentManagement
             txtMiddleName.Text = selectedRow.SubItems(4).Text
             cboCourse.SelectedIndex = cboCourse.FindStringExact(selectedRow.SubItems(5).Text)
             cboYearLevel.SelectedIndex = cboYearLevel.FindStringExact(selectedRow.SubItems(6).Text)
-            ParseSection(selectedRow.SubItems(7).Text)      ' shows the saved section, fills Time of Day / No.
+            ParseSection(selectedRow.SubItems(7).Text)
             txtContactNo.Text = selectedRow.SubItems(8).Text
 
             If selectedRow.SubItems(9).Text = "Regular" Then
@@ -337,7 +327,6 @@ Public Class frmStudentManagement
             Try
                 Call connection()
 
-                ' Check for Duplicate Student ID
                 sql = "SELECT COUNT(*) FROM tblstudents WHERE StudentID = @studentid"
                 cmd = New MySqlCommand(sql, cn)
                 cmd.Parameters.AddWithValue("@studentid", txtStudentID.Text.Trim())
@@ -347,8 +336,7 @@ Public Class frmStudentManagement
                     Exit Sub
                 End If
 
-                ' Insert Student
-                Dim sectionId As Integer = GetOrCreateSectionID()      ' finds (or creates) the row in tblsections
+                Dim sectionId As Integer = GetOrCreateSectionID()
 
                 sql = "INSERT INTO tblstudents (StudentID, LRN, LastName, FirstName, MiddleName, Course, YearLevel, SectionID, ContactNo, StudentType, Status) " &
                       "VALUES (@studentid, @lrn, @lastname, @firstname, @middlename, @course, @yearlevel, @sectionid, @contactno, @studenttype, 'Active')"
@@ -368,6 +356,7 @@ Public Class frmStudentManagement
                 End With
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Add Student", "Added new student ID: " & txtStudentID.Text.Trim(), CurrentFullName)
                 MsgBox("Student added successfully!", MsgBoxStyle.Information)
 
                 ClearFields()
@@ -389,7 +378,6 @@ Public Class frmStudentManagement
 
         If Not ValidateStudentInput() Then Exit Sub
 
-        ' Grab previous info from ListView for interpolation
         Dim prevName As String = $"{lsvStudents.SelectedItems(0).SubItems(3).Text} {lsvStudents.SelectedItems(0).SubItems(2).Text}"
         Dim prevCourse As String = lsvStudents.SelectedItems(0).SubItems(5).Text
         Dim prevYear As String = lsvStudents.SelectedItems(0).SubItems(6).Text
@@ -424,6 +412,7 @@ Public Class frmStudentManagement
                 End With
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Edit Student", "Updated student ID: " & txtStudentID.Text, CurrentFullName)
                 MsgBox("Student updated successfully!", MsgBoxStyle.Information)
 
                 ClearFields()
@@ -450,6 +439,7 @@ Public Class frmStudentManagement
                 cmd.Parameters.AddWithValue("@id", txtStudentID.Text)
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Activate Student", "Activated student ID: " & txtStudentID.Text, CurrentFullName)
                 MsgBox("Student activated successfully!", MsgBoxStyle.Information)
 
                 ClearFields()
@@ -477,6 +467,7 @@ Public Class frmStudentManagement
                 cmd.Parameters.AddWithValue("@id", txtStudentID.Text)
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Deactivate Student", "Deactivated student ID: " & txtStudentID.Text, CurrentFullName)
                 MsgBox("Student deactivated successfully!", MsgBoxStyle.Information)
 
                 ClearFields()

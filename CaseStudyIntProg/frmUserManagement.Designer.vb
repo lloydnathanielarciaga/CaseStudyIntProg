@@ -412,7 +412,7 @@ Partial Class frmUserManagement
         Me.ListViewUser.HideSelection = False
         Me.ListViewUser.Location = New System.Drawing.Point(375, 12)
         Me.ListViewUser.Name = "ListViewUser"
-        Me.ListViewUser.Size = New System.Drawing.Size(413, 426)
+        Me.ListViewUser.Size = New System.Drawing.Size(532, 506)
         Me.ListViewUser.TabIndex = 1
         Me.ListViewUser.UseCompatibleStateImageBehavior = False
         '
@@ -422,7 +422,7 @@ Partial Class frmUserManagement
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.CornflowerBlue
         Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(919, 530)
         Me.Controls.Add(Me.ListViewUser)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmUserManagement"

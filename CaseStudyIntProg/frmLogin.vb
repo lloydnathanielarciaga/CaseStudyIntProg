@@ -33,7 +33,6 @@ Public Class frmLogin
         Try
             Call connection()
 
-            ' FIX: Changed to select 'FullName' instead of FirstName/LastName
             sql = "SELECT UserID, FullName, Password, Role, Status FROM tblusers WHERE Username = @Username"
             cmd = New MySqlCommand(sql, cn)
             cmd.Parameters.AddWithValue("@Username", txtUsername.Text)
@@ -48,16 +47,23 @@ Public Class frmLogin
                 If dr("Password").ToString() = txtPassword.Text Then
 
                     If dr("Status").ToString() = "Active" Then
-                        ' FIX: Read directly from the 'FullName' column
                         DbContext.CurrentUserID = Convert.ToInt32(dr("UserID"))
                         DbContext.CurrentFullName = dr("FullName").ToString()
 
                         MessageBox.Show("Login Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         If dr("Role").ToString() = "Administrator" Then
+                            If dr.Read() Then
+                                CurrentUserID = CInt(dr("UserID"))
+                                CurrentFullName = dr("FullName").ToString()
+                            End If
                             frmAdmin.Show()
                             Me.Hide()
                         ElseIf dr("Role").ToString() = "Registrar Staff" Then
+                            If dr.Read() Then
+                                CurrentUserID = CInt(dr("UserID"))
+                                CurrentFullName = dr("FullName").ToString()
+                            End If
                             frmStaff.Show()
                             Me.Hide()
                         End If

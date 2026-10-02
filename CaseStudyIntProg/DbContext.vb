@@ -21,4 +21,27 @@ Module DbContext
     Public CurrentFullName As String
     Public CurrentSemester As Integer = 1
 
+    Public Sub LogAudit(action As String, details As String, performedBy As String, Optional requestID As Object = Nothing)
+        Try
+            connection()
+            Dim sql As String = "INSERT INTO tblauditlog (Action, Details, PerformedBy, RequestID) VALUES (@action, @details, @performedBy, @reqID)"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@action", action)
+            cmd.Parameters.AddWithValue("@details", details)
+            cmd.Parameters.AddWithValue("@performedBy", performedBy)
+
+            If requestID Is Nothing OrElse String.IsNullOrWhiteSpace(requestID.ToString()) Then
+                cmd.Parameters.AddWithValue("@reqID", DBNull.Value)
+            Else
+                cmd.Parameters.AddWithValue("@reqID", requestID)
+            End If
+
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Console.WriteLine("Audit Log Error: " & ex.Message)
+        Finally
+            If cn.State = ConnectionState.Open Then cn.Close()
+        End Try
+    End Sub
+
 End Module
