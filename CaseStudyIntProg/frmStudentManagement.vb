@@ -5,7 +5,7 @@ Imports MySql.Data.MySqlClient
 Public Class frmStudentManagement
 
     Private _loading As Boolean = False
-    Private _sectionCode As String = ""
+    Private _sectionCode As String = "" 'Saved Section
 
     Private ReadOnly CourseCodes As New Dictionary(Of String, String) From {
         {"BS Information Technology", "BSIT"},
