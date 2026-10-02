@@ -95,6 +95,7 @@ Public Class frmUserManagement
             cmd.Parameters.AddWithValue("@status", If(rdoActive.Checked, "Active", "Inactive"))
 
             cmd.ExecuteNonQuery()
+            LogAudit("Add User", "Created user account for: " & txtUsername.Text.Trim(), CurrentFullName)
             MessageBox.Show("User account successfully created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Failed to create user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -135,6 +136,7 @@ Public Class frmUserManagement
                 End If
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Edit User", "Updated user account ID: " & cboUserId.Text, CurrentFullName)
                 MessageBox.Show("User account successfully updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("Failed to update user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -161,6 +163,7 @@ Public Class frmUserManagement
                 cmd.Parameters.AddWithValue("@userid", cboUserId.Text)
 
                 cmd.ExecuteNonQuery()
+                LogAudit("Deactivate User", "Deactivated user account ID: " & cboUserId.Text, CurrentFullName)
                 MessageBox.Show("User has been securely deactivated.", "Deactivation Complete", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("Failed to deactivate user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -202,44 +205,19 @@ Public Class frmUserManagement
     End Sub
 
     Private Sub ListViewUser_DoubleClick(sender As Object, e As EventArgs) Handles ListViewUser.DoubleClick
+
         If ListViewUser.SelectedItems.Count > 0 Then
             Dim selectedUserId As Integer = Convert.ToInt32(ListViewUser.SelectedItems(0).Text)
+            Dim selectedUsername As String = ListViewUser.SelectedItems(0).SubItems(1).Text
             Dim staffName As String = ListViewUser.SelectedItems(0).SubItems(2).Text
 
-            Dim frmHistory As New Form()
-            frmHistory.Text = "Transaction History: " & staffName
-            frmHistory.Size = New Size(500, 300)
-            frmHistory.StartPosition = FormStartPosition.CenterParent
-            frmHistory.FormBorderStyle = FormBorderStyle.FixedDialog
-            frmHistory.MaximizeBox = False
+            Dim frmPrompt As New frmTransactionHistoryAndAuditLogPrompt()
+            frmPrompt.SelectedUserID = selectedUserId
+            frmPrompt.SelectedUsername = selectedUsername
+            frmPrompt.SelectedStaffName = staffName
+            frmPrompt.Text = "History & Audit Logs: " & staffName
 
-            Dim dgv As New DataGridView()
-            dgv.Dock = DockStyle.Fill
-            dgv.AllowUserToAddRows = False
-            dgv.AllowUserToDeleteRows = False
-            dgv.ReadOnly = True
-            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
-            frmHistory.Controls.Add(dgv)
-
-            Try
-                connection()
-                sql = "SELECT RequestNo, RequestDate, TotalAmount, Status FROM tblrequest WHERE CreatedBy = @userid"
-                cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@userid", selectedUserId)
-
-                Dim adapter As New MySqlDataAdapter(cmd)
-                Dim dt As New DataTable()
-                adapter.Fill(dt)
-                dgv.DataSource = dt
-
-                frmHistory.ShowDialog()
-            Catch ex As Exception
-                MessageBox.Show("Failed to load transaction history: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Finally
-                cn.Close()
-            End Try
+            frmPrompt.ShowDialog()
         End If
     End Sub
 End Class

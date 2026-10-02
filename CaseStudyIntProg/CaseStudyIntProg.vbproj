@@ -209,6 +209,12 @@
     <Compile Include="frmSystemReport.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTransactionHistoryAndAuditLogPrompt.Designer.vb">
+      <DependentUpon>frmTransactionHistoryAndAuditLogPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactionHistoryAndAuditLogPrompt.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUserManagement.Designer.vb">
       <DependentUpon>frmUserManagement.vb</DependentUpon>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSystemReport.resx">
       <DependentUpon>frmSystemReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionHistoryAndAuditLogPrompt.resx">
+      <DependentUpon>frmTransactionHistoryAndAuditLogPrompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUserManagement.resx">
       <DependentUpon>frmUserManagement.vb</DependentUpon>

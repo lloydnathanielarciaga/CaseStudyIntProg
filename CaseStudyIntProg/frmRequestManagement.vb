@@ -187,7 +187,10 @@ Public Class frmRequestManagement
             cmd.ExecuteNonQuery()
             tr.Commit()
 
+            LogAudit("Status Change", "Changed Request ID " & requestID & " status to " & newStatus, CurrentFullName, requestID)
+
             MsgBox("Request successfully updated to " & newStatus & ".", MsgBoxStyle.Information)
+
             LoadProcessingRequests()
             ClearControls()
 

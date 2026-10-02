@@ -359,6 +359,8 @@ Public Class frmNewDocumentRequest
             trans.Commit()
             WriteAuditLog("SAVE_REQUEST", txtRequestNo.Text)
 
+            LogAudit("Create Request", "Created request " & txtRequestNo.Text & " for Student " & SelectedStudentID, LoggedInFullName, newRequestID)
+
             MessageBox.Show("Request saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             GenerateReceipt()

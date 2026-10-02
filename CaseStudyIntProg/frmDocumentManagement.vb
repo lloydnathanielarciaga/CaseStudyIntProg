@@ -87,6 +87,8 @@ Public Class frmDocumentManagement
                 cmd.Parameters.AddWithValue("@status", docStatus)
 
                 cmd.ExecuteNonQuery()
+
+                LogAudit("Add Document", "Added new document: " & txtDocumentName.Text.Trim(), CurrentFullName)
                 MsgBox("Document successfully added!", MsgBoxStyle.Information)
 
                 LoadDocuments()
@@ -168,6 +170,8 @@ Public Class frmDocumentManagement
                 cmd.Parameters.AddWithValue("@id", txtDocumentId.Text)
 
                 cmd.ExecuteNonQuery()
+
+                LogAudit("Edit Document", "Updated document ID: " & txtDocumentId.Text, CurrentFullName)
                 MsgBox("Document successfully updated!", MsgBoxStyle.Information)
 
                 LoadDocuments()
@@ -229,6 +233,8 @@ Public Class frmDocumentManagement
                 cmd.Parameters.AddWithValue("@id", txtDocumentId.Text)
 
                 cmd.ExecuteNonQuery()
+
+                LogAudit("Deactivate Document", "Deactivated document ID: " & txtDocumentId.Text, CurrentFullName)
                 MsgBox("Document status successfully changed to Inactive!", MsgBoxStyle.Information)
 
                 LoadDocuments()
