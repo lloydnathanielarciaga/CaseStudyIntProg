@@ -400,5 +400,4 @@ Public Class frmNewDocumentRequest
             UpdateTotalAmount()
         End If
     End Sub
-
 End Class
