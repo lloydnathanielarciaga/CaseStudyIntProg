@@ -10,13 +10,13 @@ Public Class frmDocumentRequestList
         ListViewRequestList.MultiSelect = False
 
         ListViewRequestList.Columns.Clear()
-        ListViewRequestList.Columns.Add("Request No.", 120)
-        ListViewRequestList.Columns.Add("Student ID", 100)
-        ListViewRequestList.Columns.Add("Last Name", 120)
-        ListViewRequestList.Columns.Add("First Name", 120)
-        ListViewRequestList.Columns.Add("Request Date", 100)
-        ListViewRequestList.Columns.Add("Total Amount", 100)
-        ListViewRequestList.Columns.Add("Status", 100)
+        ListViewRequestList.Columns.Add("Request No.", 260)
+        ListViewRequestList.Columns.Add("Student ID", 180)
+        ListViewRequestList.Columns.Add("Last Name", 220)
+        ListViewRequestList.Columns.Add("First Name", 220)
+        ListViewRequestList.Columns.Add("Request Date", 200)
+        ListViewRequestList.Columns.Add("Total Amount", 200)
+        ListViewRequestList.Columns.Add("Status", 260)
 
         cboStatusFilter.Items.AddRange(New String() {"All", "Pending", "Processing", "Ready for Release", "Released", "Cancelled"})
 

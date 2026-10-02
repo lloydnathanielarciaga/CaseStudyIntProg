@@ -24,6 +24,11 @@ Partial Class frmDocumentManagement
     Private Sub InitializeComponent()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txtDescription = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtFee = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtDocumentName = New Guna.UI2.WinForms.Guna2TextBox()
@@ -35,11 +40,6 @@ Partial Class frmDocumentManagement
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.ListViewDocument = New System.Windows.Forms.ListView()
         Me.Guna2Panel7.SuspendLayout()
@@ -81,6 +81,88 @@ Partial Class frmDocumentManagement
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.Size = New System.Drawing.Size(1558, 334)
         Me.Guna2Panel7.TabIndex = 18
+        '
+        'btnClear
+        '
+        Me.btnClear.BackColor = System.Drawing.Color.Transparent
+        Me.btnClear.BorderRadius = 12
+        Me.btnClear.BorderThickness = 1
+        Me.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClear.FillColor = System.Drawing.Color.White
+        Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(1403, 269)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(121, 45)
+        Me.btnClear.TabIndex = 51
+        Me.btnClear.Text = "CLEAR"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.BorderRadius = 12
+        Me.btnDelete.BorderThickness = 1
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.White
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.Red
+        Me.btnDelete.Location = New System.Drawing.Point(1266, 269)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(121, 45)
+        Me.btnDelete.TabIndex = 50
+        Me.btnDelete.Text = "DELETE"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.BorderRadius = 12
+        Me.btnEdit.BorderThickness = 1
+        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.FillColor = System.Drawing.Color.White
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnEdit.Location = New System.Drawing.Point(1128, 269)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(121, 45)
+        Me.btnEdit.TabIndex = 49
+        Me.btnEdit.Text = "EDIT"
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.BorderRadius = 12
+        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.Location = New System.Drawing.Point(990, 269)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(121, 45)
+        Me.btnAdd.TabIndex = 48
+        Me.btnAdd.Text = "ADD"
+        '
+        'Guna2HtmlLabel7
+        '
+        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(35, 25)
+        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(320, 42)
+        Me.Guna2HtmlLabel7.TabIndex = 40
+        Me.Guna2HtmlLabel7.Text = "Document Information"
         '
         'txtDescription
         '
@@ -267,88 +349,6 @@ Partial Class frmDocumentManagement
         Me.Guna2HtmlLabel8.TabIndex = 19
         Me.Guna2HtmlLabel8.Text = "DOCUMENT ID"
         '
-        'Guna2HtmlLabel7
-        '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(35, 25)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(320, 42)
-        Me.Guna2HtmlLabel7.TabIndex = 40
-        Me.Guna2HtmlLabel7.Text = "Document Information"
-        '
-        'btnClear
-        '
-        Me.btnClear.BackColor = System.Drawing.Color.Transparent
-        Me.btnClear.BorderRadius = 12
-        Me.btnClear.BorderThickness = 1
-        Me.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnClear.FillColor = System.Drawing.Color.White
-        Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.btnClear.Location = New System.Drawing.Point(1403, 269)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(121, 45)
-        Me.btnClear.TabIndex = 51
-        Me.btnClear.Text = "CLEAR"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
-        Me.btnDelete.BorderRadius = 12
-        Me.btnDelete.BorderThickness = 1
-        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDelete.FillColor = System.Drawing.Color.White
-        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDelete.ForeColor = System.Drawing.Color.Red
-        Me.btnDelete.Location = New System.Drawing.Point(1266, 269)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(121, 45)
-        Me.btnDelete.TabIndex = 50
-        Me.btnDelete.Text = "DELETE"
-        '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.Transparent
-        Me.btnEdit.BorderRadius = 12
-        Me.btnEdit.BorderThickness = 1
-        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnEdit.FillColor = System.Drawing.Color.White
-        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.btnEdit.Location = New System.Drawing.Point(1128, 269)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(121, 45)
-        Me.btnEdit.TabIndex = 49
-        Me.btnEdit.Text = "EDIT"
-        '
-        'btnAdd
-        '
-        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
-        Me.btnAdd.BorderRadius = 12
-        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(990, 269)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(121, 45)
-        Me.btnAdd.TabIndex = 48
-        Me.btnAdd.Text = "ADD"
-        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BorderRadius = 12
@@ -361,6 +361,7 @@ Partial Class frmDocumentManagement
         '
         'ListViewDocument
         '
+        Me.ListViewDocument.BackColor = System.Drawing.Color.Lavender
         Me.ListViewDocument.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewDocument.HideSelection = False
         Me.ListViewDocument.Location = New System.Drawing.Point(22, 23)
