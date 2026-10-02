@@ -7,11 +7,11 @@ Public Class frmDocumentManagement
         ListViewDocument.GridLines = True
         ListViewDocument.FullRowSelect = True
 
-        ListViewDocument.Columns.Add("Document ID", 100)
-        ListViewDocument.Columns.Add("Document Name", 150)
-        ListViewDocument.Columns.Add("Description", 200)
-        ListViewDocument.Columns.Add("Fee", 100)
-        ListViewDocument.Columns.Add("Status", 100)
+        ListViewDocument.Columns.Add("Document ID", 180)
+        ListViewDocument.Columns.Add("Document Name", 400)
+        ListViewDocument.Columns.Add("Description", 550)
+        ListViewDocument.Columns.Add("Fee", 130)
+        ListViewDocument.Columns.Add("Status", 120)
 
         btnClear.PerformClick()
 
@@ -44,7 +44,7 @@ Public Class frmDocumentManagement
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         If Not txtDocumentName.Enabled Then
-            txtDocumentId.Clear()
+            txtDocumentID.Clear()
             txtDocumentName.Clear()
             txtDescription.Clear()
             txtFee.Clear()
@@ -102,7 +102,7 @@ Public Class frmDocumentManagement
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
-        If txtDocumentId.Text = "" Then
+        If txtDocumentID.Text = "" Then
             MsgBox("Please select a document from the list to edit.", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
@@ -167,11 +167,11 @@ Public Class frmDocumentManagement
                 cmd.Parameters.AddWithValue("@desc", txtDescription.Text.Trim())
                 cmd.Parameters.AddWithValue("@fee", feeAmount)
                 cmd.Parameters.AddWithValue("@status", docStatus)
-                cmd.Parameters.AddWithValue("@id", txtDocumentId.Text)
+                cmd.Parameters.AddWithValue("@id", txtDocumentID.Text)
 
                 cmd.ExecuteNonQuery()
 
-                LogAudit("Edit Document", "Updated document ID: " & txtDocumentId.Text, CurrentFullName)
+                LogAudit("Edit Document", "Updated document ID: " & txtDocumentID.Text, CurrentFullName)
                 MsgBox("Document successfully updated!", MsgBoxStyle.Information)
 
                 LoadDocuments()
@@ -185,7 +185,7 @@ Public Class frmDocumentManagement
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If txtDocumentId.Text = "" Then
+        If txtDocumentID.Text = "" Then
             MsgBox("Please select a document from the list to delete.", MsgBoxStyle.Exclamation)
             Exit Sub
         End If
@@ -230,11 +230,11 @@ Public Class frmDocumentManagement
                 Call connection()
                 sql = "UPDATE tbldocuments SET Status = 'Inactive' WHERE DocumentID = @id"
                 cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@id", txtDocumentId.Text)
+                cmd.Parameters.AddWithValue("@id", txtDocumentID.Text)
 
                 cmd.ExecuteNonQuery()
 
-                LogAudit("Deactivate Document", "Deactivated document ID: " & txtDocumentId.Text, CurrentFullName)
+                LogAudit("Deactivate Document", "Deactivated document ID: " & txtDocumentID.Text, CurrentFullName)
                 MsgBox("Document status successfully changed to Inactive!", MsgBoxStyle.Information)
 
                 LoadDocuments()
@@ -248,14 +248,14 @@ Public Class frmDocumentManagement
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        txtDocumentId.Clear()
+        txtDocumentID.Clear()
         txtDocumentName.Clear()
         txtDescription.Clear()
         txtFee.Clear()
         rdoActive.Checked = False
         rdoInactive.Checked = False
 
-        txtDocumentId.Enabled = False
+        txtDocumentID.Enabled = False
         txtDocumentName.Enabled = False
         txtDescription.Enabled = False
         txtFee.Enabled = False
@@ -271,7 +271,7 @@ Public Class frmDocumentManagement
         If ListViewDocument.SelectedItems.Count > 0 Then
             Dim selectedItem As ListViewItem = ListViewDocument.SelectedItems(0)
 
-            txtDocumentId.Text = selectedItem.Text
+            txtDocumentID.Text = selectedItem.Text
             txtDocumentName.Text = selectedItem.SubItems(1).Text
             txtDescription.Text = selectedItem.SubItems(2).Text
             txtFee.Text = selectedItem.SubItems(3).Text

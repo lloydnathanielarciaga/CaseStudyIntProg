@@ -22,314 +22,390 @@ Partial Class frmDocumentManagement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txtFee = New System.Windows.Forms.TextBox()
-        Me.txtDescription = New System.Windows.Forms.TextBox()
-        Me.txtDocumentName = New System.Windows.Forms.TextBox()
-        Me.lblDocumentId = New System.Windows.Forms.Label()
-        Me.lblDocuManage = New System.Windows.Forms.Label()
-        Me.lblDocumentName = New System.Windows.Forms.Label()
-        Me.lblDescription = New System.Windows.Forms.Label()
-        Me.lblFee = New System.Windows.Forms.Label()
-        Me.lblStatus = New System.Windows.Forms.Label()
-        Me.txtDocumentId = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.rdoActive = New System.Windows.Forms.RadioButton()
-        Me.rdoInactive = New System.Windows.Forms.RadioButton()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnClear = New System.Windows.Forms.Button()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.txtDescription = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtFee = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDocumentName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtDocumentID = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.rdoInactive = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.rdoActive = New Guna.UI2.WinForms.Guna2RadioButton()
+        Me.Guna2HtmlLabel15 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnDelete = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnEdit = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnAdd = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.ListViewDocument = New System.Windows.Forms.ListView()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
+        Me.Guna2Panel7.SuspendLayout()
+        Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'Guna2HtmlLabel6
         '
-        Me.TableLayoutPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.TableLayoutPanel1.ColumnCount = 3
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.txtFee, 1, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtDescription, 1, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtDocumentName, 1, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDocumentId, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDocuManage, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDocumentName, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblDescription, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblFee, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.lblStatus, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.txtDocumentId, 1, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel2, 1, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel3, 2, 6)
-        Me.TableLayoutPanel1.Controls.Add(Me.btnClear, 2, 1)
-        Me.TableLayoutPanel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 12)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 7
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28567!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28567!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28424!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(574, 220)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Segoe UI Black", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.Navy
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(31, 23)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(571, 67)
+        Me.Guna2HtmlLabel6.TabIndex = 17
+        Me.Guna2HtmlLabel6.Text = "Document Management"
         '
-        'txtFee
+        'Guna2Panel7
         '
-        Me.txtFee.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtFee.ForeColor = System.Drawing.Color.Black
-        Me.txtFee.Location = New System.Drawing.Point(99, 129)
-        Me.txtFee.Name = "txtFee"
-        Me.txtFee.Size = New System.Drawing.Size(63, 20)
-        Me.txtFee.TabIndex = 9
+        Me.Guna2Panel7.BorderRadius = 12
+        Me.Guna2Panel7.Controls.Add(Me.btnClear)
+        Me.Guna2Panel7.Controls.Add(Me.btnDelete)
+        Me.Guna2Panel7.Controls.Add(Me.btnEdit)
+        Me.Guna2Panel7.Controls.Add(Me.btnAdd)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel7)
+        Me.Guna2Panel7.Controls.Add(Me.txtDescription)
+        Me.Guna2Panel7.Controls.Add(Me.txtFee)
+        Me.Guna2Panel7.Controls.Add(Me.txtDocumentName)
+        Me.Guna2Panel7.Controls.Add(Me.txtDocumentID)
+        Me.Guna2Panel7.Controls.Add(Me.rdoInactive)
+        Me.Guna2Panel7.Controls.Add(Me.rdoActive)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel15)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel13)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel9)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel8)
+        Me.Guna2Panel7.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel7.Location = New System.Drawing.Point(31, 96)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.Size = New System.Drawing.Size(1558, 334)
+        Me.Guna2Panel7.TabIndex = 18
         '
         'txtDescription
         '
-        Me.txtDescription.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtDescription.ForeColor = System.Drawing.Color.Black
-        Me.txtDescription.Location = New System.Drawing.Point(99, 98)
-        Me.txtDescription.Multiline = True
+        Me.txtDescription.BackColor = System.Drawing.Color.Transparent
+        Me.txtDescription.BorderRadius = 12
+        Me.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDescription.DefaultText = ""
+        Me.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDescription.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescription.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDescription.Location = New System.Drawing.Point(35, 204)
+        Me.txtDescription.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtDescription.Name = "txtDescription"
-        Me.txtDescription.Size = New System.Drawing.Size(172, 20)
-        Me.txtDescription.TabIndex = 8
+        Me.txtDescription.PlaceholderText = ""
+        Me.txtDescription.SelectedText = ""
+        Me.txtDescription.Size = New System.Drawing.Size(1489, 35)
+        Me.txtDescription.TabIndex = 39
+        '
+        'txtFee
+        '
+        Me.txtFee.BackColor = System.Drawing.Color.Transparent
+        Me.txtFee.BorderRadius = 12
+        Me.txtFee.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtFee.DefaultText = ""
+        Me.txtFee.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtFee.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtFee.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtFee.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtFee.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtFee.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtFee.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFee.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtFee.Location = New System.Drawing.Point(1056, 121)
+        Me.txtFee.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtFee.Name = "txtFee"
+        Me.txtFee.PlaceholderText = ""
+        Me.txtFee.SelectedText = ""
+        Me.txtFee.Size = New System.Drawing.Size(468, 35)
+        Me.txtFee.TabIndex = 38
         '
         'txtDocumentName
         '
-        Me.txtDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtDocumentName.ForeColor = System.Drawing.Color.Black
-        Me.txtDocumentName.Location = New System.Drawing.Point(99, 67)
+        Me.txtDocumentName.BackColor = System.Drawing.Color.Transparent
+        Me.txtDocumentName.BorderRadius = 12
+        Me.txtDocumentName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDocumentName.DefaultText = ""
+        Me.txtDocumentName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDocumentName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDocumentName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDocumentName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDocumentName.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentName.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDocumentName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentName.Location = New System.Drawing.Point(548, 121)
+        Me.txtDocumentName.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
         Me.txtDocumentName.Name = "txtDocumentName"
-        Me.txtDocumentName.Size = New System.Drawing.Size(172, 20)
-        Me.txtDocumentName.TabIndex = 7
+        Me.txtDocumentName.PlaceholderText = ""
+        Me.txtDocumentName.SelectedText = ""
+        Me.txtDocumentName.Size = New System.Drawing.Size(468, 35)
+        Me.txtDocumentName.TabIndex = 37
         '
-        'lblDocumentId
+        'txtDocumentID
         '
-        Me.lblDocumentId.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblDocumentId.AutoSize = True
-        Me.lblDocumentId.Location = New System.Drawing.Point(3, 40)
-        Me.lblDocumentId.Name = "lblDocumentId"
-        Me.lblDocumentId.Size = New System.Drawing.Size(73, 13)
-        Me.lblDocumentId.TabIndex = 1
-        Me.lblDocumentId.Text = "Document ID:"
-        '
-        'lblDocuManage
-        '
-        Me.lblDocuManage.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lblDocuManage.AutoSize = True
-        Me.TableLayoutPanel1.SetColumnSpan(Me.lblDocuManage, 2)
-        Me.lblDocuManage.Location = New System.Drawing.Point(76, 9)
-        Me.lblDocuManage.Name = "lblDocuManage"
-        Me.lblDocuManage.Size = New System.Drawing.Size(121, 13)
-        Me.lblDocuManage.TabIndex = 0
-        Me.lblDocuManage.Text = "Document Management"
-        '
-        'lblDocumentName
-        '
-        Me.lblDocumentName.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblDocumentName.AutoSize = True
-        Me.lblDocumentName.Location = New System.Drawing.Point(3, 71)
-        Me.lblDocumentName.Name = "lblDocumentName"
-        Me.lblDocumentName.Size = New System.Drawing.Size(90, 13)
-        Me.lblDocumentName.TabIndex = 2
-        Me.lblDocumentName.Text = "Document Name:"
-        '
-        'lblDescription
-        '
-        Me.lblDescription.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblDescription.AutoSize = True
-        Me.lblDescription.Location = New System.Drawing.Point(3, 102)
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(63, 13)
-        Me.lblDescription.TabIndex = 3
-        Me.lblDescription.Text = "Description:"
-        '
-        'lblFee
-        '
-        Me.lblFee.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblFee.AutoSize = True
-        Me.lblFee.Location = New System.Drawing.Point(3, 133)
-        Me.lblFee.Name = "lblFee"
-        Me.lblFee.Size = New System.Drawing.Size(28, 13)
-        Me.lblFee.TabIndex = 4
-        Me.lblFee.Text = "Fee:"
-        '
-        'lblStatus
-        '
-        Me.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.Location = New System.Drawing.Point(3, 164)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(40, 13)
-        Me.lblStatus.TabIndex = 5
-        Me.lblStatus.Text = "Status:"
-        '
-        'txtDocumentId
-        '
-        Me.txtDocumentId.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.txtDocumentId.ForeColor = System.Drawing.Color.Black
-        Me.txtDocumentId.Location = New System.Drawing.Point(99, 36)
-        Me.txtDocumentId.Name = "txtDocumentId"
-        Me.txtDocumentId.Size = New System.Drawing.Size(63, 20)
-        Me.txtDocumentId.TabIndex = 6
-        '
-        'TableLayoutPanel2
-        '
-        Me.TableLayoutPanel2.ColumnCount = 2
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.rdoActive, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.rdoInactive, 1, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(99, 158)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 1
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(172, 25)
-        Me.TableLayoutPanel2.TabIndex = 10
-        '
-        'rdoActive
-        '
-        Me.rdoActive.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.rdoActive.AutoSize = True
-        Me.rdoActive.ForeColor = System.Drawing.Color.White
-        Me.rdoActive.Location = New System.Drawing.Point(3, 4)
-        Me.rdoActive.Name = "rdoActive"
-        Me.rdoActive.Size = New System.Drawing.Size(55, 17)
-        Me.rdoActive.TabIndex = 0
-        Me.rdoActive.TabStop = True
-        Me.rdoActive.Text = "Active"
-        Me.rdoActive.UseVisualStyleBackColor = True
+        Me.txtDocumentID.BackColor = System.Drawing.Color.Transparent
+        Me.txtDocumentID.BorderRadius = 12
+        Me.txtDocumentID.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtDocumentID.DefaultText = ""
+        Me.txtDocumentID.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtDocumentID.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtDocumentID.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDocumentID.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtDocumentID.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentID.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDocumentID.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtDocumentID.Location = New System.Drawing.Point(35, 121)
+        Me.txtDocumentID.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.txtDocumentID.Name = "txtDocumentID"
+        Me.txtDocumentID.PlaceholderText = ""
+        Me.txtDocumentID.SelectedText = ""
+        Me.txtDocumentID.Size = New System.Drawing.Size(468, 35)
+        Me.txtDocumentID.TabIndex = 36
         '
         'rdoInactive
         '
-        Me.rdoInactive.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.rdoInactive.AutoSize = True
-        Me.rdoInactive.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.rdoInactive.Location = New System.Drawing.Point(89, 4)
+        Me.rdoInactive.BackColor = System.Drawing.Color.Transparent
+        Me.rdoInactive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rdoInactive.CheckedState.BorderThickness = 0
+        Me.rdoInactive.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rdoInactive.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.rdoInactive.CheckedState.InnerOffset = -4
+        Me.rdoInactive.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoInactive.Location = New System.Drawing.Point(234, 271)
         Me.rdoInactive.Name = "rdoInactive"
-        Me.rdoInactive.Size = New System.Drawing.Size(63, 17)
-        Me.rdoInactive.TabIndex = 1
-        Me.rdoInactive.TabStop = True
+        Me.rdoInactive.Size = New System.Drawing.Size(105, 34)
+        Me.rdoInactive.TabIndex = 35
         Me.rdoInactive.Text = "Inactive"
-        Me.rdoInactive.UseVisualStyleBackColor = True
+        Me.rdoInactive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.rdoInactive.UncheckedState.BorderThickness = 2
+        Me.rdoInactive.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.rdoInactive.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.rdoInactive.UseVisualStyleBackColor = False
         '
-        'TableLayoutPanel3
+        'rdoActive
         '
-        Me.TableLayoutPanel3.ColumnCount = 3
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel3.Controls.Add(Me.btnAdd, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnEdit, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.btnDelete, 2, 0)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(277, 189)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(294, 28)
-        Me.TableLayoutPanel3.TabIndex = 11
+        Me.rdoActive.AutoSize = True
+        Me.rdoActive.BackColor = System.Drawing.Color.Transparent
+        Me.rdoActive.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rdoActive.CheckedState.BorderThickness = 0
+        Me.rdoActive.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.rdoActive.CheckedState.InnerColor = System.Drawing.Color.White
+        Me.rdoActive.CheckedState.InnerOffset = -4
+        Me.rdoActive.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rdoActive.Location = New System.Drawing.Point(122, 271)
+        Me.rdoActive.Name = "rdoActive"
+        Me.rdoActive.Size = New System.Drawing.Size(90, 34)
+        Me.rdoActive.TabIndex = 34
+        Me.rdoActive.Text = "Active"
+        Me.rdoActive.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.rdoActive.UncheckedState.BorderThickness = 2
+        Me.rdoActive.UncheckedState.FillColor = System.Drawing.Color.Transparent
+        Me.rdoActive.UncheckedState.InnerColor = System.Drawing.Color.Transparent
+        Me.rdoActive.UseVisualStyleBackColor = False
         '
-        'btnAdd
+        'Guna2HtmlLabel15
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnAdd.Location = New System.Drawing.Point(3, 3)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(91, 22)
-        Me.btnAdd.TabIndex = 0
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = False
+        Me.Guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel15.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel15.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel15.Location = New System.Drawing.Point(35, 277)
+        Me.Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
+        Me.Guna2HtmlLabel15.Size = New System.Drawing.Size(58, 23)
+        Me.Guna2HtmlLabel15.TabIndex = 33
+        Me.Guna2HtmlLabel15.Text = "STATUS"
         '
-        'btnEdit
+        'Guna2HtmlLabel13
         '
-        Me.btnEdit.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnEdit.Location = New System.Drawing.Point(100, 3)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(91, 22)
-        Me.btnEdit.TabIndex = 1
-        Me.btnEdit.Text = "Edit"
-        Me.btnEdit.UseVisualStyleBackColor = False
+        Me.Guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel13.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(35, 173)
+        Me.Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
+        Me.Guna2HtmlLabel13.Size = New System.Drawing.Size(100, 23)
+        Me.Guna2HtmlLabel13.TabIndex = 25
+        Me.Guna2HtmlLabel13.Text = "DESCRIPTION"
         '
-        'btnDelete
+        'Guna2HtmlLabel10
         '
-        Me.btnDelete.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btnDelete.Location = New System.Drawing.Point(197, 3)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(94, 22)
-        Me.btnDelete.TabIndex = 2
-        Me.btnDelete.Text = "Delete"
-        Me.btnDelete.UseVisualStyleBackColor = False
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(1056, 90)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(27, 23)
+        Me.Guna2HtmlLabel10.TabIndex = 23
+        Me.Guna2HtmlLabel10.Text = "FEE"
+        '
+        'Guna2HtmlLabel9
+        '
+        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel9.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(548, 90)
+        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
+        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(137, 23)
+        Me.Guna2HtmlLabel9.TabIndex = 21
+        Me.Guna2HtmlLabel9.Text = "DOCUMENT NAME"
+        '
+        'Guna2HtmlLabel8
+        '
+        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel8.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(35, 90)
+        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(108, 23)
+        Me.Guna2HtmlLabel8.TabIndex = 19
+        Me.Guna2HtmlLabel8.Text = "DOCUMENT ID"
+        '
+        'Guna2HtmlLabel7
+        '
+        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel7.ForeColor = System.Drawing.Color.Black
+        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(35, 25)
+        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
+        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(320, 42)
+        Me.Guna2HtmlLabel7.TabIndex = 40
+        Me.Guna2HtmlLabel7.Text = "Document Information"
         '
         'btnClear
         '
-        Me.btnClear.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.btnClear.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnClear.ForeColor = System.Drawing.Color.White
-        Me.btnClear.Location = New System.Drawing.Point(277, 35)
+        Me.btnClear.BackColor = System.Drawing.Color.Transparent
+        Me.btnClear.BorderRadius = 12
+        Me.btnClear.BorderThickness = 1
+        Me.btnClear.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnClear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnClear.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnClear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnClear.FillColor = System.Drawing.Color.White
+        Me.btnClear.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClear.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnClear.Location = New System.Drawing.Point(1403, 269)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(75, 23)
-        Me.btnClear.TabIndex = 12
-        Me.btnClear.Text = "Clear"
-        Me.btnClear.UseVisualStyleBackColor = False
+        Me.btnClear.Size = New System.Drawing.Size(121, 45)
+        Me.btnClear.TabIndex = 51
+        Me.btnClear.Text = "CLEAR"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.btnDelete.BorderRadius = 12
+        Me.btnDelete.BorderThickness = 1
+        Me.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnDelete.FillColor = System.Drawing.Color.White
+        Me.btnDelete.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.ForeColor = System.Drawing.Color.Red
+        Me.btnDelete.Location = New System.Drawing.Point(1266, 269)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(121, 45)
+        Me.btnDelete.TabIndex = 50
+        Me.btnDelete.Text = "DELETE"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.Transparent
+        Me.btnEdit.BorderRadius = 12
+        Me.btnEdit.BorderThickness = 1
+        Me.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnEdit.FillColor = System.Drawing.Color.White
+        Me.btnEdit.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEdit.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnEdit.Location = New System.Drawing.Point(1128, 269)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(121, 45)
+        Me.btnEdit.TabIndex = 49
+        Me.btnEdit.Text = "EDIT"
+        '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.Transparent
+        Me.btnAdd.BorderRadius = 12
+        Me.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnAdd.Font = New System.Drawing.Font("Segoe UI Semibold", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.Location = New System.Drawing.Point(990, 269)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(121, 45)
+        Me.btnAdd.TabIndex = 48
+        Me.btnAdd.Text = "ADD"
+        '
+        'Guna2Panel1
+        '
+        Me.Guna2Panel1.BorderRadius = 12
+        Me.Guna2Panel1.Controls.Add(Me.ListViewDocument)
+        Me.Guna2Panel1.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Location = New System.Drawing.Point(31, 466)
+        Me.Guna2Panel1.Name = "Guna2Panel1"
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1558, 518)
+        Me.Guna2Panel1.TabIndex = 52
         '
         'ListViewDocument
         '
-        Me.ListViewDocument.BackColor = System.Drawing.Color.Lavender
+        Me.ListViewDocument.Font = New System.Drawing.Font("Segoe UI Semibold", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewDocument.HideSelection = False
-        Me.ListViewDocument.Location = New System.Drawing.Point(12, 238)
+        Me.ListViewDocument.Location = New System.Drawing.Point(22, 23)
         Me.ListViewDocument.Name = "ListViewDocument"
-        Me.ListViewDocument.Size = New System.Drawing.Size(776, 200)
-        Me.ListViewDocument.TabIndex = 1
+        Me.ListViewDocument.Size = New System.Drawing.Size(1515, 474)
+        Me.ListViewDocument.TabIndex = 0
         Me.ListViewDocument.UseCompatibleStateImageBehavior = False
-        Me.ListViewDocument.View = System.Windows.Forms.View.Details
         '
         'frmDocumentManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.CaseStudyIntProg.My.Resources.Resources.registrarbg2
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.ListViewDocument)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1628, 1011)
+        Me.Controls.Add(Me.Guna2Panel1)
+        Me.Controls.Add(Me.Guna2Panel7)
+        Me.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Name = "frmDocumentManagement"
         Me.Text = "frmDocumentManagement"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.Guna2Panel7.ResumeLayout(False)
+        Me.Guna2Panel7.PerformLayout()
+        Me.Guna2Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents lblDocumentId As Label
-    Friend WithEvents lblDocuManage As Label
-    Friend WithEvents lblDocumentName As Label
-    Friend WithEvents lblDescription As Label
-    Friend WithEvents lblFee As Label
-    Friend WithEvents lblStatus As Label
-    Friend WithEvents txtFee As TextBox
-    Friend WithEvents txtDescription As TextBox
-    Friend WithEvents txtDocumentName As TextBox
-    Friend WithEvents txtDocumentId As TextBox
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents rdoActive As RadioButton
-    Friend WithEvents rdoInactive As RadioButton
+    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents txtDescription As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtFee As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDocumentName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtDocumentID As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents rdoInactive As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents rdoActive As Guna.UI2.WinForms.Guna2RadioButton
+    Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents btnClear As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnDelete As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnEdit As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnAdd As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents ListViewDocument As ListView
-    Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
-    Friend WithEvents btnAdd As Button
-    Friend WithEvents btnEdit As Button
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents btnClear As Button
 End Class

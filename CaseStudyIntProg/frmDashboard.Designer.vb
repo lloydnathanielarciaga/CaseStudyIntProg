@@ -114,6 +114,7 @@ Partial Class frmDashboard
         '
         'lsvTopDocs
         '
+        Me.lsvTopDocs.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvTopDocs.HideSelection = False
         Me.lsvTopDocs.Location = New System.Drawing.Point(30, 63)
         Me.lsvTopDocs.Name = "lsvTopDocs"
@@ -146,6 +147,7 @@ Partial Class frmDashboard
         '
         'lsvRequests
         '
+        Me.lsvRequests.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lsvRequests.HideSelection = False
         Me.lsvRequests.Location = New System.Drawing.Point(27, 63)
         Me.lsvRequests.Name = "lsvRequests"

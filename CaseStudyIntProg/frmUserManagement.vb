@@ -10,11 +10,11 @@ Public Class frmUserManagement
         ListViewUser.GridLines = True
         ListViewUser.MultiSelect = False
 
-        ListViewUser.Columns.Add("User ID", 70)
-        ListViewUser.Columns.Add("Username", 120)
-        ListViewUser.Columns.Add("Full Name", 180)
-        ListViewUser.Columns.Add("Role", 120)
-        ListViewUser.Columns.Add("Status", 80)
+        ListViewUser.Columns.Add("User ID", 90)
+        ListViewUser.Columns.Add("Username", 130)
+        ListViewUser.Columns.Add("Full Name", 220)
+        ListViewUser.Columns.Add("Role", 190)
+        ListViewUser.Columns.Add("Status", 100)
 
         cboRole.DropDownStyle = ComboBoxStyle.DropDownList
         cboRole.Items.Clear()
@@ -26,11 +26,11 @@ Public Class frmUserManagement
 
     Private Sub LoadUsers()
         ListViewUser.Items.Clear()
-        cboUserId.Items.Clear()
+        cboUserID.Items.Clear()
 
         Try
             connection()
-            sql = "SELECT UserID, Username, FullName, Role, Status FROM tblusers"
+            sql = "SELECT UserID, Username, FullName, Role, Status FROM tblusers ORDER BY UserID"
             cmd = New MySqlCommand(sql, cn)
             dr = cmd.ExecuteReader()
 
@@ -42,7 +42,7 @@ Public Class frmUserManagement
                 item.SubItems.Add(dr("Status").ToString())
                 ListViewUser.Items.Add(item)
 
-                cboUserId.Items.Add(dr("UserID").ToString())
+                cboUserID.Items.Add(dr("UserID").ToString())
             End While
         Catch ex As Exception
             MessageBox.Show("Failed to load user records. Connection error: " & ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -81,34 +81,59 @@ Public Class frmUserManagement
     End Function
 
     Private Sub btnAddUser_Click(sender As Object, e As EventArgs) Handles btnAddUser.Click
+        ' a row is selected -> the form holds an existing user; start a new one first
+        If cboUserID.Text.Trim() <> "" Then
+            MessageBox.Show("A user is currently selected. Click Clear first, then enter the new user's details.", "Add User", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Exit Sub
+        End If
+
         If Not ValidateInputs(True) Then Exit Sub
+
+        Dim added As Boolean = False
 
         Try
             connection()
+
+            ' username must be unique
+            sql = "SELECT COUNT(*) FROM tblusers WHERE Username = @username"
+            cmd = New MySqlCommand(sql, cn)
+            cmd.Parameters.AddWithValue("@username", txtUsername.Text.Trim())
+            If Convert.ToInt32(cmd.ExecuteScalar()) > 0 Then
+                MessageBox.Show("That username is already taken. Please choose a different one.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtUsername.Focus()
+                Exit Sub
+            End If
+
             sql = "INSERT INTO tblusers (Username, Password, FullName, Role, Status) VALUES (@username, @password, @fullname, @role, @status)"
             cmd = New MySqlCommand(sql, cn)
-
             cmd.Parameters.AddWithValue("@username", txtUsername.Text.Trim())
             cmd.Parameters.AddWithValue("@password", txtPassword.Text.Trim())
             cmd.Parameters.AddWithValue("@fullname", txtFullName.Text.Trim())
             cmd.Parameters.AddWithValue("@role", cboRole.SelectedItem.ToString())
             cmd.Parameters.AddWithValue("@status", If(rdoActive.Checked, "Active", "Inactive"))
-
             cmd.ExecuteNonQuery()
-            LogAudit("Add User", "Created user account for: " & txtUsername.Text.Trim(), CurrentFullName)
-            MessageBox.Show("User account successfully created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Dim newUserId As Long = cmd.LastInsertedId          ' the ID MySQL just generated
+            added = True
+
+            LogAudit("Add User", "Created user account for: " & txtUsername.Text.Trim() & " (User ID " & newUserId & ")", CurrentFullName)
+            MessageBox.Show("User account successfully created." & vbCrLf & "User ID: " & newUserId, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Failed to create user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally
             cn.Close()
+        End Try
+
+        ' only reload + clear when the user was really added (so typed details aren't lost on an error)
+        If added Then
             LoadUsers()
             btnClear.PerformClick()
-        End Try
+        End If
     End Sub
 
     Private Sub btnEditUser_Click(sender As Object, e As EventArgs) Handles btnEditUser.Click
-        If cboUserId.Text.Trim() = "" Then
-            MessageBox.Show("Please select a User ID to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If cboUserID.Text.Trim() = "" Then
+            MessageBox.Show("Please select a user from the list to edit.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
@@ -125,7 +150,7 @@ Public Class frmUserManagement
                 End If
 
                 cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@userid", cboUserId.Text)
+                cmd.Parameters.AddWithValue("@userid", cboUserID.Text)
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text.Trim())
                 cmd.Parameters.AddWithValue("@fullname", txtFullName.Text.Trim())
                 cmd.Parameters.AddWithValue("@role", cboRole.SelectedItem.ToString())
@@ -136,8 +161,10 @@ Public Class frmUserManagement
                 End If
 
                 cmd.ExecuteNonQuery()
-                LogAudit("Edit User", "Updated user account ID: " & cboUserId.Text, CurrentFullName)
+                LogAudit("Edit User", "Updated user account ID: " & cboUserID.Text, CurrentFullName)
                 MessageBox.Show("User account successfully updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As MySqlException When ex.Number = 1062
+                MessageBox.Show("That username is already used by another account.", "Duplicate Username", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Catch ex As Exception
                 MessageBox.Show("Failed to update user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Finally
@@ -149,8 +176,14 @@ Public Class frmUserManagement
     End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
-        If cboUserId.Text.Trim() = "" Then
-            MessageBox.Show("Please select a User ID to deactivate.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        If cboUserID.Text.Trim() = "" Then
+            MessageBox.Show("Please select a user from the list to deactivate.", "Selection Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        End If
+
+        ' protect yourself from locking out your own account
+        If cboUserID.Text.Trim() = CurrentUserID.ToString() Then
+            MessageBox.Show("You cannot deactivate the account you are currently logged in with.", "Not Allowed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         End If
 
@@ -160,10 +193,10 @@ Public Class frmUserManagement
                 connection()
                 sql = "UPDATE tblusers SET Status = 'Inactive' WHERE UserID = @userid"
                 cmd = New MySqlCommand(sql, cn)
-                cmd.Parameters.AddWithValue("@userid", cboUserId.Text)
+                cmd.Parameters.AddWithValue("@userid", cboUserID.Text)
 
                 cmd.ExecuteNonQuery()
-                LogAudit("Deactivate User", "Deactivated user account ID: " & cboUserId.Text, CurrentFullName)
+                LogAudit("Deactivate User", "Deactivated user account ID: " & cboUserID.Text, CurrentFullName)
                 MessageBox.Show("User has been securely deactivated.", "Deactivation Complete", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Catch ex As Exception
                 MessageBox.Show("Failed to deactivate user. " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -176,21 +209,22 @@ Public Class frmUserManagement
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        cboUserId.SelectedIndex = -1
-        cboUserId.Text = ""
+        cboUserID.SelectedIndex = -1
+        cboUserID.Text = ""
         txtFullName.Clear()
         txtUsername.Clear()
         txtPassword.Clear()
         cboRole.SelectedIndex = -1
         rdoActive.Checked = False
         rdoInactive.Checked = False
+        ListViewUser.SelectedItems.Clear()
         txtFullName.Focus()
     End Sub
 
     Private Sub ListViewUser_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListViewUser.SelectedIndexChanged
         If ListViewUser.SelectedItems.Count > 0 Then
             Dim selectedItem = ListViewUser.SelectedItems(0)
-            cboUserId.Text = selectedItem.SubItems(0).Text
+            cboUserID.Text = selectedItem.SubItems(0).Text
             txtUsername.Text = selectedItem.SubItems(1).Text
             txtFullName.Text = selectedItem.SubItems(2).Text
             cboRole.Text = selectedItem.SubItems(3).Text
