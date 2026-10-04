@@ -18,7 +18,7 @@ Public Class frmRequestManagement
         ListView1.Columns.Add("Status", 120)
         ListView1.Columns.Add("Student Name", 150)
         ListView1.Columns.Add("Request Date", 100)
-        ListView1.Columns.Add("Handled Since", 100)
+        ListView1.Columns.Add("Handled Since", 130)
 
         LoadProcessingRequests()
     End Sub

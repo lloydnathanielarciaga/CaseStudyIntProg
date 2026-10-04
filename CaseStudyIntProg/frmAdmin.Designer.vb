@@ -50,6 +50,9 @@ Partial Class frmAdmin
         Me.SplitContainerMain.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.SplitContainerMain.Panel1.Controls.Add(Me.cboSemester)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.TableLayoutPanelButtons)
+        '
+        'SplitContainerMain.Panel2
+        '
         Me.SplitContainerMain.Size = New System.Drawing.Size(1707, 813)
         Me.SplitContainerMain.SplitterDistance = 256
         Me.SplitContainerMain.TabIndex = 1

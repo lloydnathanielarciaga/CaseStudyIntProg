@@ -33,7 +33,7 @@ Public Class frmLogin
         Try
             Call connection()
 
-            sql = "SELECT UserID, FullName, Password, Role, Status FROM tblusers WHERE Username = @Username"
+            sql = "SELECT UserID, Username, FullName, Password, Role, Status FROM tblusers WHERE Username = @Username"
             cmd = New MySqlCommand(sql, cn)
             cmd.Parameters.AddWithValue("@Username", txtUsername.Text)
 
@@ -49,6 +49,7 @@ Public Class frmLogin
                     If dr("Status").ToString() = "Active" Then
                         DbContext.CurrentUserID = Convert.ToInt32(dr("UserID"))
                         DbContext.CurrentFullName = dr("FullName").ToString()
+                        DbContext.CurrentUsername = dr("Username").ToString()
 
                         MessageBox.Show("Login Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
@@ -57,14 +58,14 @@ Public Class frmLogin
                                 CurrentUserID = CInt(dr("UserID"))
                                 CurrentFullName = dr("FullName").ToString()
                             End If
-                            frmAdmin.Show()
+                            frmAdminMenu.Show()
                             Me.Hide()
                         ElseIf dr("Role").ToString() = "Registrar Staff" Then
                             If dr.Read() Then
                                 CurrentUserID = CInt(dr("UserID"))
                                 CurrentFullName = dr("FullName").ToString()
                             End If
-                            frmStaff.Show()
+                            frmStaffMenu.Show()
                             Me.Hide()
                         End If
                     Else

@@ -20,6 +20,7 @@ Module DbContext
     Public CurrentUserID As Integer
     Public CurrentFullName As String
     Public CurrentSemester As Integer = 1
+    Public CurrentUsername As String
 
     Public Sub LogAudit(action As String, details As String, performedBy As String, Optional requestID As Object = Nothing)
         Try

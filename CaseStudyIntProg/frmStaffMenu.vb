@@ -1,4 +1,11 @@
-﻿Public Class frmStaff
+﻿Imports Mysqlx.XDevAPI.Common
+
+Public Class frmStaffMenu
+
+    Private Sub frmStaffMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblUsername.Text = "Welcome! " & CurrentUsername
+        LoadFormInPanel(New frmDashboard())
+    End Sub
 
     Private Sub LoadFormInPanel(ByVal childForm As Form)
         ' Clear existing forms/controls from the right panel
@@ -23,7 +30,7 @@
 
     End Sub
 
-    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequest.Click
+    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequestList.Click
 
         LoadFormInPanel(New frmNewDocumentRequest())
 
@@ -45,25 +52,28 @@
 
     End Sub
 
-    Private Sub btnPaymentInformation_Click(sender As Object, e As EventArgs)
-
-        LoadFormInPanel(New frmRecordPaymentInformation())
-
-    End Sub
-
     Private Sub btnSystemReport_Click(sender As Object, e As EventArgs) Handles btnSystemReport.Click
 
         LoadFormInPanel(New frmSystemReport())
 
     End Sub
 
-    Private Sub btnStudentManagement_Click(sender As Object, e As EventArgs) 
-        LoadFormInPanel(New frmStudentManagement())
-    End Sub
-
     Private Sub btnRequestManagement_Click(sender As Object, e As EventArgs) Handles btnRequestManagement.Click
 
         LoadFormInPanel(New frmRequestManagement())
 
+    End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        MsgBox("Do you want to logout?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirm Logout")
+
+        If MsgBoxResult.Yes Then
+            frmLogin.Show()
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+        LoadFormInPanel(New frmDashboard())
     End Sub
 End Class

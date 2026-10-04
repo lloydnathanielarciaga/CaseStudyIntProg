@@ -45,10 +45,10 @@ Partial Class frmSystemReport
         Me.lblTotalRevenue = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.ListViewReport = New System.Windows.Forms.ListView()
         Me.btnExportCsv = New Guna.UI2.WinForms.Guna2Button()
         Me.btnPrintReport = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.ListViewReport = New System.Windows.Forms.ListView()
         Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
@@ -364,16 +364,6 @@ Partial Class frmSystemReport
         Me.Guna2Panel4.Size = New System.Drawing.Size(1558, 387)
         Me.Guna2Panel4.TabIndex = 27
         '
-        'ListViewReport
-        '
-        Me.ListViewReport.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListViewReport.HideSelection = False
-        Me.ListViewReport.Location = New System.Drawing.Point(26, 88)
-        Me.ListViewReport.Name = "ListViewReport"
-        Me.ListViewReport.Size = New System.Drawing.Size(1508, 273)
-        Me.ListViewReport.TabIndex = 59
-        Me.ListViewReport.UseCompatibleStateImageBehavior = False
-        '
         'btnExportCsv
         '
         Me.btnExportCsv.BackColor = System.Drawing.Color.Transparent
@@ -420,6 +410,17 @@ Partial Class frmSystemReport
         Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(231, 47)
         Me.Guna2HtmlLabel11.TabIndex = 14
         Me.Guna2HtmlLabel11.Text = "Payment Report"
+        '
+        'ListViewReport
+        '
+        Me.ListViewReport.BackColor = System.Drawing.Color.Lavender
+        Me.ListViewReport.Font = New System.Drawing.Font("Segoe UI Semibold", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListViewReport.HideSelection = False
+        Me.ListViewReport.Location = New System.Drawing.Point(26, 90)
+        Me.ListViewReport.Name = "ListViewReport"
+        Me.ListViewReport.Size = New System.Drawing.Size(1508, 273)
+        Me.ListViewReport.TabIndex = 60
+        Me.ListViewReport.UseCompatibleStateImageBehavior = False
         '
         'frmSystemReport
         '

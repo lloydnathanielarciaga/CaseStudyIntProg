@@ -39,43 +39,44 @@ Public Class frmSystemReport
         ResetStats()
 
         If cboSelectReport.Text = "Pending Request" Then
-            ListViewReport.Columns.Add("Request No.", 120)
-            ListViewReport.Columns.Add("Last Name", 120)
-            ListViewReport.Columns.Add("First Name", 120)
-            ListViewReport.Columns.Add("Request Date", 100)
-            ListViewReport.Columns.Add("Total Amount", 100, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Request No.", 220)
+            ListViewReport.Columns.Add("Last Name", 150)
+            ListViewReport.Columns.Add("First Name", 150)
+            ListViewReport.Columns.Add("Request Date", 200)
+            ListViewReport.Columns.Add("Total Amount", 130, HorizontalAlignment.Right)
         ElseIf cboSelectReport.Text = "Request by Document Type" Then
-            ListViewReport.Columns.Add("Document Name", 200)
-            ListViewReport.Columns.Add("Request No.", 120)
-            ListViewReport.Columns.Add("Request Date", 100)
-            ListViewReport.Columns.Add("Quantity", 80, HorizontalAlignment.Right)
-            ListViewReport.Columns.Add("Subtotal", 100, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Document Name", 300)
+            ListViewReport.Columns.Add("Request No.", 320)
+            ListViewReport.Columns.Add("Request Date", 200)
+            ListViewReport.Columns.Add("Quantity", 130, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Subtotal", 150, HorizontalAlignment.Right)
         ElseIf cboSelectReport.Text = "Payment Report" Then
-            ListViewReport.Columns.Add("OR No.", 120)
-            ListViewReport.Columns.Add("OR Date", 100)
-            ListViewReport.Columns.Add("Request No.", 120)
-            ListViewReport.Columns.Add("Total Amount", 100, HorizontalAlignment.Right)
-            ListViewReport.Columns.Add("Payment Status", 120)
+            ListViewReport.Columns.Add("OR No.", 200)
+            ListViewReport.Columns.Add("OR Date", 200)
+            ListViewReport.Columns.Add("Request No.", 320)
+            ListViewReport.Columns.Add("Total Amount", 160, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Payment Status", 190)
         ElseIf cboSelectReport.Text = "Transaction History" Then
-            ListViewReport.Columns.Add("Request No.", 120)
-            ListViewReport.Columns.Add("Last Name", 120)
-            ListViewReport.Columns.Add("First Name", 120)
-            ListViewReport.Columns.Add("Request Date", 100)
-            ListViewReport.Columns.Add("Amount", 100, HorizontalAlignment.Right)
-            ListViewReport.Columns.Add("Payment Status", 100)
-            ListViewReport.Columns.Add("Status", 120)
+            ListViewReport.Columns.Add("Request No.", 220)
+            ListViewReport.Columns.Add("Last Name", 150)
+            ListViewReport.Columns.Add("First Name", 150)
+            ListViewReport.Columns.Add("Request Date", 200)
+            ListViewReport.Columns.Add("Amount", 130, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Payment Status", 160)
+            ListViewReport.Columns.Add("Status", 180)
         End If
     End Sub
 
     ' ------------------------------------------- SHARED QUERY PARAMETERS
     ' Dates use .Value.Date (not .Text) so the query never depends on the date display format.
+    ' The search box accepts a Last Name OR a Student ID (partial matches allowed).
     Private Sub AddFilterParams(c As MySqlCommand)
         c.Parameters.AddWithValue("@dateFrom", DateTimePickerDateFrom.Value.Date)
         c.Parameters.AddWithValue("@dateTo", DateTimePickerDateTo.Value.Date)
-        c.Parameters.AddWithValue("@lastName", "%" & txtLastName.Text.Trim() & "%")
+        c.Parameters.AddWithValue("@search", "%" & txtLastName.Text.Trim() & "%")
     End Sub
 
-    ' Pressing Enter in the last-name box generates the report
+    ' Pressing Enter in the search box generates the report
     Private Sub txtLastName_KeyDown(sender As Object, e As KeyEventArgs) Handles txtLastName.KeyDown
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
@@ -112,24 +113,26 @@ Public Class frmSystemReport
                 sql = "SELECT r.RequestNo, s.LastName, s.FirstName, r.RequestDate, r.TotalAmount " &
                       "FROM tblrequest r INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
                       "WHERE r.Status = 'Pending' AND r.RequestDate BETWEEN @dateFrom AND @dateTo " &
-                      "AND s.LastName LIKE @lastName ORDER BY r.RequestDate, r.RequestNo"
+                      "AND (s.LastName LIKE @search OR s.StudentID LIKE @search) ORDER BY r.RequestDate, r.RequestNo"
             ElseIf cboSelectReport.Text = "Request by Document Type" Then
                 sql = "SELECT d.DocumentName, r.RequestNo, r.RequestDate, rd.Quantity, rd.Subtotal " &
                       "FROM tblrequestdetails rd " &
                       "INNER JOIN tbldocuments d ON rd.DocumentID = d.DocumentID " &
                       "INNER JOIN tblrequest r ON rd.RequestID = r.RequestID " &
                       "INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
-                      "WHERE r.RequestDate BETWEEN @dateFrom AND @dateTo AND s.LastName LIKE @lastName " &
+                      "WHERE r.RequestDate BETWEEN @dateFrom AND @dateTo " &
+                      "AND (s.LastName LIKE @search OR s.StudentID LIKE @search) " &
                       "ORDER BY d.DocumentName, r.RequestDate"
             ElseIf cboSelectReport.Text = "Payment Report" Then
                 sql = "SELECT r.ORNo, r.ORDate, r.RequestNo, r.TotalAmount, r.PaymentStatus " &
                       "FROM tblrequest r INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
                       "WHERE r.PaymentStatus = 'Paid' AND r.ORDate BETWEEN @dateFrom AND @dateTo " &
-                      "AND s.LastName LIKE @lastName ORDER BY r.ORDate, r.ORNo"
+                      "AND (s.LastName LIKE @search OR s.StudentID LIKE @search) ORDER BY r.ORDate, r.ORNo"
             ElseIf cboSelectReport.Text = "Transaction History" Then
                 sql = "SELECT r.RequestNo, s.LastName, s.FirstName, r.RequestDate, r.TotalAmount, r.PaymentStatus, r.Status " &
                       "FROM tblrequest r INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
-                      "WHERE r.RequestDate BETWEEN @dateFrom AND @dateTo AND s.LastName LIKE @lastName " &
+                      "WHERE r.RequestDate BETWEEN @dateFrom AND @dateTo " &
+                      "AND (s.LastName LIKE @search OR s.StudentID LIKE @search) " &
                       "ORDER BY r.RequestDate DESC, r.RequestNo DESC"
             End If
 
@@ -177,13 +180,14 @@ Public Class frmSystemReport
             lblRecords.Text = ListViewReport.Items.Count.ToString("N0")
 
             ' Total documents processed = quantity in requests that are Processing / Ready for Release / Released
-            ' (same date range + last name filter). Use just 'Released' if you only want completed ones.
+            ' (same date range + search filter). Use just 'Released' if you only want completed ones.
             Dim docSql As String =
                 "SELECT IFNULL(SUM(rd.Quantity), 0) FROM tblrequestdetails rd " &
                 "INNER JOIN tblrequest r ON rd.RequestID = r.RequestID " &
                 "INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
                 "WHERE r.Status IN ('Processing','Ready for Release','Released') " &
-                "AND r.RequestDate BETWEEN @dateFrom AND @dateTo AND s.LastName LIKE @lastName"
+                "AND r.RequestDate BETWEEN @dateFrom AND @dateTo " &
+                "AND (s.LastName LIKE @search OR s.StudentID LIKE @search)"
             Using c As New MySqlCommand(docSql, cn)
                 AddFilterParams(c)
                 totalDocs = Convert.ToInt32(c.ExecuteScalar())
@@ -194,7 +198,8 @@ Public Class frmSystemReport
                 "SELECT IFNULL(SUM(r.TotalAmount), 0) FROM tblrequest r " &
                 "INNER JOIN tblstudents s ON r.StudentID = s.StudentID " &
                 "WHERE r.PaymentStatus = 'Paid' " &
-                "AND r.ORDate BETWEEN @dateFrom AND @dateTo AND s.LastName LIKE @lastName"
+                "AND r.ORDate BETWEEN @dateFrom AND @dateTo " &
+                "AND (s.LastName LIKE @search OR s.StudentID LIKE @search)"
             Using c As New MySqlCommand(revSql, cn)
                 AddFilterParams(c)
                 totalRevenue = Convert.ToDecimal(c.ExecuteScalar())
@@ -293,7 +298,7 @@ Public Class frmSystemReport
 
                     Dim info As String = "Period: " & DateTimePickerDateFrom.Value.ToString("MMM dd, yyyy") & " to " & DateTimePickerDateTo.Value.ToString("MMM dd, yyyy") &
                                          "     Printed: " & DateTime.Now.ToString("MMM dd, yyyy hh:mm tt")
-                    If txtLastName.Text.Trim() <> "" Then info &= "     Student last name: " & txtLastName.Text.Trim()
+                    If txtLastName.Text.Trim() <> "" Then info &= "     Last Name / Student ID: " & txtLastName.Text.Trim()
                     Dim pInfo As New Paragraph(info, fBody)
                     pInfo.Alignment = Element.ALIGN_CENTER
                     pInfo.SpacingAfter = 10.0F
@@ -377,7 +382,7 @@ Public Class frmSystemReport
 
                     sb.AppendLine(CsvField(cboSelectReport.Text & " Report"))
                     sb.AppendLine(CsvField("Period: " & DateTimePickerDateFrom.Value.ToString("yyyy-MM-dd") & " to " & DateTimePickerDateTo.Value.ToString("yyyy-MM-dd")))
-                    If txtLastName.Text.Trim() <> "" Then sb.AppendLine(CsvField("Student Last Name: " & txtLastName.Text.Trim()))
+                    If txtLastName.Text.Trim() <> "" Then sb.AppendLine(CsvField("Last Name / Student ID: " & txtLastName.Text.Trim()))
                     sb.AppendLine()
 
                     Dim headers As New List(Of String)

@@ -134,6 +134,12 @@
     <Compile Include="frmAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdminMenu.Designer.vb">
+      <DependentUpon>frmAdminMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDashboard.Designer.vb">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </Compile>
@@ -200,6 +206,12 @@
     <Compile Include="frmStaff.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmStaffMenu.Designer.vb">
+      <DependentUpon>frmStaffMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStudentManagement.Designer.vb">
       <DependentUpon>frmStudentManagement.vb</DependentUpon>
     </Compile>
@@ -245,6 +257,9 @@
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminMenu.resx">
+      <DependentUpon>frmAdminMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffMenu.resx">
+      <DependentUpon>frmStaffMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentManagement.resx">
       <DependentUpon>frmStudentManagement.vb</DependentUpon>
@@ -315,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\registrarbg2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loalogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
