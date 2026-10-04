@@ -42,7 +42,7 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(800, 450)
+        Me.TabControl1.Size = New System.Drawing.Size(895, 450)
         Me.TabControl1.TabIndex = 0
         '
         'TabPageTransactionHistory
@@ -52,14 +52,14 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         Me.TabPageTransactionHistory.Location = New System.Drawing.Point(4, 22)
         Me.TabPageTransactionHistory.Name = "TabPageTransactionHistory"
         Me.TabPageTransactionHistory.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageTransactionHistory.Size = New System.Drawing.Size(792, 424)
+        Me.TabPageTransactionHistory.Size = New System.Drawing.Size(887, 424)
         Me.TabPageTransactionHistory.TabIndex = 0
         Me.TabPageTransactionHistory.Text = "Transaction History"
         Me.TabPageTransactionHistory.UseVisualStyleBackColor = True
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(686, 389)
+        Me.btnClose.Location = New System.Drawing.Point(399, 389)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(98, 27)
         Me.btnClose.TabIndex = 1
@@ -68,8 +68,9 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         '
         'ListViewTransactionHistory
         '
+        Me.ListViewTransactionHistory.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewTransactionHistory.HideSelection = False
-        Me.ListViewTransactionHistory.Location = New System.Drawing.Point(8, 6)
+        Me.ListViewTransactionHistory.Location = New System.Drawing.Point(65, 6)
         Me.ListViewTransactionHistory.Name = "ListViewTransactionHistory"
         Me.ListViewTransactionHistory.Size = New System.Drawing.Size(776, 377)
         Me.ListViewTransactionHistory.TabIndex = 0
@@ -82,14 +83,14 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         Me.TabPageAuditLog.Location = New System.Drawing.Point(4, 22)
         Me.TabPageAuditLog.Name = "TabPageAuditLog"
         Me.TabPageAuditLog.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageAuditLog.Size = New System.Drawing.Size(792, 424)
+        Me.TabPageAuditLog.Size = New System.Drawing.Size(887, 424)
         Me.TabPageAuditLog.TabIndex = 1
         Me.TabPageAuditLog.Text = "Audit Logs"
         Me.TabPageAuditLog.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(686, 390)
+        Me.Button1.Location = New System.Drawing.Point(387, 390)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(98, 27)
         Me.Button1.TabIndex = 3
@@ -98,10 +99,11 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         '
         'ListViewAuditLog
         '
+        Me.ListViewAuditLog.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ListViewAuditLog.HideSelection = False
         Me.ListViewAuditLog.Location = New System.Drawing.Point(8, 7)
         Me.ListViewAuditLog.Name = "ListViewAuditLog"
-        Me.ListViewAuditLog.Size = New System.Drawing.Size(776, 377)
+        Me.ListViewAuditLog.Size = New System.Drawing.Size(871, 377)
         Me.ListViewAuditLog.TabIndex = 2
         Me.ListViewAuditLog.UseCompatibleStateImageBehavior = False
         '
@@ -109,10 +111,12 @@ Partial Class frmTransactionHistoryAndAuditLogPrompt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(895, 450)
         Me.Controls.Add(Me.TabControl1)
+        Me.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmTransactionHistoryAndAuditLogPrompt"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "frmTransactionHistoryAndAuditLog"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPageTransactionHistory.ResumeLayout(False)

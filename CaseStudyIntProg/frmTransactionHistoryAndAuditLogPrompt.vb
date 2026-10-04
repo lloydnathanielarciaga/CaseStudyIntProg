@@ -19,11 +19,11 @@ Public Class frmTransactionHistoryAndAuditLogPrompt
         ListViewTransactionHistory.FullRowSelect = True
         ListViewTransactionHistory.GridLines = True
         ListViewTransactionHistory.Columns.Clear()
-        ListViewTransactionHistory.Columns.Add("Request No.", 120)
-        ListViewTransactionHistory.Columns.Add("Student ID", 100)
-        ListViewTransactionHistory.Columns.Add("Request Date", 100)
-        ListViewTransactionHistory.Columns.Add("Total Amount", 100)
-        ListViewTransactionHistory.Columns.Add("Status", 120)
+        ListViewTransactionHistory.Columns.Add("Request No.", 180)
+        ListViewTransactionHistory.Columns.Add("Student ID", 130)
+        ListViewTransactionHistory.Columns.Add("Request Date", 150)
+        ListViewTransactionHistory.Columns.Add("Total Amount", 150)
+        ListViewTransactionHistory.Columns.Add("Status", 180)
 
         ' Setup ListViewAuditLog
         ListViewAuditLog.View = View.Details
@@ -32,8 +32,8 @@ Public Class frmTransactionHistoryAndAuditLogPrompt
         ListViewAuditLog.Columns.Clear()
         ListViewAuditLog.Columns.Add("Log ID", 80)
         ListViewAuditLog.Columns.Add("Action", 150)
-        ListViewAuditLog.Columns.Add("Details", 300)
-        ListViewAuditLog.Columns.Add("Action Date", 150)
+        ListViewAuditLog.Columns.Add("Details", 460)
+        ListViewAuditLog.Columns.Add("Action Date", 180)
     End Sub
 
     Private Sub LoadTransactionHistory()

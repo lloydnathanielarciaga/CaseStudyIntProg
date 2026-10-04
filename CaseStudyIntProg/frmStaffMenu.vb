@@ -76,4 +76,8 @@ Public Class frmStaffMenu
     Private Sub btnDashboard_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         LoadFormInPanel(New frmDashboard())
     End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        LoadFormInPanel(New frmNewDocumentRequest())
+    End Sub
 End Class

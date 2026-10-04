@@ -24,7 +24,6 @@ Partial Class frmAdminMenu
     Private Sub InitializeComponent()
         Me.SplitContainerMain = New System.Windows.Forms.SplitContainer()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnUserManagement = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSystemReport = New Guna.UI2.WinForms.Guna2Button()
         Me.btnStudentManagement = New Guna.UI2.WinForms.Guna2Button()
@@ -33,6 +32,7 @@ Partial Class frmAdminMenu
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblUsername = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cboSemester = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,21 +78,6 @@ Partial Class frmAdminMenu
         Me.btnDashboard.Size = New System.Drawing.Size(279, 45)
         Me.btnDashboard.TabIndex = 16
         Me.btnDashboard.Text = "Dashboard"
-        '
-        'btnLogout
-        '
-        Me.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnLogout.FillColor = System.Drawing.Color.Transparent
-        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.ForeColor = System.Drawing.Color.White
-        Me.btnLogout.Location = New System.Drawing.Point(2, 947)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(282, 45)
-        Me.btnLogout.TabIndex = 14
-        Me.btnLogout.Text = "Logout"
         '
         'btnUserManagement
         '
@@ -208,6 +193,21 @@ Partial Class frmAdminMenu
         Me.cboSemester.Name = "cboSemester"
         Me.cboSemester.Size = New System.Drawing.Size(249, 36)
         Me.cboSemester.TabIndex = 15
+        '
+        'btnLogout
+        '
+        Me.btnLogout.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnLogout.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnLogout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnLogout.FillColor = System.Drawing.Color.Transparent
+        Me.btnLogout.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Location = New System.Drawing.Point(2, 947)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(282, 45)
+        Me.btnLogout.TabIndex = 14
+        Me.btnLogout.Text = "Logout"
         '
         'Guna2CirclePictureBox2
         '
