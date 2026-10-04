@@ -212,6 +212,12 @@
     <Compile Include="frmStaffMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmStudentInformation.Designer.vb">
+      <DependentUpon>frmStudentInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmStudentInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStudentManagement.Designer.vb">
       <DependentUpon>frmStudentManagement.vb</DependentUpon>
     </Compile>
@@ -295,6 +301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaffMenu.resx">
       <DependentUpon>frmStaffMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentInformation.resx">
+      <DependentUpon>frmStudentInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentManagement.resx">
       <DependentUpon>frmStudentManagement.vb</DependentUpon>

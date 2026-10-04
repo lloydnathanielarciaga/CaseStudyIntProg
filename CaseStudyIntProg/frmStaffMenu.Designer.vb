@@ -23,17 +23,17 @@ Partial Class frmStaffMenu
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainerMain = New System.Windows.Forms.SplitContainer()
+        Me.btnNewDocumentRequest = New Guna.UI2.WinForms.Guna2Button()
         Me.btnLogout = New Guna.UI2.WinForms.Guna2Button()
         Me.btnRequestManagement = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSystemReport = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDashboard = New Guna.UI2.WinForms.Guna2Button()
         Me.btnDocumentRequestList = New Guna.UI2.WinForms.Guna2Button()
-        Me.btnDocumentManagement = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnStudentInformation = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lblUsername = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2CirclePictureBox2 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.SplitContainerMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerMain.Panel1.SuspendLayout()
         Me.SplitContainerMain.SuspendLayout()
@@ -51,17 +51,32 @@ Partial Class frmStaffMenu
         'SplitContainerMain.Panel1
         '
         Me.SplitContainerMain.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.SplitContainerMain.Panel1.Controls.Add(Me.Guna2Button1)
+        Me.SplitContainerMain.Panel1.Controls.Add(Me.btnNewDocumentRequest)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.btnLogout)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.btnRequestManagement)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.btnSystemReport)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.btnDashboard)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.btnDocumentRequestList)
-        Me.SplitContainerMain.Panel1.Controls.Add(Me.btnDocumentManagement)
+        Me.SplitContainerMain.Panel1.Controls.Add(Me.btnStudentInformation)
         Me.SplitContainerMain.Panel1.Controls.Add(Me.Guna2Panel1)
         Me.SplitContainerMain.Size = New System.Drawing.Size(1904, 1021)
         Me.SplitContainerMain.SplitterDistance = 285
         Me.SplitContainerMain.TabIndex = 0
+        '
+        'btnNewDocumentRequest
+        '
+        Me.btnNewDocumentRequest.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnNewDocumentRequest.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnNewDocumentRequest.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnNewDocumentRequest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnNewDocumentRequest.FillColor = System.Drawing.Color.Transparent
+        Me.btnNewDocumentRequest.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNewDocumentRequest.ForeColor = System.Drawing.Color.White
+        Me.btnNewDocumentRequest.Location = New System.Drawing.Point(6, 329)
+        Me.btnNewDocumentRequest.Name = "btnNewDocumentRequest"
+        Me.btnNewDocumentRequest.Size = New System.Drawing.Size(279, 45)
+        Me.btnNewDocumentRequest.TabIndex = 8
+        Me.btnNewDocumentRequest.Text = "New Document Request"
         '
         'btnLogout
         '
@@ -138,20 +153,20 @@ Partial Class frmStaffMenu
         Me.btnDocumentRequestList.TabIndex = 3
         Me.btnDocumentRequestList.Text = "Document Request"
         '
-        'btnDocumentManagement
+        'btnStudentInformation
         '
-        Me.btnDocumentManagement.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btnDocumentManagement.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btnDocumentManagement.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btnDocumentManagement.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnDocumentManagement.FillColor = System.Drawing.Color.Transparent
-        Me.btnDocumentManagement.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDocumentManagement.ForeColor = System.Drawing.Color.White
-        Me.btnDocumentManagement.Location = New System.Drawing.Point(3, 278)
-        Me.btnDocumentManagement.Name = "btnDocumentManagement"
-        Me.btnDocumentManagement.Size = New System.Drawing.Size(279, 45)
-        Me.btnDocumentManagement.TabIndex = 2
-        Me.btnDocumentManagement.Text = "Document Management"
+        Me.btnStudentInformation.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnStudentInformation.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnStudentInformation.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnStudentInformation.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnStudentInformation.FillColor = System.Drawing.Color.Transparent
+        Me.btnStudentInformation.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStudentInformation.ForeColor = System.Drawing.Color.White
+        Me.btnStudentInformation.Location = New System.Drawing.Point(3, 278)
+        Me.btnStudentInformation.Name = "btnStudentInformation"
+        Me.btnStudentInformation.Size = New System.Drawing.Size(279, 45)
+        Me.btnStudentInformation.TabIndex = 2
+        Me.btnStudentInformation.Text = "Student Information"
         '
         'Guna2Panel1
         '
@@ -200,21 +215,6 @@ Partial Class frmStaffMenu
         Me.Guna2CirclePictureBox1.TabIndex = 0
         Me.Guna2CirclePictureBox1.TabStop = False
         '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(6, 329)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(279, 45)
-        Me.Guna2Button1.TabIndex = 8
-        Me.Guna2Button1.Text = "New Document Request"
-        '
         'frmStaffMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -242,11 +242,11 @@ Partial Class frmStaffMenu
     Friend WithEvents Guna2CirclePictureBox2 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents lblUsername As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents btnDocumentManagement As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnStudentInformation As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnSystemReport As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnDashboard As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnDocumentRequestList As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnRequestManagement As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnLogout As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnNewDocumentRequest As Guna.UI2.WinForms.Guna2Button
 End Class

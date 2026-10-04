@@ -23,22 +23,6 @@
 
     End Sub
 
-    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequest.Click
-
-        LoadFormInPanel(New frmNewDocumentRequest())
-
-        ' 1. Create the form instance
-        Dim requestForm As New frmNewDocumentRequest()
-
-        ' 2. Assign the session variables we just added to DbContext
-        requestForm.LoggedInUserID = DbContext.CurrentUserID
-        requestForm.LoggedInFullName = DbContext.CurrentFullName
-
-        ' 3. Embed into panel (Do not use ShowDialog here)
-        LoadFormInPanel(requestForm)
-
-    End Sub
-
     Private Sub btnDocumentRequestList_Click(sender As Object, e As EventArgs) Handles btnDocumentRequestList.Click
 
         LoadFormInPanel(New frmDocumentRequestList())

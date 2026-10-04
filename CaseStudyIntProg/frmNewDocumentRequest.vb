@@ -3,8 +3,17 @@ Imports System.IO
 Imports System.Drawing.Printing
 
 Public Class frmNewDocumentRequest
-    Public LoggedInUserID As Integer
-    Public LoggedInFullName As String
+    Public ReadOnly Property LoggedInUserID As Integer
+        Get
+            Return DbContext.CurrentUserID
+        End Get
+    End Property
+
+    Public ReadOnly Property LoggedInFullName As String
+        Get
+            Return DbContext.CurrentFullName
+        End Get
+    End Property
 
     Private CurrentTotalAmount As Decimal = 0.00D
     Private SelectedStudentID As String = ""

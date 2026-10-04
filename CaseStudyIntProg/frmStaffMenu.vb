@@ -24,25 +24,15 @@ Public Class frmStaffMenu
         childForm.Show()
     End Sub
 
-    Private Sub btnDocumentManagement_Click(sender As Object, e As EventArgs) Handles btnDocumentManagement.Click
+    Private Sub btnStudentInformation_Click(sender As Object, e As EventArgs) Handles btnStudentInformation.Click
 
-        LoadFormInPanel(New frmDocumentManagement())
+        LoadFormInPanel(New frmStudentInformation())
 
     End Sub
 
-    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnDocumentRequestList.Click
+    Private Sub btnDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnNewDocumentRequest.Click
 
         LoadFormInPanel(New frmNewDocumentRequest())
-
-        ' 1. Create the form instance
-        Dim requestForm As New frmNewDocumentRequest()
-
-        ' 2. Assign the session variables we just added to DbContext
-        requestForm.LoggedInUserID = DbContext.CurrentUserID
-        requestForm.LoggedInFullName = DbContext.CurrentFullName
-
-        ' 3. Embed into panel (Do not use ShowDialog here)
-        LoadFormInPanel(requestForm)
 
     End Sub
 
@@ -77,7 +67,7 @@ Public Class frmStaffMenu
         LoadFormInPanel(New frmDashboard())
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub btnNewDocumentRequest_Click(sender As Object, e As EventArgs) Handles btnNewDocumentRequest.Click
         LoadFormInPanel(New frmNewDocumentRequest())
     End Sub
 End Class
