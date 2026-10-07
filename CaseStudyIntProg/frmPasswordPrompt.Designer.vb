@@ -118,7 +118,7 @@ Partial Class frmPasswordPrompt
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.Guna2HtmlLabel7)
         Me.Controls.Add(Me.lblMessage)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmPasswordPrompt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmPasswordPrompt"

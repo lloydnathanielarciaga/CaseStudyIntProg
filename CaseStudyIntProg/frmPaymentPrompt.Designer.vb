@@ -22,164 +22,220 @@ Partial Class frmPaymentPrompt
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblORNo = New System.Windows.Forms.Label()
-        Me.lblDisplayORNo = New System.Windows.Forms.Label()
-        Me.lblORDate = New System.Windows.Forms.Label()
-        Me.DateTimePickerOR = New System.Windows.Forms.DateTimePicker()
-        Me.lblStudentNo = New System.Windows.Forms.Label()
-        Me.lblDisplayStudentNo = New System.Windows.Forms.Label()
-        Me.lblStudentName = New System.Windows.Forms.Label()
-        Me.lblDisplayStudentName = New System.Windows.Forms.Label()
-        Me.lblRequestNo = New System.Windows.Forms.Label()
+        Me.lblMessage = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.lblDisplayRequestNo = New System.Windows.Forms.Label()
-        Me.btnSavePayment = New System.Windows.Forms.Button()
-        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.lblDisplayORNo = New System.Windows.Forms.Label()
+        Me.lblDisplayStudentNo = New System.Windows.Forms.Label()
+        Me.lblDisplayStudentName = New System.Windows.Forms.Label()
+        Me.DateTimePickerOR = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.btnCancel = New Guna.UI2.WinForms.Guna2Button()
+        Me.btnSavePayment = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'lblORNo
+        'lblMessage
         '
-        Me.lblORNo.AutoSize = True
-        Me.lblORNo.Location = New System.Drawing.Point(55, 74)
-        Me.lblORNo.Name = "lblORNo"
-        Me.lblORNo.Size = New System.Drawing.Size(43, 13)
-        Me.lblORNo.TabIndex = 0
-        Me.lblORNo.Text = "OR No:"
+        Me.lblMessage.AutoSize = True
+        Me.lblMessage.BackColor = System.Drawing.Color.Transparent
+        Me.lblMessage.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessage.Location = New System.Drawing.Point(31, 17)
+        Me.lblMessage.Name = "lblMessage"
+        Me.lblMessage.Size = New System.Drawing.Size(89, 20)
+        Me.lblMessage.TabIndex = 12
+        Me.lblMessage.Text = "Request No:"
         '
-        'lblDisplayORNo
+        'Label1
         '
-        Me.lblDisplayORNo.AutoSize = True
-        Me.lblDisplayORNo.Location = New System.Drawing.Point(139, 73)
-        Me.lblDisplayORNo.Name = "lblDisplayORNo"
-        Me.lblDisplayORNo.Size = New System.Drawing.Size(10, 13)
-        Me.lblDisplayORNo.TabIndex = 1
-        Me.lblDisplayORNo.Text = "-"
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(63, 62)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(56, 20)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "OR No:"
         '
-        'lblORDate
+        'Label2
         '
-        Me.lblORDate.AutoSize = True
-        Me.lblORDate.Location = New System.Drawing.Point(55, 161)
-        Me.lblORDate.Name = "lblORDate"
-        Me.lblORDate.Size = New System.Drawing.Size(52, 13)
-        Me.lblORDate.TabIndex = 2
-        Me.lblORDate.Text = "OR Date:"
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(13, 151)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(107, 20)
+        Me.Label2.TabIndex = 15
+        Me.Label2.Text = "Student Name:"
         '
-        'DateTimePickerOR
+        'Label3
         '
-        Me.DateTimePickerOR.CustomFormat = "yyyy-MM-dd"
-        Me.DateTimePickerOR.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerOR.Location = New System.Drawing.Point(142, 154)
-        Me.DateTimePickerOR.Name = "DateTimePickerOR"
-        Me.DateTimePickerOR.Size = New System.Drawing.Size(94, 20)
-        Me.DateTimePickerOR.TabIndex = 3
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(33, 106)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(87, 20)
+        Me.Label3.TabIndex = 14
+        Me.Label3.Text = "Student No:"
         '
-        'lblStudentNo
+        'Label4
         '
-        Me.lblStudentNo.AutoSize = True
-        Me.lblStudentNo.Location = New System.Drawing.Point(55, 102)
-        Me.lblStudentNo.Name = "lblStudentNo"
-        Me.lblStudentNo.Size = New System.Drawing.Size(64, 13)
-        Me.lblStudentNo.TabIndex = 4
-        Me.lblStudentNo.Text = "Student No:"
-        '
-        'lblDisplayStudentNo
-        '
-        Me.lblDisplayStudentNo.AutoSize = True
-        Me.lblDisplayStudentNo.Location = New System.Drawing.Point(139, 101)
-        Me.lblDisplayStudentNo.Name = "lblDisplayStudentNo"
-        Me.lblDisplayStudentNo.Size = New System.Drawing.Size(10, 13)
-        Me.lblDisplayStudentNo.TabIndex = 5
-        Me.lblDisplayStudentNo.Text = "-"
-        '
-        'lblStudentName
-        '
-        Me.lblStudentName.AutoSize = True
-        Me.lblStudentName.Location = New System.Drawing.Point(55, 129)
-        Me.lblStudentName.Name = "lblStudentName"
-        Me.lblStudentName.Size = New System.Drawing.Size(78, 13)
-        Me.lblStudentName.TabIndex = 6
-        Me.lblStudentName.Text = "Student Name:"
-        '
-        'lblDisplayStudentName
-        '
-        Me.lblDisplayStudentName.AutoSize = True
-        Me.lblDisplayStudentName.Location = New System.Drawing.Point(139, 129)
-        Me.lblDisplayStudentName.Name = "lblDisplayStudentName"
-        Me.lblDisplayStudentName.Size = New System.Drawing.Size(10, 13)
-        Me.lblDisplayStudentName.TabIndex = 7
-        Me.lblDisplayStudentName.Text = "-"
-        '
-        'lblRequestNo
-        '
-        Me.lblRequestNo.AutoSize = True
-        Me.lblRequestNo.Location = New System.Drawing.Point(55, 52)
-        Me.lblRequestNo.Name = "lblRequestNo"
-        Me.lblRequestNo.Size = New System.Drawing.Size(67, 13)
-        Me.lblRequestNo.TabIndex = 8
-        Me.lblRequestNo.Text = "Request No:"
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(52, 192)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(68, 20)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "OR Date:"
         '
         'lblDisplayRequestNo
         '
         Me.lblDisplayRequestNo.AutoSize = True
-        Me.lblDisplayRequestNo.Location = New System.Drawing.Point(139, 52)
+        Me.lblDisplayRequestNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblDisplayRequestNo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDisplayRequestNo.Location = New System.Drawing.Point(126, 20)
         Me.lblDisplayRequestNo.Name = "lblDisplayRequestNo"
-        Me.lblDisplayRequestNo.Size = New System.Drawing.Size(10, 13)
-        Me.lblDisplayRequestNo.TabIndex = 9
+        Me.lblDisplayRequestNo.Size = New System.Drawing.Size(13, 17)
+        Me.lblDisplayRequestNo.TabIndex = 18
         Me.lblDisplayRequestNo.Text = "-"
         '
-        'btnSavePayment
+        'lblDisplayORNo
         '
-        Me.btnSavePayment.Location = New System.Drawing.Point(142, 199)
-        Me.btnSavePayment.Name = "btnSavePayment"
-        Me.btnSavePayment.Size = New System.Drawing.Size(94, 35)
-        Me.btnSavePayment.TabIndex = 10
-        Me.btnSavePayment.Text = "Save Payment"
-        Me.btnSavePayment.UseVisualStyleBackColor = True
+        Me.lblDisplayORNo.AutoSize = True
+        Me.lblDisplayORNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblDisplayORNo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDisplayORNo.Location = New System.Drawing.Point(126, 64)
+        Me.lblDisplayORNo.Name = "lblDisplayORNo"
+        Me.lblDisplayORNo.Size = New System.Drawing.Size(13, 17)
+        Me.lblDisplayORNo.TabIndex = 19
+        Me.lblDisplayORNo.Text = "-"
+        '
+        'lblDisplayStudentNo
+        '
+        Me.lblDisplayStudentNo.AutoSize = True
+        Me.lblDisplayStudentNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblDisplayStudentNo.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDisplayStudentNo.Location = New System.Drawing.Point(126, 109)
+        Me.lblDisplayStudentNo.Name = "lblDisplayStudentNo"
+        Me.lblDisplayStudentNo.Size = New System.Drawing.Size(13, 17)
+        Me.lblDisplayStudentNo.TabIndex = 20
+        Me.lblDisplayStudentNo.Text = "-"
+        '
+        'lblDisplayStudentName
+        '
+        Me.lblDisplayStudentName.AutoSize = True
+        Me.lblDisplayStudentName.BackColor = System.Drawing.Color.Transparent
+        Me.lblDisplayStudentName.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDisplayStudentName.Location = New System.Drawing.Point(126, 153)
+        Me.lblDisplayStudentName.Name = "lblDisplayStudentName"
+        Me.lblDisplayStudentName.Size = New System.Drawing.Size(13, 17)
+        Me.lblDisplayStudentName.TabIndex = 21
+        Me.lblDisplayStudentName.Text = "-"
+        '
+        'DateTimePickerOR
+        '
+        Me.DateTimePickerOR.BackColor = System.Drawing.Color.Transparent
+        Me.DateTimePickerOR.BorderRadius = 12
+        Me.DateTimePickerOR.Checked = True
+        Me.DateTimePickerOR.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DateTimePickerOR.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.DateTimePickerOR.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerOR.Location = New System.Drawing.Point(126, 187)
+        Me.DateTimePickerOR.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePickerOR.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DateTimePickerOR.Name = "DateTimePickerOR"
+        Me.DateTimePickerOR.Size = New System.Drawing.Size(125, 32)
+        Me.DateTimePickerOR.TabIndex = 54
+        Me.DateTimePickerOR.Value = New Date(2026, 10, 2, 15, 41, 46, 199)
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(242, 199)
+        Me.btnCancel.BackColor = System.Drawing.Color.Transparent
+        Me.btnCancel.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnCancel.BorderRadius = 12
+        Me.btnCancel.BorderThickness = 1
+        Me.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnCancel.FillColor = System.Drawing.Color.White
+        Me.btnCancel.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnCancel.Location = New System.Drawing.Point(103, 288)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(94, 35)
-        Me.btnCancel.TabIndex = 11
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
+        Me.btnCancel.Size = New System.Drawing.Size(116, 32)
+        Me.btnCancel.TabIndex = 62
+        Me.btnCancel.Text = "CANCEL"
+        '
+        'btnSavePayment
+        '
+        Me.btnSavePayment.BackColor = System.Drawing.Color.Transparent
+        Me.btnSavePayment.BorderRadius = 12
+        Me.btnSavePayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btnSavePayment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btnSavePayment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btnSavePayment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btnSavePayment.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.btnSavePayment.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSavePayment.ForeColor = System.Drawing.Color.White
+        Me.btnSavePayment.Location = New System.Drawing.Point(228, 288)
+        Me.btnSavePayment.Name = "btnSavePayment"
+        Me.btnSavePayment.Size = New System.Drawing.Size(143, 32)
+        Me.btnSavePayment.TabIndex = 61
+        Me.btnSavePayment.Text = "SAVE PAYMENT"
+        '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.BorderRadius = 12
+        Me.Guna2Panel2.Controls.Add(Me.DateTimePickerOR)
+        Me.Guna2Panel2.Controls.Add(Me.lblDisplayRequestNo)
+        Me.Guna2Panel2.Controls.Add(Me.lblDisplayORNo)
+        Me.Guna2Panel2.Controls.Add(Me.Label4)
+        Me.Guna2Panel2.Controls.Add(Me.lblDisplayStudentName)
+        Me.Guna2Panel2.Controls.Add(Me.Label2)
+        Me.Guna2Panel2.Controls.Add(Me.lblDisplayStudentNo)
+        Me.Guna2Panel2.Controls.Add(Me.Label3)
+        Me.Guna2Panel2.Controls.Add(Me.Label1)
+        Me.Guna2Panel2.Controls.Add(Me.lblMessage)
+        Me.Guna2Panel2.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel2.Location = New System.Drawing.Point(25, 38)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.Size = New System.Drawing.Size(346, 234)
+        Me.Guna2Panel2.TabIndex = 63
         '
         'frmPaymentPrompt
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 303)
+        Me.ClientSize = New System.Drawing.Size(399, 339)
+        Me.Controls.Add(Me.Guna2Panel2)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSavePayment)
-        Me.Controls.Add(Me.lblDisplayRequestNo)
-        Me.Controls.Add(Me.lblRequestNo)
-        Me.Controls.Add(Me.lblDisplayStudentName)
-        Me.Controls.Add(Me.lblStudentName)
-        Me.Controls.Add(Me.lblDisplayStudentNo)
-        Me.Controls.Add(Me.lblStudentNo)
-        Me.Controls.Add(Me.DateTimePickerOR)
-        Me.Controls.Add(Me.lblORDate)
-        Me.Controls.Add(Me.lblDisplayORNo)
-        Me.Controls.Add(Me.lblORNo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "frmPaymentPrompt"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmPaymentPrompt"
+        Me.Text = "Record Payment"
+        Me.Guna2Panel2.ResumeLayout(False)
+        Me.Guna2Panel2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents lblORNo As Label
-    Friend WithEvents lblDisplayORNo As Label
-    Friend WithEvents lblORDate As Label
-    Friend WithEvents DateTimePickerOR As DateTimePicker
-    Friend WithEvents lblStudentNo As Label
-    Friend WithEvents lblDisplayStudentNo As Label
-    Friend WithEvents lblStudentName As Label
-    Friend WithEvents lblDisplayStudentName As Label
-    Friend WithEvents lblRequestNo As Label
+    Friend WithEvents lblMessage As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
     Friend WithEvents lblDisplayRequestNo As Label
-    Friend WithEvents btnSavePayment As Button
-    Friend WithEvents btnCancel As Button
+    Friend WithEvents lblDisplayORNo As Label
+    Friend WithEvents lblDisplayStudentNo As Label
+    Friend WithEvents lblDisplayStudentName As Label
+    Friend WithEvents DateTimePickerOR As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents btnCancel As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btnSavePayment As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
 End Class

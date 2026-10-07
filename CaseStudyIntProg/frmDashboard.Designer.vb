@@ -91,7 +91,7 @@ Partial Class frmDashboard
         Me.dtpDate.FillColor = System.Drawing.Color.White
         Me.dtpDate.FocusedColor = System.Drawing.Color.White
         Me.dtpDate.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpDate.Location = New System.Drawing.Point(1036, 59)
         Me.dtpDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)

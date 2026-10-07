@@ -25,6 +25,8 @@ Partial Class frmDocumentRequestList
         Me.ListViewRequestList = New System.Windows.Forms.ListView()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cboStatusFilter = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnReset = New Guna.UI2.WinForms.Guna2Button()
         Me.btnSearch = New Guna.UI2.WinForms.Guna2Button()
         Me.cboOrder = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -35,8 +37,6 @@ Partial Class frmDocumentRequestList
         Me.DateTimePickerFrom = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.txtSearchStudentIdOrName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.cboStatusFilter = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -82,6 +82,33 @@ Partial Class frmDocumentRequestList
         Me.Guna2Panel3.Name = "Guna2Panel3"
         Me.Guna2Panel3.Size = New System.Drawing.Size(1539, 211)
         Me.Guna2Panel3.TabIndex = 58
+        '
+        'cboStatusFilter
+        '
+        Me.cboStatusFilter.BackColor = System.Drawing.Color.Transparent
+        Me.cboStatusFilter.BorderRadius = 12
+        Me.cboStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboStatusFilter.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboStatusFilter.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.cboStatusFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cboStatusFilter.ItemHeight = 30
+        Me.cboStatusFilter.Location = New System.Drawing.Point(1313, 68)
+        Me.cboStatusFilter.Name = "cboStatusFilter"
+        Me.cboStatusFilter.Size = New System.Drawing.Size(193, 36)
+        Me.cboStatusFilter.TabIndex = 56
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(1311, 40)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(58, 23)
+        Me.Guna2HtmlLabel3.TabIndex = 57
+        Me.Guna2HtmlLabel3.Text = "STATUS"
         '
         'btnReset
         '
@@ -163,7 +190,7 @@ Partial Class frmDocumentRequestList
         Me.DateTimePickerTo.Checked = True
         Me.DateTimePickerTo.FillColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.DateTimePickerTo.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePickerTo.Location = New System.Drawing.Point(785, 69)
         Me.DateTimePickerTo.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DateTimePickerTo.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
@@ -189,7 +216,7 @@ Partial Class frmDocumentRequestList
         Me.DateTimePickerFrom.Checked = True
         Me.DateTimePickerFrom.FillColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.DateTimePickerFrom.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePickerFrom.Location = New System.Drawing.Point(489, 69)
         Me.DateTimePickerFrom.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DateTimePickerFrom.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
@@ -230,33 +257,6 @@ Partial Class frmDocumentRequestList
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(147, 23)
         Me.Guna2HtmlLabel8.TabIndex = 37
         Me.Guna2HtmlLabel8.Text = "STUDENT ID / NAME"
-        '
-        'cboStatusFilter
-        '
-        Me.cboStatusFilter.BackColor = System.Drawing.Color.Transparent
-        Me.cboStatusFilter.BorderRadius = 12
-        Me.cboStatusFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboStatusFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboStatusFilter.FillColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(243, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatusFilter.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatusFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboStatusFilter.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.cboStatusFilter.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cboStatusFilter.ItemHeight = 30
-        Me.cboStatusFilter.Location = New System.Drawing.Point(1313, 68)
-        Me.cboStatusFilter.Name = "cboStatusFilter"
-        Me.cboStatusFilter.Size = New System.Drawing.Size(193, 36)
-        Me.cboStatusFilter.TabIndex = 56
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(1311, 40)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(58, 23)
-        Me.Guna2HtmlLabel3.TabIndex = 57
-        Me.Guna2HtmlLabel3.Text = "STATUS"
         '
         'frmDocumentRequestList
         '

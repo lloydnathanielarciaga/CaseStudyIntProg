@@ -258,7 +258,7 @@ Partial Class frmNewDocumentRequest
         Me.DateTimePickerDate.Checked = True
         Me.DateTimePickerDate.FillColor = System.Drawing.Color.FromArgb(CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
         Me.DateTimePickerDate.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.DateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePickerDate.Location = New System.Drawing.Point(1339, 111)
         Me.DateTimePickerDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DateTimePickerDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)

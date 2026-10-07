@@ -39,10 +39,10 @@ Public Class frmDashboard
         lsvRequests.FullRowSelect = True
         lsvRequests.HideSelection = False
         If lsvRequests.Columns.Count = 0 Then
-            lsvRequests.Columns.Add("Request No.", 130)
+            lsvRequests.Columns.Add("Request No.", 200)
             lsvRequests.Columns.Add("Student", 210)
             lsvRequests.Columns.Add("Status", 130)
-            lsvRequests.Columns.Add("Amount", 90, HorizontalAlignment.Right)
+            lsvRequests.Columns.Add("Amount", 100, HorizontalAlignment.Right)
         End If
 
         lsvTopDocs.View = View.Details
