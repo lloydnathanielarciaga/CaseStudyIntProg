@@ -44,7 +44,7 @@ Public Class frmPaymentPrompt
         End Try
     End Sub
 
-    Private Sub btnSavePayment_Click(sender As Object, e As EventArgs)
+    Private Sub btnSavePayment_Click(sender As Object, e As EventArgs) Handles btnSavePayment.Click
         If String.IsNullOrEmpty(lblDisplayRequestNo.Text) OrElse lblDisplayRequestNo.Text = "-" Then
             MessageBox.Show("No valid request selected.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
@@ -82,7 +82,7 @@ Public Class frmPaymentPrompt
         End Try
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.DialogResult = DialogResult.Cancel
         Me.Close()
     End Sub

@@ -43,7 +43,7 @@ Public Class frmSystemReport
             ListViewReport.Columns.Add("Last Name", 150)
             ListViewReport.Columns.Add("First Name", 150)
             ListViewReport.Columns.Add("Request Date", 200)
-            ListViewReport.Columns.Add("Total Amount", 130, HorizontalAlignment.Right)
+            ListViewReport.Columns.Add("Total Amount", 180, HorizontalAlignment.Right)
         ElseIf cboSelectReport.Text = "Request by Document Type" Then
             ListViewReport.Columns.Add("Document Name", 300)
             ListViewReport.Columns.Add("Request No.", 320)

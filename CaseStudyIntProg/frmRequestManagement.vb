@@ -78,6 +78,7 @@ Public Class frmRequestManagement
         If ListView1.SelectedItems.Count > 0 Then
             Dim selected As ListViewItem = ListView1.SelectedItems(0)
 
+            lblRequestNo.Text = selected.SubItems(1).Text
             lblDisplayCurrentStatus.Text = selected.SubItems(3).Text
             lblDisplayRecordedBy.Text = If(selected.Tag IsNot Nothing, selected.Tag.ToString(), "-")
             lblDisplayRequestCreated.Text = selected.SubItems(5).Text
@@ -95,6 +96,7 @@ Public Class frmRequestManagement
     End Sub
 
     Private Sub ClearControls()
+        lblRequestNo.Text = "-"
         lblDisplayCurrentStatus.Text = "-"
         lblDisplayRecordedBy.Text = "-"
         lblDisplayRequestCreated.Text = "-"
@@ -200,5 +202,9 @@ Public Class frmRequestManagement
         Finally
             cn.Close()
         End Try
+    End Sub
+
+    Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
+        ClearControls()
     End Sub
 End Class

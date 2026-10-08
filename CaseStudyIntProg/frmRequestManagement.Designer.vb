@@ -24,14 +24,15 @@ Partial Class frmRequestManagement
     Private Sub InitializeComponent()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.lblRequestNo = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btnClear = New Guna.UI2.WinForms.Guna2Button()
         Me.btnCancelRequest = New Guna.UI2.WinForms.Guna2Button()
         Me.btnUpdateRequest = New Guna.UI2.WinForms.Guna2Button()
         Me.cboNewCurrentStatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblDisplayStudentNo = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.lblRequestNo = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblDisplayCurrentStatus = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblDisplayRequestHandled = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lblDisplayRequestCreated = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -46,7 +47,6 @@ Partial Class frmRequestManagement
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
         Me.Guna2Panel4.SuspendLayout()
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -73,17 +73,28 @@ Partial Class frmRequestManagement
         Me.Guna2Panel4.Size = New System.Drawing.Size(757, 858)
         Me.Guna2Panel4.TabIndex = 59
         '
+        'ListView1
+        '
+        Me.ListView1.BackColor = System.Drawing.Color.Lavender
+        Me.ListView1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(25, 26)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(707, 806)
+        Me.ListView1.TabIndex = 21
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel1.BorderRadius = 12
+        Me.Guna2Panel1.Controls.Add(Me.lblRequestNo)
         Me.Guna2Panel1.Controls.Add(Me.btnClear)
         Me.Guna2Panel1.Controls.Add(Me.btnCancelRequest)
         Me.Guna2Panel1.Controls.Add(Me.btnUpdateRequest)
         Me.Guna2Panel1.Controls.Add(Me.cboNewCurrentStatus)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel1.Controls.Add(Me.lblDisplayStudentNo)
-        Me.Guna2Panel1.Controls.Add(Me.lblRequestNo)
         Me.Guna2Panel1.Controls.Add(Me.lblDisplayCurrentStatus)
         Me.Guna2Panel1.Controls.Add(Me.lblDisplayRequestHandled)
         Me.Guna2Panel1.Controls.Add(Me.lblDisplayRequestCreated)
@@ -103,6 +114,17 @@ Partial Class frmRequestManagement
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(757, 858)
         Me.Guna2Panel1.TabIndex = 60
+        '
+        'lblRequestNo
+        '
+        Me.lblRequestNo.BackColor = System.Drawing.Color.Transparent
+        Me.lblRequestNo.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRequestNo.Location = New System.Drawing.Point(58, 49)
+        Me.lblRequestNo.Name = "lblRequestNo"
+        Me.lblRequestNo.Size = New System.Drawing.Size(27, 42)
+        Me.lblRequestNo.TabIndex = 73
+        Me.lblRequestNo.Text = "--"
+        Me.lblRequestNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'btnClear
         '
@@ -194,17 +216,6 @@ Partial Class frmRequestManagement
         Me.lblDisplayStudentNo.TabIndex = 67
         Me.lblDisplayStudentNo.Text = "--"
         Me.lblDisplayStudentNo.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lblRequestNo
-        '
-        Me.lblRequestNo.BackColor = System.Drawing.Color.Transparent
-        Me.lblRequestNo.Font = New System.Drawing.Font("Segoe UI", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRequestNo.ForeColor = System.Drawing.Color.Black
-        Me.lblRequestNo.Location = New System.Drawing.Point(57, 39)
-        Me.lblRequestNo.Name = "lblRequestNo"
-        Me.lblRequestNo.Size = New System.Drawing.Size(204, 49)
-        Me.lblRequestNo.TabIndex = 66
-        Me.lblRequestNo.Text = "Request No."
         '
         'lblDisplayCurrentStatus
         '
@@ -353,17 +364,6 @@ Partial Class frmRequestManagement
         Me.Guna2HtmlLabel10.TabIndex = 52
         Me.Guna2HtmlLabel10.Text = "OR No."
         '
-        'ListView1
-        '
-        Me.ListView1.BackColor = System.Drawing.Color.Lavender
-        Me.ListView1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView1.HideSelection = False
-        Me.ListView1.Location = New System.Drawing.Point(25, 26)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(707, 806)
-        Me.ListView1.TabIndex = 21
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        '
         'frmRequestManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -399,7 +399,6 @@ Partial Class frmRequestManagement
     Friend WithEvents lblDisplayStudentName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblDisplayORNo As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblDisplayORDate As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents lblRequestNo As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lblDisplayStudentNo As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cboNewCurrentStatus As Guna.UI2.WinForms.Guna2ComboBox
@@ -407,4 +406,5 @@ Partial Class frmRequestManagement
     Friend WithEvents btnCancelRequest As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btnClear As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ListView1 As ListView
+    Friend WithEvents lblRequestNo As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class
